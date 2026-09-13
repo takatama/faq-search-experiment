@@ -1,0 +1,6 @@
+{
+  "status": "not_run",
+  "reason": "The immutable holdout was not evaluated because the required corpus, split data, aliases, embeddings, and frozen Development configuration were unavailable.",
+  "expectedCounts": { "holdoutFaqs": 120, "holdoutQueries": 360 },
+  "oneShotGuard": true
+}

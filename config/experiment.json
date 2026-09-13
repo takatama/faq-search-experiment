@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "aliasModel": "gemini-2.5-flash-lite",
+  "embeddingModel": "gemini-embedding-001",
+  "aliasCount": 5,
+  "ngramMin": 2,
+  "ngramMax": 4,
+  "questionWeight": 2,
+  "aliasWeight": 1,
+  "rrfK": 60,
+  "gate": null,
+  "status": "unfrozen",
+  "note": "Run tune:gate on development data to freeze; never tune using holdout."
+}

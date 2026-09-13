@@ -1,0 +1,3 @@
+export function cosine(a,b){ if(a.length!==b.length) throw new Error('Embedding dimensions differ'); let d=0,aa=0,bb=0; for(let i=0;i<a.length;i++){d+=a[i]*b[i];aa+=a[i]**2;bb+=b[i]**2;} return aa&&bb?d/Math.sqrt(aa*bb):0; }
+export function searchVector(docEmbeddings, queryEmbedding, limit=3){ return docEmbeddings.map(x=>({id:x.id,score:cosine(x.embedding,queryEmbedding)})).sort((a,b)=>b.score-a.score||String(a.id).localeCompare(String(b.id))).slice(0,limit); }
+export function rrf(lists,{k=60,limit=3}={}){ const scores=new Map(); for(const list of lists) list.forEach((x,i)=>scores.set(x.id,(scores.get(x.id)||0)+1/(k+i+1))); return [...scores].map(([id,score])=>({id,score})).sort((a,b)=>b.score-a.score||String(a.id).localeCompare(String(b.id))).slice(0,limit); }
