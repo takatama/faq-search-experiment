@@ -1,0 +1,6 @@
+{
+  "status": "blocked",
+  "stage": "repository and data inspection",
+  "reason": "data/corpus.json and data/development.json were not present in the supplied repository; no Development metrics were fabricated.",
+  "expectedCounts": { "corpusFaqs": 661, "developmentFaqs": 30, "developmentQueries": 90 }
+}
