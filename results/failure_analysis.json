@@ -1,0 +1,781 @@
+{
+  "vectorRescuedLexical": {
+    "count": 40,
+    "examples": [
+      {
+        "queryId": "Q-561-3",
+        "query": "余った食品を寄付したい。どこへ持っていけばいい？",
+        "correctFaq": "フードドライブについて教えてください。",
+        "lexicalPrediction": "乳腺炎になったらどこの病院に行けばいいですか？",
+        "vectorPrediction": "フードドライブについて教えてください。",
+        "hybridPrediction": "フードドライブについて教えてください。"
+      },
+      {
+        "queryId": "Q-120-2",
+        "query": "子ども医療証 忘れた 病院",
+        "correctFaq": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "lexicalPrediction": "乳幼児・子ども医療証発行の申請期限は？",
+        "vectorPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "hybridPrediction": "子どもの医療証は市外の病院でも使えますか？"
+      },
+      {
+        "queryId": "Q-120-3",
+        "query": "子どもの医療証を家に忘れて、窓口で医療費を払った。あとから払い戻してもらえる？",
+        "correctFaq": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "lexicalPrediction": "入院時の食事療養費を払ったときは払い戻しできますか？",
+        "vectorPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "hybridPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。"
+      }
+    ],
+    "all": [
+      {
+        "queryId": "Q-561-3",
+        "query": "余った食品を寄付したい。どこへ持っていけばいい？",
+        "correctFaq": "フードドライブについて教えてください。",
+        "lexicalPrediction": "乳腺炎になったらどこの病院に行けばいいですか？",
+        "vectorPrediction": "フードドライブについて教えてください。",
+        "hybridPrediction": "フードドライブについて教えてください。"
+      },
+      {
+        "queryId": "Q-120-2",
+        "query": "子ども医療証 忘れた 病院",
+        "correctFaq": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "lexicalPrediction": "乳幼児・子ども医療証発行の申請期限は？",
+        "vectorPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "hybridPrediction": "子どもの医療証は市外の病院でも使えますか？"
+      },
+      {
+        "queryId": "Q-120-3",
+        "query": "子どもの医療証を家に忘れて、窓口で医療費を払った。あとから払い戻してもらえる？",
+        "correctFaq": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "lexicalPrediction": "入院時の食事療養費を払ったときは払い戻しできますか？",
+        "vectorPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "hybridPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。"
+      },
+      {
+        "queryId": "Q-1081-3",
+        "query": "地域の人と交流できる活動にはどんなものがある？",
+        "correctFaq": "（地域交流イベント・地域活動イベント等）とはなんですか？",
+        "lexicalPrediction": "子どもの手当にはどんなものがありますか？",
+        "vectorPrediction": "（地域交流イベント・地域活動イベント等）とはなんですか？",
+        "hybridPrediction": "（地域交流イベント・地域活動イベント等）とはなんですか？"
+      },
+      {
+        "queryId": "Q-299-1",
+        "query": "母親同士が交流できる集まりについて教えてください",
+        "correctFaq": "（ママ同士の交流会等）について教えてください。",
+        "lexicalPrediction": "採用について教えてください。",
+        "vectorPrediction": "（ママ同士の交流会等）について教えてください。",
+        "hybridPrediction": "（ママ同士の交流会等）について教えてください。"
+      },
+      {
+        "queryId": "Q-299-3",
+        "query": "同じくらいの子を育てている母親と話せる場を探している",
+        "correctFaq": "（ママ同士の交流会等）について教えてください。",
+        "lexicalPrediction": "本日営業している病院を教えてください。",
+        "vectorPrediction": "（ママ同士の交流会等）について教えてください。",
+        "hybridPrediction": "本日営業している病院を教えてください。"
+      },
+      {
+        "queryId": "Q-952-3",
+        "query": "心の不調について専門家に相談したい",
+        "correctFaq": "精神保健相談について教えてください。",
+        "lexicalPrediction": "出産について相談したいのですが。",
+        "vectorPrediction": "精神保健相談について教えてください。",
+        "hybridPrediction": "子どもの発達や育児の悩みを相談したい。"
+      },
+      {
+        "queryId": "Q-816-1",
+        "query": "市の基本計画や基本構想では、どのような点を重視していますか？",
+        "correctFaq": "（基本計画・基本構想等におけるポイント）とは何ですか？",
+        "lexicalPrediction": "（自治体が定める基本計画・基本構想等）について教えてください。",
+        "vectorPrediction": "（基本計画・基本構想等におけるポイント）とは何ですか？",
+        "hybridPrediction": "（自治体が定める基本計画・基本構想等）について教えてください。"
+      },
+      {
+        "queryId": "Q-894-3",
+        "query": "犬と一緒に遊べる場所を探している",
+        "correctFaq": "犬を連れて遊べる公園を教えてください。",
+        "lexicalPrediction": "○○駅近くで子どもと遊べる場所を教えてください。",
+        "vectorPrediction": "犬を連れて遊べる公園を教えてください。",
+        "hybridPrediction": "○○駅近くで子どもと遊べる場所を教えてください。"
+      },
+      {
+        "queryId": "Q-1072-2",
+        "query": "出生届 届出人",
+        "correctFaq": "出生届は誰が届出すればいいですか？",
+        "lexicalPrediction": "出生届の届出場所を教えてください。",
+        "vectorPrediction": "出生届は誰が届出すればいいですか？",
+        "hybridPrediction": "出生届は誰が届出すればいいですか？"
+      },
+      {
+        "queryId": "Q-1072-3",
+        "query": "赤ちゃんが生まれた。出生届は父母のどちらが出せばいい？",
+        "correctFaq": "出生届は誰が届出すればいいですか？",
+        "lexicalPrediction": "赤ちゃんが寝てくれません。",
+        "vectorPrediction": "出生届は誰が届出すればいいですか？",
+        "hybridPrediction": "出生届は誰が届出すればいいですか？"
+      },
+      {
+        "queryId": "Q-1086-3",
+        "query": "国民健康保険を脱退した。保険証はどのように返せばいい？",
+        "correctFaq": "国民健康保険証の返却について教えてください。",
+        "lexicalPrediction": "国民健康保険証を紛失しました。",
+        "vectorPrediction": "国民健康保険証の返却について教えてください。",
+        "hybridPrediction": "国民健康保険証の返却について教えてください。"
+      },
+      {
+        "queryId": "Q-934-3",
+        "query": "パスポートを取りたい。どこで申請すればいい？",
+        "correctFaq": "パスポートの申請窓口を教えてください。",
+        "lexicalPrediction": "小児慢性特定疾病の申請は誰が申請すればいいのですか？",
+        "vectorPrediction": "パスポートの申請窓口を教えてください。",
+        "hybridPrediction": "パスポートの申請に必要な書類を教えてください。"
+      },
+      {
+        "queryId": "Q-280-3",
+        "query": "私立幼稚園の補助金を母親名義の口座で受け取りたい",
+        "correctFaq": "私立幼稚園の補助金の振込先口座は父と母どちらでも可能ですか？",
+        "lexicalPrediction": "私立幼稚園の補助金の申請手続きを教えてください。",
+        "vectorPrediction": "私立幼稚園の補助金の振込先口座は父と母どちらでも可能ですか？",
+        "hybridPrediction": "私立幼稚園の補助金の申請手続きを教えてください。"
+      },
+      {
+        "queryId": "Q-024-1",
+        "query": "9・10か月健診を決められた期間に受けられないのですが、どうすればいいですか？",
+        "correctFaq": "9・10か月健診の期間内に受診できません。",
+        "lexicalPrediction": "子どもの発育に不安があるのですが、どうすればいいですか？",
+        "vectorPrediction": "9・10か月健診の期間内に受診できません。",
+        "hybridPrediction": "9・10か月健診の期間内に受診できません。"
+      },
+      {
+        "queryId": "Q-040-2",
+        "query": "療育医療 申請条件",
+        "correctFaq": "療育医療はどんな時に申請できるのですか？",
+        "lexicalPrediction": "療育医療について教えてください。",
+        "vectorPrediction": "療育医療はどんな時に申請できるのですか？",
+        "hybridPrediction": "療育医療の申請に必要なものは何ですか？"
+      },
+      {
+        "queryId": "Q-943-1",
+        "query": "生活に困っている場合、どこへ相談すればよいですか？",
+        "correctFaq": "生活困窮についてどこに相談すればいいですか？",
+        "lexicalPrediction": "子育てはどこに相談すればいいですか？",
+        "vectorPrediction": "生活困窮についてどこに相談すればいいですか？",
+        "hybridPrediction": "生活困窮についてどこに相談すればいいですか？"
+      },
+      {
+        "queryId": "Q-943-3",
+        "query": "収入が減って生活費に困っている。相談できる窓口はある？",
+        "correctFaq": "生活困窮についてどこに相談すればいいですか？",
+        "lexicalPrediction": "子どもが相談できるところはありますか？",
+        "vectorPrediction": "生活困窮についてどこに相談すればいいですか？",
+        "hybridPrediction": "子どもの不登校を相談できるところはありますか？"
+      },
+      {
+        "queryId": "Q-885-3",
+        "query": "この地域ならではの名物料理を知りたい",
+        "correctFaq": "（ご当地グルメ等）とは何ですか？",
+        "lexicalPrediction": "住民税の納税証明書を取りたい。",
+        "vectorPrediction": "（ご当地グルメ等）とは何ですか？",
+        "hybridPrediction": "（ご当地グルメ等）とは何ですか？"
+      },
+      {
+        "queryId": "Q-920-3",
+        "query": "近所で起きた犯罪の情報を通知で受け取りたい",
+        "correctFaq": "（犯罪等の発生お知らせサービス等）について教えてください。",
+        "lexicalPrediction": "母子手帳を受け取りたいのですが、手続きを教えてください。",
+        "vectorPrediction": "（犯罪等の発生お知らせサービス等）について教えてください。",
+        "hybridPrediction": "母子手帳を受け取りたいのですが、手続きを教えてください。"
+      },
+      {
+        "queryId": "Q-274-3",
+        "query": "私立幼稚園の補助金ので負担する金額を知りたい",
+        "correctFaq": "私立幼稚園の補助金の金額について教えてください。",
+        "lexicalPrediction": "私立幼稚園の補助金の申請手続きを教えてください。",
+        "vectorPrediction": "私立幼稚園の補助金の金額について教えてください。",
+        "hybridPrediction": "私立幼稚園の補助金の金額について教えてください。"
+      },
+      {
+        "queryId": "Q-904-3",
+        "query": "市からのお知らせが載った広報紙を入手したい",
+        "correctFaq": "市報がほしい。",
+        "lexicalPrediction": "（犯罪等の発生お知らせサービス等）について教えてください。",
+        "vectorPrediction": "市報がほしい。",
+        "hybridPrediction": "市報がほしい。"
+      },
+      {
+        "queryId": "Q-115-3",
+        "query": "子どもの医療証をなくしてしまった。再発行したい",
+        "correctFaq": "子どもの医療証の再発行はできますか？",
+        "lexicalPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "vectorPrediction": "子どもの医療証の再発行はできますか？",
+        "hybridPrediction": "子どもの医療証の再発行はできますか？"
+      },
+      {
+        "queryId": "Q-875-3",
+        "query": "妊婦健診の受診の手続きをしたい。行く窓口を知りたい",
+        "correctFaq": "妊婦健診の受診場所を教えてください。",
+        "lexicalPrediction": "妊婦健診の受診票について教えてください。",
+        "vectorPrediction": "妊婦健診の受診場所を教えてください。",
+        "hybridPrediction": "妊婦健診の受診票について教えてください。"
+      },
+      {
+        "queryId": "Q-195-1",
+        "query": "支給認定ってどのようなものでしょうか？",
+        "correctFaq": "支給認定とは何ですか？",
+        "lexicalPrediction": "どうしたら早くねてくれるのでしょうか？",
+        "vectorPrediction": "支給認定とは何ですか？",
+        "hybridPrediction": "支給認定とは何ですか？"
+      },
+      {
+        "queryId": "Q-973-3",
+        "query": "避難の手続きをしたい。行く窓口を知りたい",
+        "correctFaq": "避難場所はどこですか？",
+        "lexicalPrediction": "離婚の手続きを教えてください。",
+        "vectorPrediction": "避難場所はどこですか？",
+        "hybridPrediction": "養子縁組をしたいのですが。"
+      },
+      {
+        "queryId": "Q-021-3",
+        "query": "6・7か月健診の受診券をなくした。再発行してもらえる？",
+        "correctFaq": "6・7か月健診の券を失くしてしまいました。",
+        "lexicalPrediction": "○○市外でも6・7か月健診の受診票は使えますか？",
+        "vectorPrediction": "6・7か月健診の券を失くしてしまいました。",
+        "hybridPrediction": "6・7か月健診の券を失くしてしまいました。"
+      },
+      {
+        "queryId": "Q-022-3",
+        "query": "9・10か月健診の受診券をなくした。再発行してもらえる？",
+        "correctFaq": "9・10か月健診の券を失くしてしまいました。",
+        "lexicalPrediction": "○○市外でも9・10か月健診の受診票は使えますか？",
+        "vectorPrediction": "9・10か月健診の券を失くしてしまいました。",
+        "hybridPrediction": "9・10か月健診の券を失くしてしまいました。"
+      },
+      {
+        "queryId": "Q-042-3",
+        "query": "結核児童向けの療育医療を申請したい。用意する書類は？",
+        "correctFaq": "療育医療の申請に必要なものは何ですか？",
+        "lexicalPrediction": "療育医療について教えてください。",
+        "vectorPrediction": "療育医療の申請に必要なものは何ですか？",
+        "hybridPrediction": "療育医療の申請手続を教えてください。"
+      },
+      {
+        "queryId": "Q-043-3",
+        "query": "療育医療の申請期限を知りたい",
+        "correctFaq": "療育医療の申請手続はいつまでにすればいいですか？",
+        "lexicalPrediction": "児童手当の申請期限を教えてください。",
+        "vectorPrediction": "療育医療の申請手続はいつまでにすればいいですか？",
+        "hybridPrediction": "療育医療の申請に必要なものは何ですか？"
+      },
+      {
+        "queryId": "Q-044-3",
+        "query": "療育医療は保護者と医療機関のどちらが申請する？",
+        "correctFaq": "療育医療の申請は誰がすればいいのですか？",
+        "lexicalPrediction": "療育医療はどんな時に申請できるのですか？",
+        "vectorPrediction": "療育医療の申請は誰がすればいいのですか？",
+        "hybridPrediction": "療育医療の申請は誰がすればいいのですか？"
+      },
+      {
+        "queryId": "Q-056-3",
+        "query": "未熟児の養育医療を申請したい。必要な書類は？",
+        "correctFaq": "養育医療の申請に必要なものは何ですか？",
+        "lexicalPrediction": "パスポートの申請に必要な書類を教えてください。",
+        "vectorPrediction": "養育医療の申請に必要なものは何ですか？",
+        "hybridPrediction": "養育医療の申請手続を教えてください。"
+      },
+      {
+        "queryId": "Q-058-3",
+        "query": "養育医療は誰が申請するものですか？",
+        "correctFaq": "養育医療の申請は誰がすればいいのですか？",
+        "lexicalPrediction": "小児慢性特定疾病の申請は誰が申請すればいいのですか？",
+        "vectorPrediction": "養育医療の申請は誰がすればいいのですか？",
+        "hybridPrediction": "養育医療の申請は誰がすればいいのですか？"
+      },
+      {
+        "queryId": "Q-162-3",
+        "query": "近くの支所は何時から何時まで開いている？",
+        "correctFaq": "（支所・出張所、市民サービスセンター等）の開設時間を教えてください。",
+        "lexicalPrediction": "市役所は何時から始まりますか？",
+        "vectorPrediction": "（支所・出張所、市民サービスセンター等）の開設時間を教えてください。",
+        "hybridPrediction": "市役所は何時から始まりますか？"
+      },
+      {
+        "queryId": "Q-376-3",
+        "query": "近くの支所に電話で問い合わせたい",
+        "correctFaq": "（支所・出張所、市民サービスセンター等）の電話番号を教えてください。",
+        "lexicalPrediction": "予防接種の問い合わせ窓口を教えてください。",
+        "vectorPrediction": "（支所・出張所、市民サービスセンター等）の電話番号を教えてください。",
+        "hybridPrediction": "予防接種の問い合わせ窓口を教えてください。"
+      },
+      {
+        "queryId": "Q-365-3",
+        "query": "赤ちゃんが生まれたので出生届を出したい。必要な持ち物は？",
+        "correctFaq": "出生届の届出に必要なものは何ですか？",
+        "lexicalPrediction": "赤ちゃんが寝てくれません。",
+        "vectorPrediction": "出生届の届出に必要なものは何ですか？",
+        "hybridPrediction": "子どもが生まれたら、どんな手続きが必要ですか。"
+      },
+      {
+        "queryId": "Q-190-1",
+        "query": "市立保育室ってどのようなものでしょうか？",
+        "correctFaq": "市立保育室とは何ですか？",
+        "lexicalPrediction": "どうしたら早くねてくれるのでしょうか？",
+        "vectorPrediction": "市立保育室とは何ですか？",
+        "hybridPrediction": "市立保育室とは何ですか？"
+      },
+      {
+        "queryId": "Q-190-3",
+        "query": "市が運営する保育室は、普通の保育園とどう違う？",
+        "correctFaq": "市立保育室とは何ですか？",
+        "lexicalPrediction": "近くの保育園を教えてください。",
+        "vectorPrediction": "市立保育室とは何ですか？",
+        "hybridPrediction": "市立保育室とは何ですか？"
+      },
+      {
+        "queryId": "Q-191-1",
+        "query": "私立保育室ってどのようなものでしょうか？",
+        "correctFaq": "私立保育室とは何ですか？",
+        "lexicalPrediction": "どうしたら早くねてくれるのでしょうか？",
+        "vectorPrediction": "私立保育室とは何ですか？",
+        "hybridPrediction": "私立保育室とは何ですか？"
+      },
+      {
+        "queryId": "Q-191-3",
+        "query": "民間が運営する保育室は、どのような施設？",
+        "correctFaq": "私立保育室とは何ですか？",
+        "lexicalPrediction": "市内に児童館のような施設はありますか？",
+        "vectorPrediction": "私立保育室とは何ですか？",
+        "hybridPrediction": "私立保育室とは何ですか？"
+      }
+    ]
+  },
+  "vectorWrongWhenLexicalCorrect": {
+    "count": 3,
+    "examples": [
+      {
+        "queryId": "Q-843-3",
+        "query": "子どもの通う先を探している。市にある保育園の一覧がほしいについて知りたい",
+        "correctFaq": "○○市にある保育園の一覧がほしい。",
+        "lexicalPrediction": "○○市にある保育園の一覧がほしい。",
+        "vectorPrediction": "市内に保育園がどこにあるか教えてください。",
+        "hybridPrediction": "○○市にある保育園の一覧がほしい。"
+      },
+      {
+        "queryId": "Q-971-1",
+        "query": "避難所はどこでしょうか？",
+        "correctFaq": "避難所はどこですか？",
+        "lexicalPrediction": "避難所はどこですか？",
+        "vectorPrediction": "避難場所はどこですか？",
+        "hybridPrediction": "避難所はどこですか？"
+      },
+      {
+        "queryId": "Q-971-3",
+        "query": "避難所はの手続きをしたい。行く窓口を知りたい",
+        "correctFaq": "避難所はどこですか？",
+        "lexicalPrediction": "避難所はどこですか？",
+        "vectorPrediction": "避難場所はどこですか？",
+        "hybridPrediction": "避難所はどこですか？"
+      }
+    ],
+    "all": [
+      {
+        "queryId": "Q-843-3",
+        "query": "子どもの通う先を探している。市にある保育園の一覧がほしいについて知りたい",
+        "correctFaq": "○○市にある保育園の一覧がほしい。",
+        "lexicalPrediction": "○○市にある保育園の一覧がほしい。",
+        "vectorPrediction": "市内に保育園がどこにあるか教えてください。",
+        "hybridPrediction": "○○市にある保育園の一覧がほしい。"
+      },
+      {
+        "queryId": "Q-971-1",
+        "query": "避難所はどこでしょうか？",
+        "correctFaq": "避難所はどこですか？",
+        "lexicalPrediction": "避難所はどこですか？",
+        "vectorPrediction": "避難場所はどこですか？",
+        "hybridPrediction": "避難所はどこですか？"
+      },
+      {
+        "queryId": "Q-971-3",
+        "query": "避難所はの手続きをしたい。行く窓口を知りたい",
+        "correctFaq": "避難所はどこですか？",
+        "lexicalPrediction": "避難所はどこですか？",
+        "vectorPrediction": "避難場所はどこですか？",
+        "hybridPrediction": "避難所はどこですか？"
+      }
+    ]
+  },
+  "hybridFailed": {
+    "count": 28,
+    "examples": [
+      {
+        "queryId": "Q-120-2",
+        "query": "子ども医療証 忘れた 病院",
+        "correctFaq": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "lexicalPrediction": "乳幼児・子ども医療証発行の申請期限は？",
+        "vectorPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "hybridPrediction": "子どもの医療証は市外の病院でも使えますか？"
+      },
+      {
+        "queryId": "Q-1006-3",
+        "query": "児童館や公民館で親子が参加できるプログラムを探している",
+        "correctFaq": "（自治体の施設内で開催される子ども・保護者向けプログラムやイベント等）について教えてください。",
+        "lexicalPrediction": "（親子で参加できるイベント等）について教えてください。",
+        "vectorPrediction": "（親子で参加できるイベント等）について教えてください。",
+        "hybridPrediction": "（親子で参加できるイベント等）について教えてください。"
+      },
+      {
+        "queryId": "Q-299-3",
+        "query": "同じくらいの子を育てている母親と話せる場を探している",
+        "correctFaq": "（ママ同士の交流会等）について教えてください。",
+        "lexicalPrediction": "本日営業している病院を教えてください。",
+        "vectorPrediction": "（ママ同士の交流会等）について教えてください。",
+        "hybridPrediction": "本日営業している病院を教えてください。"
+      }
+    ],
+    "all": [
+      {
+        "queryId": "Q-120-2",
+        "query": "子ども医療証 忘れた 病院",
+        "correctFaq": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "lexicalPrediction": "乳幼児・子ども医療証発行の申請期限は？",
+        "vectorPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "hybridPrediction": "子どもの医療証は市外の病院でも使えますか？"
+      },
+      {
+        "queryId": "Q-1006-3",
+        "query": "児童館や公民館で親子が参加できるプログラムを探している",
+        "correctFaq": "（自治体の施設内で開催される子ども・保護者向けプログラムやイベント等）について教えてください。",
+        "lexicalPrediction": "（親子で参加できるイベント等）について教えてください。",
+        "vectorPrediction": "（親子で参加できるイベント等）について教えてください。",
+        "hybridPrediction": "（親子で参加できるイベント等）について教えてください。"
+      },
+      {
+        "queryId": "Q-299-3",
+        "query": "同じくらいの子を育てている母親と話せる場を探している",
+        "correctFaq": "（ママ同士の交流会等）について教えてください。",
+        "lexicalPrediction": "本日営業している病院を教えてください。",
+        "vectorPrediction": "（ママ同士の交流会等）について教えてください。",
+        "hybridPrediction": "本日営業している病院を教えてください。"
+      },
+      {
+        "queryId": "Q-952-3",
+        "query": "心の不調について専門家に相談したい",
+        "correctFaq": "精神保健相談について教えてください。",
+        "lexicalPrediction": "出産について相談したいのですが。",
+        "vectorPrediction": "精神保健相談について教えてください。",
+        "hybridPrediction": "子どもの発達や育児の悩みを相談したい。"
+      },
+      {
+        "queryId": "Q-816-1",
+        "query": "市の基本計画や基本構想では、どのような点を重視していますか？",
+        "correctFaq": "（基本計画・基本構想等におけるポイント）とは何ですか？",
+        "lexicalPrediction": "（自治体が定める基本計画・基本構想等）について教えてください。",
+        "vectorPrediction": "（基本計画・基本構想等におけるポイント）とは何ですか？",
+        "hybridPrediction": "（自治体が定める基本計画・基本構想等）について教えてください。"
+      },
+      {
+        "queryId": "Q-816-3",
+        "query": "自治体が今後どんなまちづくりを進めるのか、計画の要点を知りたい",
+        "correctFaq": "（基本計画・基本構想等におけるポイント）とは何ですか？",
+        "lexicalPrediction": "（自治体が定める基本計画・基本構想等）について教えてください。",
+        "vectorPrediction": "（自治体が定める基本計画・基本構想等）について教えてください。",
+        "hybridPrediction": "（自治体が定める基本計画・基本構想等）について教えてください。"
+      },
+      {
+        "queryId": "Q-894-3",
+        "query": "犬と一緒に遊べる場所を探している",
+        "correctFaq": "犬を連れて遊べる公園を教えてください。",
+        "lexicalPrediction": "○○駅近くで子どもと遊べる場所を教えてください。",
+        "vectorPrediction": "犬を連れて遊べる公園を教えてください。",
+        "hybridPrediction": "○○駅近くで子どもと遊べる場所を教えてください。"
+      },
+      {
+        "queryId": "Q-934-3",
+        "query": "パスポートを取りたい。どこで申請すればいい？",
+        "correctFaq": "パスポートの申請窓口を教えてください。",
+        "lexicalPrediction": "小児慢性特定疾病の申請は誰が申請すればいいのですか？",
+        "vectorPrediction": "パスポートの申請窓口を教えてください。",
+        "hybridPrediction": "パスポートの申請に必要な書類を教えてください。"
+      },
+      {
+        "queryId": "Q-280-3",
+        "query": "私立幼稚園の補助金を母親名義の口座で受け取りたい",
+        "correctFaq": "私立幼稚園の補助金の振込先口座は父と母どちらでも可能ですか？",
+        "lexicalPrediction": "私立幼稚園の補助金の申請手続きを教えてください。",
+        "vectorPrediction": "私立幼稚園の補助金の振込先口座は父と母どちらでも可能ですか？",
+        "hybridPrediction": "私立幼稚園の補助金の申請手続きを教えてください。"
+      },
+      {
+        "queryId": "Q-024-2",
+        "query": "9・10か月健診 期間過ぎた",
+        "correctFaq": "9・10か月健診の期間内に受診できません。",
+        "lexicalPrediction": "9・10か月健診の期間内に受診できません。",
+        "vectorPrediction": "9・10か月健診の期間内に受診できません。",
+        "hybridPrediction": "9・10か月健診の券を失くしてしまいました。"
+      },
+      {
+        "queryId": "Q-040-2",
+        "query": "療育医療 申請条件",
+        "correctFaq": "療育医療はどんな時に申請できるのですか？",
+        "lexicalPrediction": "療育医療について教えてください。",
+        "vectorPrediction": "療育医療はどんな時に申請できるのですか？",
+        "hybridPrediction": "療育医療の申請に必要なものは何ですか？"
+      },
+      {
+        "queryId": "Q-040-3",
+        "query": "結核で長期療養が必要な子どもは、医療費の給付を受けられる？",
+        "correctFaq": "療育医療はどんな時に申請できるのですか？",
+        "lexicalPrediction": "保育利用料軽減を受けられる条件は？",
+        "vectorPrediction": "小児慢性特定疾病の医療費助成制度について教えてください。",
+        "hybridPrediction": "保育利用料軽減を受けられる条件は？"
+      },
+      {
+        "queryId": "Q-1007-2",
+        "query": "保育室 どんな施設",
+        "correctFaq": "保育室とは何ですか？",
+        "lexicalPrediction": "保育室とは何ですか？",
+        "vectorPrediction": "保育室とは何ですか？",
+        "hybridPrediction": "市立保育室とは何ですか？"
+      },
+      {
+        "queryId": "Q-943-3",
+        "query": "収入が減って生活費に困っている。相談できる窓口はある？",
+        "correctFaq": "生活困窮についてどこに相談すればいいですか？",
+        "lexicalPrediction": "子どもが相談できるところはありますか？",
+        "vectorPrediction": "生活困窮についてどこに相談すればいいですか？",
+        "hybridPrediction": "子どもの不登校を相談できるところはありますか？"
+      },
+      {
+        "queryId": "Q-144-3",
+        "query": "児童扶養手当を申請したい。必要な手順を知りたい",
+        "correctFaq": "児童扶養手当の申請は両親の代わりに祖父母等親族ができますか？",
+        "lexicalPrediction": "児童扶養手当の申請に必要なものを教えてください。",
+        "vectorPrediction": "児童扶養手当の申請に必要なものを教えてください。",
+        "hybridPrediction": "児童扶養手当の申請に必要なものを教えてください。"
+      },
+      {
+        "queryId": "Q-153-3",
+        "query": "児童扶養で負担する金額を知りたい",
+        "correctFaq": "児童扶養手当額は収入が変化したら変わりますか？",
+        "lexicalPrediction": "児童扶養手当とは何ですか？",
+        "vectorPrediction": "児童扶養手当とは何ですか？",
+        "hybridPrediction": "児童扶養手当とは何ですか？"
+      },
+      {
+        "queryId": "Q-920-3",
+        "query": "近所で起きた犯罪の情報を通知で受け取りたい",
+        "correctFaq": "（犯罪等の発生お知らせサービス等）について教えてください。",
+        "lexicalPrediction": "母子手帳を受け取りたいのですが、手続きを教えてください。",
+        "vectorPrediction": "（犯罪等の発生お知らせサービス等）について教えてください。",
+        "hybridPrediction": "母子手帳を受け取りたいのですが、手続きを教えてください。"
+      },
+      {
+        "queryId": "Q-924-3",
+        "query": "引っ越しに伴う転入の手続きをしたい 住民票",
+        "correctFaq": "転入した後の手続きについて教えてください。",
+        "lexicalPrediction": "転入の手続きについて教えてください。",
+        "vectorPrediction": "転入の手続きについて教えてください。",
+        "hybridPrediction": "転入の手続きについて教えてください。"
+      },
+      {
+        "queryId": "Q-875-3",
+        "query": "妊婦健診の受診の手続きをしたい。行く窓口を知りたい",
+        "correctFaq": "妊婦健診の受診場所を教えてください。",
+        "lexicalPrediction": "妊婦健診の受診票について教えてください。",
+        "vectorPrediction": "妊婦健診の受診場所を教えてください。",
+        "hybridPrediction": "妊婦健診の受診票について教えてください。"
+      },
+      {
+        "queryId": "Q-195-3",
+        "query": "について、自分も対象になるか確認したい",
+        "correctFaq": "支給認定とは何ですか？",
+        "lexicalPrediction": "病児・病後児利用料金助成の対象になるベビーシッター業者はどこですか？",
+        "vectorPrediction": "自分の軽減金額を教えてください。",
+        "hybridPrediction": "病児・病後児利用料金助成の対象になるベビーシッター業者はどこですか？"
+      },
+      {
+        "queryId": "Q-347-3",
+        "query": "について、自分も対象になるか確認したい 保育園の入園申込",
+        "correctFaq": "支給認定証とは何ですか？",
+        "lexicalPrediction": "保育園の入園案内はどこでもらえますか？",
+        "vectorPrediction": "保育園の募集や空きがなくても申し込みできますか？",
+        "hybridPrediction": "保育園の募集時期はいつですか？"
+      },
+      {
+        "queryId": "Q-973-3",
+        "query": "避難の手続きをしたい。行く窓口を知りたい",
+        "correctFaq": "避難場所はどこですか？",
+        "lexicalPrediction": "離婚の手続きを教えてください。",
+        "vectorPrediction": "避難場所はどこですか？",
+        "hybridPrediction": "養子縁組をしたいのですが。"
+      },
+      {
+        "queryId": "Q-042-3",
+        "query": "結核児童向けの療育医療を申請したい。用意する書類は？",
+        "correctFaq": "療育医療の申請に必要なものは何ですか？",
+        "lexicalPrediction": "療育医療について教えてください。",
+        "vectorPrediction": "療育医療の申請に必要なものは何ですか？",
+        "hybridPrediction": "療育医療の申請手続を教えてください。"
+      },
+      {
+        "queryId": "Q-043-3",
+        "query": "療育医療の申請期限を知りたい",
+        "correctFaq": "療育医療の申請手続はいつまでにすればいいですか？",
+        "lexicalPrediction": "児童手当の申請期限を教えてください。",
+        "vectorPrediction": "療育医療の申請手続はいつまでにすればいいですか？",
+        "hybridPrediction": "療育医療の申請に必要なものは何ですか？"
+      },
+      {
+        "queryId": "Q-056-3",
+        "query": "未熟児の養育医療を申請したい。必要な書類は？",
+        "correctFaq": "養育医療の申請に必要なものは何ですか？",
+        "lexicalPrediction": "パスポートの申請に必要な書類を教えてください。",
+        "vectorPrediction": "養育医療の申請に必要なものは何ですか？",
+        "hybridPrediction": "養育医療の申請手続を教えてください。"
+      },
+      {
+        "queryId": "Q-162-3",
+        "query": "近くの支所は何時から何時まで開いている？",
+        "correctFaq": "（支所・出張所、市民サービスセンター等）の開設時間を教えてください。",
+        "lexicalPrediction": "市役所は何時から始まりますか？",
+        "vectorPrediction": "（支所・出張所、市民サービスセンター等）の開設時間を教えてください。",
+        "hybridPrediction": "市役所は何時から始まりますか？"
+      },
+      {
+        "queryId": "Q-376-3",
+        "query": "近くの支所に電話で問い合わせたい",
+        "correctFaq": "（支所・出張所、市民サービスセンター等）の電話番号を教えてください。",
+        "lexicalPrediction": "予防接種の問い合わせ窓口を教えてください。",
+        "vectorPrediction": "（支所・出張所、市民サービスセンター等）の電話番号を教えてください。",
+        "hybridPrediction": "予防接種の問い合わせ窓口を教えてください。"
+      },
+      {
+        "queryId": "Q-365-3",
+        "query": "赤ちゃんが生まれたので出生届を出したい。必要な持ち物は？",
+        "correctFaq": "出生届の届出に必要なものは何ですか？",
+        "lexicalPrediction": "赤ちゃんが寝てくれません。",
+        "vectorPrediction": "出生届の届出に必要なものは何ですか？",
+        "hybridPrediction": "子どもが生まれたら、どんな手続きが必要ですか。"
+      }
+    ]
+  },
+  "gateMissedRescue": {
+    "count": 6,
+    "examples": [
+      {
+        "queryId": "Q-1081-3",
+        "query": "地域の人と交流できる活動にはどんなものがある？",
+        "correctFaq": "（地域交流イベント・地域活動イベント等）とはなんですか？",
+        "lexicalPrediction": "子どもの手当にはどんなものがありますか？",
+        "vectorPrediction": "（地域交流イベント・地域活動イベント等）とはなんですか？",
+        "hybridPrediction": "（地域交流イベント・地域活動イベント等）とはなんですか？"
+      },
+      {
+        "queryId": "Q-1086-3",
+        "query": "国民健康保険を脱退した。保険証はどのように返せばいい？",
+        "correctFaq": "国民健康保険証の返却について教えてください。",
+        "lexicalPrediction": "国民健康保険証を紛失しました。",
+        "vectorPrediction": "国民健康保険証の返却について教えてください。",
+        "hybridPrediction": "国民健康保険証の返却について教えてください。"
+      },
+      {
+        "queryId": "Q-904-3",
+        "query": "市からのお知らせが載った広報紙を入手したい",
+        "correctFaq": "市報がほしい。",
+        "lexicalPrediction": "（犯罪等の発生お知らせサービス等）について教えてください。",
+        "vectorPrediction": "市報がほしい。",
+        "hybridPrediction": "市報がほしい。"
+      }
+    ],
+    "all": [
+      {
+        "queryId": "Q-1081-3",
+        "query": "地域の人と交流できる活動にはどんなものがある？",
+        "correctFaq": "（地域交流イベント・地域活動イベント等）とはなんですか？",
+        "lexicalPrediction": "子どもの手当にはどんなものがありますか？",
+        "vectorPrediction": "（地域交流イベント・地域活動イベント等）とはなんですか？",
+        "hybridPrediction": "（地域交流イベント・地域活動イベント等）とはなんですか？"
+      },
+      {
+        "queryId": "Q-1086-3",
+        "query": "国民健康保険を脱退した。保険証はどのように返せばいい？",
+        "correctFaq": "国民健康保険証の返却について教えてください。",
+        "lexicalPrediction": "国民健康保険証を紛失しました。",
+        "vectorPrediction": "国民健康保険証の返却について教えてください。",
+        "hybridPrediction": "国民健康保険証の返却について教えてください。"
+      },
+      {
+        "queryId": "Q-904-3",
+        "query": "市からのお知らせが載った広報紙を入手したい",
+        "correctFaq": "市報がほしい。",
+        "lexicalPrediction": "（犯罪等の発生お知らせサービス等）について教えてください。",
+        "vectorPrediction": "市報がほしい。",
+        "hybridPrediction": "市報がほしい。"
+      },
+      {
+        "queryId": "Q-115-3",
+        "query": "子どもの医療証をなくしてしまった。再発行したい",
+        "correctFaq": "子どもの医療証の再発行はできますか？",
+        "lexicalPrediction": "子どもの医療証を使わずに病院を受診してしまったのですが。",
+        "vectorPrediction": "子どもの医療証の再発行はできますか？",
+        "hybridPrediction": "子どもの医療証の再発行はできますか？"
+      },
+      {
+        "queryId": "Q-1030-3",
+        "query": "市立保育園への入園を考えている。受け入れ人数を知りたい",
+        "correctFaq": "○○市立保育園の定員を教えてください。",
+        "lexicalPrediction": "○○市立保育園の定員を教えてください。",
+        "vectorPrediction": "○○市立保育園の定員を教えてください。",
+        "hybridPrediction": "○○市立保育園の定員を教えてください。"
+      },
+      {
+        "queryId": "Q-191-3",
+        "query": "民間が運営する保育室は、どのような施設？",
+        "correctFaq": "私立保育室とは何ですか？",
+        "lexicalPrediction": "市内に児童館のような施設はありますか？",
+        "vectorPrediction": "私立保育室とは何ですか？",
+        "hybridPrediction": "私立保育室とは何ですか？"
+      }
+    ]
+  },
+  "hybridBrokeCorrectLexical": {
+    "count": 2,
+    "examples": [
+      {
+        "queryId": "Q-024-2",
+        "query": "9・10か月健診 期間過ぎた",
+        "correctFaq": "9・10か月健診の期間内に受診できません。",
+        "lexicalPrediction": "9・10か月健診の期間内に受診できません。",
+        "vectorPrediction": "9・10か月健診の期間内に受診できません。",
+        "hybridPrediction": "9・10か月健診の券を失くしてしまいました。"
+      },
+      {
+        "queryId": "Q-1007-2",
+        "query": "保育室 どんな施設",
+        "correctFaq": "保育室とは何ですか？",
+        "lexicalPrediction": "保育室とは何ですか？",
+        "vectorPrediction": "保育室とは何ですか？",
+        "hybridPrediction": "市立保育室とは何ですか？"
+      }
+    ],
+    "all": [
+      {
+        "queryId": "Q-024-2",
+        "query": "9・10か月健診 期間過ぎた",
+        "correctFaq": "9・10か月健診の期間内に受診できません。",
+        "lexicalPrediction": "9・10か月健診の期間内に受診できません。",
+        "vectorPrediction": "9・10か月健診の期間内に受診できません。",
+        "hybridPrediction": "9・10か月健診の券を失くしてしまいました。"
+      },
+      {
+        "queryId": "Q-1007-2",
+        "query": "保育室 どんな施設",
+        "correctFaq": "保育室とは何ですか？",
+        "lexicalPrediction": "保育室とは何ですか？",
+        "vectorPrediction": "保育室とは何ですか？",
+        "hybridPrediction": "市立保育室とは何ですか？"
+      }
+    ]
+  }
+}

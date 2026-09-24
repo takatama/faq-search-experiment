@@ -1,2 +1,21 @@
-import { readJson,rows,faqId,question,queryText,expectedId,requireFile } from '../src/io.js'; import { validEmbedding } from '../src/cache.js';
-export function loadExperiment(split,{requireGate=true}={}){const config=readJson(requireFile('config/experiment.json'));if(requireGate&&(!config.gate||config.status!=='frozen'))throw new Error('Experiment settings are not frozen; run npm run tune:gate first');const faqs=rows(readJson(requireFile('data/corpus.json')),['faqs','corpus']).map(x=>({id:faqId(x),question:question(x)}));if(faqs.length!==661)throw new Error(`Fixed corpus must contain 661 FAQs, got ${faqs.length}`);const raw=rows(readJson(requireFile(`data/${split}.json`)),['queries','items']);const expected=split==='development'?90:360;if(raw.length!==expected)throw new Error(`Fixed ${split} split must contain ${expected} queries, got ${raw.length}`);const queries=raw.map((x,i)=>({id:String(x.id??x.query_id??`${split}-${i}`),text:queryText(x),expectedId:expectedId(x),queryType:x.query_type??x.type,difficulty:x.difficulty}));const uniqueFaqs=new Set(queries.map(x=>x.expectedId));if(uniqueFaqs.size!==expected/3||[...uniqueFaqs].some(id=>queries.filter(q=>q.expectedId===id).length!==3))throw new Error(`Fixed ${split} split must contain exactly three queries per FAQ`);const aliasCache=readJson(requireFile('data/cache/aliases.json')),fCache=readJson(requireFile('data/cache/faq-embeddings.json')),qCache=readJson(requireFile(`data/cache/${split}-embeddings.json`));const aliases=Object.fromEntries(Object.entries(aliasCache.items).map(([id,x])=>[id,x.aliases]));const faqEmbeddings={},queryEmbeddings={};for(const f of faqs){const x=fCache.items[f.id];if(!validEmbedding(x,{model:config.embeddingModel,taskType:'RETRIEVAL_DOCUMENT',text:f.question}))throw new Error(`Invalid FAQ embedding cache: ${f.id}`);faqEmbeddings[f.id]=x.embedding;}for(const q of queries){const x=qCache.items[q.id];if(!validEmbedding(x,{model:config.embeddingModel,taskType:'RETRIEVAL_QUERY',text:q.text}))throw new Error(`Invalid query embedding cache: ${q.id}`);queryEmbeddings[q.id]=x.embedding;}return {config,faqs,queries,aliases,faqEmbeddings,queryEmbeddings};}
+import {readJson,category,answer} from '../src/io.js';
+import {validEmbedding,hashText} from '../src/cache.js';
+import {loadData,fingerprints} from '../src/data.js';
+export function loadExperiment(split,{requireGate=true}={}){
+ const config=readJson('config/experiment.json');
+ if(requireGate&&(!config.gate||config.status!=='frozen'))throw new Error('Experiment settings are not frozen');
+ if(requireGate&&JSON.stringify(config.dataHashes)!==JSON.stringify(fingerprints()))throw new Error('Frozen data hashes differ');
+ const {faqs,queries}=loadData(split);
+ const aliasCache=readJson('data/cache/aliases.json'),fCache=readJson('data/cache/faq-embeddings.json'),qCache=readJson(`data/cache/${split}-embeddings.json`);
+ const aliases={},faqEmbeddings={},queryEmbeddings={};
+ for(const f of faqs){
+  const a=aliasCache.items[f.id],source={id:f.id,question:f.question,answer:answer(f),category:category(f)};
+  if(a?.model!==config.aliasModel||a.inputHash!==hashText(JSON.stringify(source))||a.aliases?.length!==5)throw new Error(`Invalid alias cache: ${f.id}`);
+  aliases[f.id]=a.aliases;
+  const x=fCache.items[f.id];if(!validEmbedding(x,{model:config.embeddingModel,taskType:'RETRIEVAL_DOCUMENT',text:f.question}))throw new Error(`Invalid FAQ embedding cache: ${f.id}`);faqEmbeddings[f.id]=x.embedding;
+ }
+ for(const q of queries){const x=qCache.items[q.id];if(!validEmbedding(x,{model:config.embeddingModel,taskType:'RETRIEVAL_QUERY',text:q.text}))throw new Error(`Invalid query embedding cache: ${q.id}`);queryEmbeddings[q.id]=x.embedding;}
+ const cacheHashes={aliases:hashText(JSON.stringify(aliasCache.items)),faqEmbeddings:hashText(JSON.stringify(fCache.items))};
+ if(requireGate&&JSON.stringify(config.cacheHashes)!==JSON.stringify(cacheHashes))throw new Error('Frozen index cache hashes differ');
+ return {config,faqs,queries,aliases,faqEmbeddings,queryEmbeddings,cacheHashes,costs:{aliases:aliasCache.runs,faq:fCache.runs,queries:qCache.runs}};
+}

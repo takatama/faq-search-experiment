@@ -1,0 +1,3052 @@
+{
+  "experiment": "Additional dimensionality experiment; Development only",
+  "generatedAt": "2026-09-13T05:10:19.355Z",
+  "apiRequests": 0,
+  "method": "Truncate cached 3072 vectors then L2-normalize; same search core as Apps Script",
+  "holdoutReevaluated": false,
+  "sourceSettingsHash": "bc1299f5b6dbcbd8678c6d4077153a28efbb328f636292f5452b0b641db815ab",
+  "methods": {
+    "384": {
+      "queries": 90,
+      "hitAt1": 0.9333333333333333,
+      "hitAt3": 0.9666666666666667,
+      "mrr": 0.9481481481481481,
+      "hitAt1ByQueryType": {
+        "natural_paraphrase": 0.9666666666666667,
+        "terse_search": 0.9666666666666667,
+        "situation_gap": 0.8666666666666667
+      },
+      "hitAt1ByDifficulty": {
+        "Easy": 0.9259259259259259,
+        "Medium": 0.8888888888888888,
+        "Hard": 1
+      },
+      "p50LatencyMs": 1.291799999999057,
+      "p95LatencyMs": 1.38340000000062,
+      "hits": 84,
+      "top1Changes": 3,
+      "correctToWrong": 2,
+      "wrongToCorrect": 0,
+      "indexJsonBytes": 5632699,
+      "changes": [
+        {
+          "id": "Q-888-1",
+          "baseline": {
+            "id": "Q-888-1",
+            "rank": 1,
+            "predictedId": "888",
+            "queryType": "natural_paraphrase",
+            "difficulty": "Medium",
+            "latencyMs": 8.929800000000341
+          },
+          "reduced": {
+            "id": "Q-888-1",
+            "rank": 2,
+            "predictedId": "920",
+            "queryType": "natural_paraphrase",
+            "difficulty": "Medium",
+            "latencyMs": 1.3117000000002008
+          }
+        },
+        {
+          "id": "Q-888-2",
+          "baseline": {
+            "id": "Q-888-2",
+            "rank": 1,
+            "predictedId": "888",
+            "queryType": "terse_search",
+            "difficulty": "Medium",
+            "latencyMs": 8.843499999999949
+          },
+          "reduced": {
+            "id": "Q-888-2",
+            "rank": 2,
+            "predictedId": "920",
+            "queryType": "terse_search",
+            "difficulty": "Medium",
+            "latencyMs": 1.310699999999997
+          }
+        },
+        {
+          "id": "Q-371-3",
+          "baseline": {
+            "id": "Q-371-3",
+            "rank": 0,
+            "predictedId": "199",
+            "queryType": "situation_gap",
+            "difficulty": "Medium",
+            "latencyMs": 8.555900000000292
+          },
+          "reduced": {
+            "id": "Q-371-3",
+            "rank": 0,
+            "predictedId": "969",
+            "queryType": "situation_gap",
+            "difficulty": "Medium",
+            "latencyMs": 1.2813000000005559
+          }
+        }
+      ],
+      "records": [
+        {
+          "id": "Q-286-1",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 1.4884000000001834
+        },
+        {
+          "id": "Q-286-2",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 1.4377000000004045
+        },
+        {
+          "id": "Q-286-3",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 1.3104000000002998
+        },
+        {
+          "id": "Q-964-1",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.2844000000004598
+        },
+        {
+          "id": "Q-964-2",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.286099999999351
+        },
+        {
+          "id": "Q-964-3",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.4088000000010652
+        },
+        {
+          "id": "Q-888-1",
+          "rank": 2,
+          "predictedId": "920",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.3117000000002008
+        },
+        {
+          "id": "Q-888-2",
+          "rank": 2,
+          "predictedId": "920",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.310699999999997
+        },
+        {
+          "id": "Q-888-3",
+          "rank": 0,
+          "predictedId": "920",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.2869000000009692
+        },
+        {
+          "id": "Q-815-1",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.2932999999993626
+        },
+        {
+          "id": "Q-815-2",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.2885999999998603
+        },
+        {
+          "id": "Q-815-3",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.2791999999990367
+        },
+        {
+          "id": "Q-337-1",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.3114000000005035
+        },
+        {
+          "id": "Q-337-2",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.297099999999773
+        },
+        {
+          "id": "Q-337-3",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.2757999999994354
+        },
+        {
+          "id": "Q-304-1",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 1.2898999999997613
+        },
+        {
+          "id": "Q-304-2",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 1.2877000000007683
+        },
+        {
+          "id": "Q-304-3",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 1.2744999999995343
+        },
+        {
+          "id": "Q-562-1",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 1.3195999999988999
+        },
+        {
+          "id": "Q-562-2",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 1.313799999999901
+        },
+        {
+          "id": "Q-562-3",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 1.2911000000003696
+        },
+        {
+          "id": "Q-325-1",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 1.2959000000009837
+        },
+        {
+          "id": "Q-325-2",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 1.291799999999057
+        },
+        {
+          "id": "Q-325-3",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 1.282099999998536
+        },
+        {
+          "id": "Q-928-1",
+          "rank": 1,
+          "predictedId": "928",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 1.3796000000002095
+        },
+        {
+          "id": "Q-928-2",
+          "rank": 1,
+          "predictedId": "928",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 1.3032000000002881
+        },
+        {
+          "id": "Q-928-3",
+          "rank": 3,
+          "predictedId": "546",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 1.308100000000195
+        },
+        {
+          "id": "Q-1045-1",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 1.2916999999997643
+        },
+        {
+          "id": "Q-1045-2",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 1.2864000000008673
+        },
+        {
+          "id": "Q-1045-3",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 1.2938000000012835
+        },
+        {
+          "id": "Q-910-1",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 1.291400000000067
+        },
+        {
+          "id": "Q-910-2",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 1.431800000000294
+        },
+        {
+          "id": "Q-910-3",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 1.3443999999999505
+        },
+        {
+          "id": "Q-094-1",
+          "rank": 1,
+          "predictedId": "94",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 1.304100000001199
+        },
+        {
+          "id": "Q-094-2",
+          "rank": 1,
+          "predictedId": "94",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 1.2793000000001484
+        },
+        {
+          "id": "Q-094-3",
+          "rank": 0,
+          "predictedId": "69",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 1.2877000000007683
+        },
+        {
+          "id": "Q-167-1",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 1.290100000000166
+        },
+        {
+          "id": "Q-167-2",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 1.2827999999990425
+        },
+        {
+          "id": "Q-167-3",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 1.294499999999971
+        },
+        {
+          "id": "Q-966-1",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 1.2876999999989494
+        },
+        {
+          "id": "Q-966-2",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 1.2757999999994354
+        },
+        {
+          "id": "Q-966-3",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 1.2888999999995576
+        },
+        {
+          "id": "Q-944-1",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 1.2918999999983498
+        },
+        {
+          "id": "Q-944-2",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 1.3085999999984779
+        },
+        {
+          "id": "Q-944-3",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 1.3163999999997031
+        },
+        {
+          "id": "Q-270-1",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.2824999999993452
+        },
+        {
+          "id": "Q-270-2",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.294499999999971
+        },
+        {
+          "id": "Q-270-3",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.287899999999354
+        },
+        {
+          "id": "Q-377-1",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.2775999999994383
+        },
+        {
+          "id": "Q-377-2",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.290899999999965
+        },
+        {
+          "id": "Q-377-3",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.3407999999999447
+        },
+        {
+          "id": "Q-1036-1",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.2815000000009604
+        },
+        {
+          "id": "Q-1036-2",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.3042999999997846
+        },
+        {
+          "id": "Q-1036-3",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.3132000000005064
+        },
+        {
+          "id": "Q-096-1",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.2862000000004628
+        },
+        {
+          "id": "Q-096-2",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.288299999998344
+        },
+        {
+          "id": "Q-096-3",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.3138999999991938
+        },
+        {
+          "id": "Q-356-1",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.2911999999996624
+        },
+        {
+          "id": "Q-356-2",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.297100000001592
+        },
+        {
+          "id": "Q-356-3",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.27770000000055
+        },
+        {
+          "id": "Q-969-1",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.2896999999993568
+        },
+        {
+          "id": "Q-969-2",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.2826999999997497
+        },
+        {
+          "id": "Q-969-3",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.293999999999869
+        },
+        {
+          "id": "Q-370-1",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.30409999999938
+        },
+        {
+          "id": "Q-370-2",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.2955999999994674
+        },
+        {
+          "id": "Q-370-3",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.2780999999995402
+        },
+        {
+          "id": "Q-371-1",
+          "rank": 1,
+          "predictedId": "371",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 1.2923999999984517
+        },
+        {
+          "id": "Q-371-2",
+          "rank": 1,
+          "predictedId": "371",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 1.2914999999993597
+        },
+        {
+          "id": "Q-371-3",
+          "rank": 0,
+          "predictedId": "969",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 1.2813000000005559
+        },
+        {
+          "id": "Q-818-1",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 1.3194000000003143
+        },
+        {
+          "id": "Q-818-2",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 1.3034999999999854
+        },
+        {
+          "id": "Q-818-3",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 1.2800999999999476
+        },
+        {
+          "id": "Q-054-1",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 1.2844999999997526
+        },
+        {
+          "id": "Q-054-2",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 1.26720000000023
+        },
+        {
+          "id": "Q-054-3",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 1.283499999999549
+        },
+        {
+          "id": "Q-393-1",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 1.38340000000062
+        },
+        {
+          "id": "Q-393-2",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 1.2916000000004715
+        },
+        {
+          "id": "Q-393-3",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 1.2973000000001775
+        },
+        {
+          "id": "Q-156-1",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 1.2924000000002707
+        },
+        {
+          "id": "Q-156-2",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 1.2761000000009517
+        },
+        {
+          "id": "Q-156-3",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 1.2893999999996595
+        },
+        {
+          "id": "Q-397-1",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 1.3317999999999302
+        },
+        {
+          "id": "Q-397-2",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 1.2968000000000757
+        },
+        {
+          "id": "Q-397-3",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 1.3017999999992753
+        },
+        {
+          "id": "Q-976-1",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 1.2924999999995634
+        },
+        {
+          "id": "Q-976-2",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 1.281200000001263
+        },
+        {
+          "id": "Q-976-3",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 1.2898999999997613
+        },
+        {
+          "id": "Q-008-1",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 1.3183000000008178
+        },
+        {
+          "id": "Q-008-2",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 1.2884000000012747
+        },
+        {
+          "id": "Q-008-3",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 1.2969999999986612
+        }
+      ]
+    },
+    "768": {
+      "queries": 90,
+      "hitAt1": 0.9555555555555556,
+      "hitAt3": 0.9666666666666667,
+      "mrr": 0.9611111111111111,
+      "hitAt1ByQueryType": {
+        "natural_paraphrase": 1,
+        "terse_search": 1,
+        "situation_gap": 0.8666666666666667
+      },
+      "hitAt1ByDifficulty": {
+        "Easy": 0.9259259259259259,
+        "Medium": 0.9444444444444444,
+        "Hard": 1
+      },
+      "p50LatencyMs": 2.210300000000643,
+      "p95LatencyMs": 2.4963000000007014,
+      "hits": 86,
+      "top1Changes": 0,
+      "correctToWrong": 0,
+      "wrongToCorrect": 0,
+      "indexJsonBytes": 11058935,
+      "changes": [],
+      "records": [
+        {
+          "id": "Q-286-1",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 2.2937000000001717
+        },
+        {
+          "id": "Q-286-2",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 2.237600000000384
+        },
+        {
+          "id": "Q-286-3",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 2.3755999999993946
+        },
+        {
+          "id": "Q-964-1",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.4963000000007014
+        },
+        {
+          "id": "Q-964-2",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.4223000000001775
+        },
+        {
+          "id": "Q-964-3",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.3665000000000873
+        },
+        {
+          "id": "Q-888-1",
+          "rank": 1,
+          "predictedId": "888",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.4007999999994354
+        },
+        {
+          "id": "Q-888-2",
+          "rank": 1,
+          "predictedId": "888",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.361000000000786
+        },
+        {
+          "id": "Q-888-3",
+          "rank": 0,
+          "predictedId": "920",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.360500000000684
+        },
+        {
+          "id": "Q-815-1",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.3418000000001484
+        },
+        {
+          "id": "Q-815-2",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.473500000000058
+        },
+        {
+          "id": "Q-815-3",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.4109000000007654
+        },
+        {
+          "id": "Q-337-1",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.355199999999968
+        },
+        {
+          "id": "Q-337-2",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.421200000000681
+        },
+        {
+          "id": "Q-337-3",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 9.321600000001126
+        },
+        {
+          "id": "Q-304-1",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 2.307199999999284
+        },
+        {
+          "id": "Q-304-2",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 2.251699999998891
+        },
+        {
+          "id": "Q-304-3",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 2.2404999999998836
+        },
+        {
+          "id": "Q-562-1",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 2.2246999999988475
+        },
+        {
+          "id": "Q-562-2",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 2.1865000000016153
+        },
+        {
+          "id": "Q-562-3",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 2.173399999999674
+        },
+        {
+          "id": "Q-325-1",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 2.2313999999987573
+        },
+        {
+          "id": "Q-325-2",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 2.173500000000786
+        },
+        {
+          "id": "Q-325-3",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 2.1719000000011874
+        },
+        {
+          "id": "Q-928-1",
+          "rank": 1,
+          "predictedId": "928",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 2.351300000000265
+        },
+        {
+          "id": "Q-928-2",
+          "rank": 1,
+          "predictedId": "928",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 2.5033999999996013
+        },
+        {
+          "id": "Q-928-3",
+          "rank": 2,
+          "predictedId": "546",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 2.2269999999989523
+        },
+        {
+          "id": "Q-1045-1",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 2.201100000000224
+        },
+        {
+          "id": "Q-1045-2",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 2.5741000000016356
+        },
+        {
+          "id": "Q-1045-3",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 2.6974000000009255
+        },
+        {
+          "id": "Q-910-1",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 2.297099999999773
+        },
+        {
+          "id": "Q-910-2",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 2.259299999999712
+        },
+        {
+          "id": "Q-910-3",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 2.2383000000008906
+        },
+        {
+          "id": "Q-094-1",
+          "rank": 1,
+          "predictedId": "94",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 2.2155000000002474
+        },
+        {
+          "id": "Q-094-2",
+          "rank": 1,
+          "predictedId": "94",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 2.2937000000001717
+        },
+        {
+          "id": "Q-094-3",
+          "rank": 0,
+          "predictedId": "69",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 2.2281000000002678
+        },
+        {
+          "id": "Q-167-1",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 2.2757999999994354
+        },
+        {
+          "id": "Q-167-2",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 2.2096999999994296
+        },
+        {
+          "id": "Q-167-3",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 2.1806999999989785
+        },
+        {
+          "id": "Q-966-1",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 2.3222999999998137
+        },
+        {
+          "id": "Q-966-2",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 2.2039000000004307
+        },
+        {
+          "id": "Q-966-3",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 2.184000000001106
+        },
+        {
+          "id": "Q-944-1",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 2.179500000000189
+        },
+        {
+          "id": "Q-944-2",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 2.1749999999992724
+        },
+        {
+          "id": "Q-944-3",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 2.1682999999993626
+        },
+        {
+          "id": "Q-270-1",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.1635000000005675
+        },
+        {
+          "id": "Q-270-2",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.2656000000006316
+        },
+        {
+          "id": "Q-270-3",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.1875
+        },
+        {
+          "id": "Q-377-1",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.1886000000013155
+        },
+        {
+          "id": "Q-377-2",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.1819999999988795
+        },
+        {
+          "id": "Q-377-3",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.2084999999988213
+        },
+        {
+          "id": "Q-1036-1",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.1838000000007014
+        },
+        {
+          "id": "Q-1036-2",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.181300000000192
+        },
+        {
+          "id": "Q-1036-3",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.1758000000008906
+        },
+        {
+          "id": "Q-096-1",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.2123999999985244
+        },
+        {
+          "id": "Q-096-2",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.17699999999968
+        },
+        {
+          "id": "Q-096-3",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.169800000001487
+        },
+        {
+          "id": "Q-356-1",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.1907000000010157
+        },
+        {
+          "id": "Q-356-2",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.174300000000585
+        },
+        {
+          "id": "Q-356-3",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.1696000000010827
+        },
+        {
+          "id": "Q-969-1",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.1728000000002794
+        },
+        {
+          "id": "Q-969-2",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.234200000000783
+        },
+        {
+          "id": "Q-969-3",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.197700000000623
+        },
+        {
+          "id": "Q-370-1",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.1785999999992782
+        },
+        {
+          "id": "Q-370-2",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.1783999999988737
+        },
+        {
+          "id": "Q-370-3",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.2797999999984313
+        },
+        {
+          "id": "Q-371-1",
+          "rank": 1,
+          "predictedId": "371",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 2.2044999999998254
+        },
+        {
+          "id": "Q-371-2",
+          "rank": 1,
+          "predictedId": "371",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 2.1895000000004075
+        },
+        {
+          "id": "Q-371-3",
+          "rank": 0,
+          "predictedId": "199",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 2.187900000000809
+        },
+        {
+          "id": "Q-818-1",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 2.173399999999674
+        },
+        {
+          "id": "Q-818-2",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 2.169399999998859
+        },
+        {
+          "id": "Q-818-3",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 2.169100000000981
+        },
+        {
+          "id": "Q-054-1",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 2.216500000000451
+        },
+        {
+          "id": "Q-054-2",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 2.209899999999834
+        },
+        {
+          "id": "Q-054-3",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 2.195399999998699
+        },
+        {
+          "id": "Q-393-1",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 2.1841000000003987
+        },
+        {
+          "id": "Q-393-2",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 2.2250999999996566
+        },
+        {
+          "id": "Q-393-3",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 2.1730999999999767
+        },
+        {
+          "id": "Q-156-1",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 2.1715000000003783
+        },
+        {
+          "id": "Q-156-2",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 2.188900000001013
+        },
+        {
+          "id": "Q-156-3",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 2.2397000000000844
+        },
+        {
+          "id": "Q-397-1",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 2.210300000000643
+        },
+        {
+          "id": "Q-397-2",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 2.1854999999995925
+        },
+        {
+          "id": "Q-397-3",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 2.1736000000000786
+        },
+        {
+          "id": "Q-976-1",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 2.2430999999996857
+        },
+        {
+          "id": "Q-976-2",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 2.1877000000004045
+        },
+        {
+          "id": "Q-976-3",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 2.1785999999992782
+        },
+        {
+          "id": "Q-008-1",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 2.284700000000157
+        },
+        {
+          "id": "Q-008-2",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 2.4362999999993917
+        },
+        {
+          "id": "Q-008-3",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 2.2214999999996508
+        }
+      ]
+    },
+    "1536": {
+      "queries": 90,
+      "hitAt1": 0.9555555555555556,
+      "hitAt3": 0.9666666666666667,
+      "mrr": 0.9611111111111111,
+      "hitAt1ByQueryType": {
+        "natural_paraphrase": 1,
+        "terse_search": 1,
+        "situation_gap": 0.8666666666666667
+      },
+      "hitAt1ByDifficulty": {
+        "Easy": 0.9259259259259259,
+        "Medium": 0.9444444444444444,
+        "Hard": 1
+      },
+      "p50LatencyMs": 4.32760000000053,
+      "p95LatencyMs": 4.89640000000054,
+      "hits": 86,
+      "top1Changes": 0,
+      "correctToWrong": 0,
+      "wrongToCorrect": 0,
+      "indexJsonBytes": 21976547,
+      "changes": [],
+      "records": [
+        {
+          "id": "Q-286-1",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 7.619800000000396
+        },
+        {
+          "id": "Q-286-2",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 4.89640000000054
+        },
+        {
+          "id": "Q-286-3",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 5.214199999999437
+        },
+        {
+          "id": "Q-964-1",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 7.245299999999588
+        },
+        {
+          "id": "Q-964-2",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.263500000000022
+        },
+        {
+          "id": "Q-964-3",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.2509000000000015
+        },
+        {
+          "id": "Q-888-1",
+          "rank": 1,
+          "predictedId": "888",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.292499999999563
+        },
+        {
+          "id": "Q-888-2",
+          "rank": 1,
+          "predictedId": "888",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.34519999999975
+        },
+        {
+          "id": "Q-888-3",
+          "rank": 0,
+          "predictedId": "920",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.403199999999742
+        },
+        {
+          "id": "Q-815-1",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.300799999999981
+        },
+        {
+          "id": "Q-815-2",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.290499999999156
+        },
+        {
+          "id": "Q-815-3",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.2632000000003245
+        },
+        {
+          "id": "Q-337-1",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.316200000000208
+        },
+        {
+          "id": "Q-337-2",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.233600000000479
+        },
+        {
+          "id": "Q-337-3",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.272799999999734
+        },
+        {
+          "id": "Q-304-1",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.282099999999446
+        },
+        {
+          "id": "Q-304-2",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.328499999999622
+        },
+        {
+          "id": "Q-304-3",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.266399999999521
+        },
+        {
+          "id": "Q-562-1",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.24159999999938
+        },
+        {
+          "id": "Q-562-2",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.27390000000014
+        },
+        {
+          "id": "Q-562-3",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.285799999999654
+        },
+        {
+          "id": "Q-325-1",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 4.32129999999961
+        },
+        {
+          "id": "Q-325-2",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 4.3474999999998545
+        },
+        {
+          "id": "Q-325-3",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 4.347300000000359
+        },
+        {
+          "id": "Q-928-1",
+          "rank": 1,
+          "predictedId": "928",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 4.296099999999569
+        },
+        {
+          "id": "Q-928-2",
+          "rank": 1,
+          "predictedId": "928",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 4.293099999999868
+        },
+        {
+          "id": "Q-928-3",
+          "rank": 2,
+          "predictedId": "546",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 4.46979999999985
+        },
+        {
+          "id": "Q-1045-1",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 4.309099999999489
+        },
+        {
+          "id": "Q-1045-2",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 4.4979999999995925
+        },
+        {
+          "id": "Q-1045-3",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 3.867699999999786
+        },
+        {
+          "id": "Q-910-1",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 4.407799999999952
+        },
+        {
+          "id": "Q-910-2",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 4.426400000000285
+        },
+        {
+          "id": "Q-910-3",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 4.681499999999687
+        },
+        {
+          "id": "Q-094-1",
+          "rank": 1,
+          "predictedId": "94",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 4.342200000000048
+        },
+        {
+          "id": "Q-094-2",
+          "rank": 1,
+          "predictedId": "94",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 4.358099999999467
+        },
+        {
+          "id": "Q-094-3",
+          "rank": 0,
+          "predictedId": "69",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 4.381999999999607
+        },
+        {
+          "id": "Q-167-1",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 4.311999999999898
+        },
+        {
+          "id": "Q-167-2",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 4.328900000000431
+        },
+        {
+          "id": "Q-167-3",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 4.296400000000176
+        },
+        {
+          "id": "Q-966-1",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 4.371600000000399
+        },
+        {
+          "id": "Q-966-2",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 4.3233000000000175
+        },
+        {
+          "id": "Q-966-3",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 4.3796000000002095
+        },
+        {
+          "id": "Q-944-1",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 4.274300000000039
+        },
+        {
+          "id": "Q-944-2",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 4.395100000000639
+        },
+        {
+          "id": "Q-944-3",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 4.282900000000154
+        },
+        {
+          "id": "Q-270-1",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.265300000000025
+        },
+        {
+          "id": "Q-270-2",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.2874000000001615
+        },
+        {
+          "id": "Q-270-3",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.51050000000032
+        },
+        {
+          "id": "Q-377-1",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.39639999999963
+        },
+        {
+          "id": "Q-377-2",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.309299999999894
+        },
+        {
+          "id": "Q-377-3",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.389699999999721
+        },
+        {
+          "id": "Q-1036-1",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.296699999999873
+        },
+        {
+          "id": "Q-1036-2",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.356499999999869
+        },
+        {
+          "id": "Q-1036-3",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.304399999999987
+        },
+        {
+          "id": "Q-096-1",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.374800000000505
+        },
+        {
+          "id": "Q-096-2",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.29030000000057
+        },
+        {
+          "id": "Q-096-3",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.38550000000032
+        },
+        {
+          "id": "Q-356-1",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.273300000000745
+        },
+        {
+          "id": "Q-356-2",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.3101000000006024
+        },
+        {
+          "id": "Q-356-3",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.3101000000006024
+        },
+        {
+          "id": "Q-969-1",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.289899999999761
+        },
+        {
+          "id": "Q-969-2",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.28439999999955
+        },
+        {
+          "id": "Q-969-3",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.318699999999808
+        },
+        {
+          "id": "Q-370-1",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.337800000000243
+        },
+        {
+          "id": "Q-370-2",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.3474999999998545
+        },
+        {
+          "id": "Q-370-3",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.282900000000154
+        },
+        {
+          "id": "Q-371-1",
+          "rank": 1,
+          "predictedId": "371",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 4.298600000000079
+        },
+        {
+          "id": "Q-371-2",
+          "rank": 1,
+          "predictedId": "371",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 4.286399999999958
+        },
+        {
+          "id": "Q-371-3",
+          "rank": 0,
+          "predictedId": "199",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 4.313499999999294
+        },
+        {
+          "id": "Q-818-1",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.349699999999757
+        },
+        {
+          "id": "Q-818-2",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.337700000000041
+        },
+        {
+          "id": "Q-818-3",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.35320000000047
+        },
+        {
+          "id": "Q-054-1",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.346000000000458
+        },
+        {
+          "id": "Q-054-2",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.322500000000218
+        },
+        {
+          "id": "Q-054-3",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.330500000000029
+        },
+        {
+          "id": "Q-393-1",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.32760000000053
+        },
+        {
+          "id": "Q-393-2",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.3697000000001935
+        },
+        {
+          "id": "Q-393-3",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.401100000000042
+        },
+        {
+          "id": "Q-156-1",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.324099999999817
+        },
+        {
+          "id": "Q-156-2",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.268200000000434
+        },
+        {
+          "id": "Q-156-3",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.327800000000025
+        },
+        {
+          "id": "Q-397-1",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.3703999999997905
+        },
+        {
+          "id": "Q-397-2",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.347600000000057
+        },
+        {
+          "id": "Q-397-3",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.334799999999632
+        },
+        {
+          "id": "Q-976-1",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.32169999999951
+        },
+        {
+          "id": "Q-976-2",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.373499999999694
+        },
+        {
+          "id": "Q-976-3",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.258700000000317
+        },
+        {
+          "id": "Q-008-1",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.342099999999846
+        },
+        {
+          "id": "Q-008-2",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.370100000000093
+        },
+        {
+          "id": "Q-008-3",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.977200000000266
+        }
+      ]
+    },
+    "3072": {
+      "queries": 90,
+      "hitAt1": 0.9555555555555556,
+      "hitAt3": 0.9666666666666667,
+      "mrr": 0.9611111111111111,
+      "hitAt1ByQueryType": {
+        "natural_paraphrase": 1,
+        "terse_search": 1,
+        "situation_gap": 0.8666666666666667
+      },
+      "hitAt1ByDifficulty": {
+        "Easy": 0.9259259259259259,
+        "Medium": 0.9444444444444444,
+        "Hard": 1
+      },
+      "p50LatencyMs": 8.99869999999919,
+      "p95LatencyMs": 10.322400000000016,
+      "hits": 86,
+      "top1Changes": 0,
+      "correctToWrong": 0,
+      "wrongToCorrect": 0,
+      "indexJsonBytes": 43952264,
+      "changes": [],
+      "records": [
+        {
+          "id": "Q-286-1",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 26.153800000000047
+        },
+        {
+          "id": "Q-286-2",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 11.014100000000326
+        },
+        {
+          "id": "Q-286-3",
+          "rank": 1,
+          "predictedId": "286",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 9.048999999999978
+        },
+        {
+          "id": "Q-964-1",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 9.285199999999804
+        },
+        {
+          "id": "Q-964-2",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 9.360900000000129
+        },
+        {
+          "id": "Q-964-3",
+          "rank": 1,
+          "predictedId": "964",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 9.051100000000133
+        },
+        {
+          "id": "Q-888-1",
+          "rank": 1,
+          "predictedId": "888",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 8.929800000000341
+        },
+        {
+          "id": "Q-888-2",
+          "rank": 1,
+          "predictedId": "888",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 8.843499999999949
+        },
+        {
+          "id": "Q-888-3",
+          "rank": 0,
+          "predictedId": "920",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 9.095000000000255
+        },
+        {
+          "id": "Q-815-1",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 8.835500000000138
+        },
+        {
+          "id": "Q-815-2",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 9.139599999999973
+        },
+        {
+          "id": "Q-815-3",
+          "rank": 1,
+          "predictedId": "815",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 9.13299999999981
+        },
+        {
+          "id": "Q-337-1",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 9.095400000000154
+        },
+        {
+          "id": "Q-337-2",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 9.065599999999904
+        },
+        {
+          "id": "Q-337-3",
+          "rank": 1,
+          "predictedId": "337",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 8.930299999999988
+        },
+        {
+          "id": "Q-304-1",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 9.037199999999757
+        },
+        {
+          "id": "Q-304-2",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 8.97019999999975
+        },
+        {
+          "id": "Q-304-3",
+          "rank": 1,
+          "predictedId": "304",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 9.06939999999986
+        },
+        {
+          "id": "Q-562-1",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 8.944899999999961
+        },
+        {
+          "id": "Q-562-2",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 9.047700000000077
+        },
+        {
+          "id": "Q-562-3",
+          "rank": 1,
+          "predictedId": "562",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 8.999700000000303
+        },
+        {
+          "id": "Q-325-1",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 9.01740000000018
+        },
+        {
+          "id": "Q-325-2",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 9.039300000000367
+        },
+        {
+          "id": "Q-325-3",
+          "rank": 1,
+          "predictedId": "325",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 8.953499999999622
+        },
+        {
+          "id": "Q-928-1",
+          "rank": 1,
+          "predictedId": "928",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 9.067900000000009
+        },
+        {
+          "id": "Q-928-2",
+          "rank": 1,
+          "predictedId": "928",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 8.992699999999786
+        },
+        {
+          "id": "Q-928-3",
+          "rank": 2,
+          "predictedId": "546",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 9.040299999999661
+        },
+        {
+          "id": "Q-1045-1",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 8.964200000000346
+        },
+        {
+          "id": "Q-1045-2",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 9.036799999999857
+        },
+        {
+          "id": "Q-1045-3",
+          "rank": 1,
+          "predictedId": "1045",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 8.991899999999987
+        },
+        {
+          "id": "Q-910-1",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 8.99200000000019
+        },
+        {
+          "id": "Q-910-2",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 8.94589999999971
+        },
+        {
+          "id": "Q-910-3",
+          "rank": 1,
+          "predictedId": "910",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 9.090900000000147
+        },
+        {
+          "id": "Q-094-1",
+          "rank": 1,
+          "predictedId": "94",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 9.0007999999998
+        },
+        {
+          "id": "Q-094-2",
+          "rank": 1,
+          "predictedId": "94",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 8.995299999999588
+        },
+        {
+          "id": "Q-094-3",
+          "rank": 0,
+          "predictedId": "69",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 9.09689999999955
+        },
+        {
+          "id": "Q-167-1",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 9.068900000000212
+        },
+        {
+          "id": "Q-167-2",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 8.99869999999919
+        },
+        {
+          "id": "Q-167-3",
+          "rank": 1,
+          "predictedId": "167",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 8.950399999999718
+        },
+        {
+          "id": "Q-966-1",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 9.045900000000074
+        },
+        {
+          "id": "Q-966-2",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 8.124099999999999
+        },
+        {
+          "id": "Q-966-3",
+          "rank": 1,
+          "predictedId": "966",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 9.261399999999412
+        },
+        {
+          "id": "Q-944-1",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Easy",
+          "latencyMs": 7.616100000000188
+        },
+        {
+          "id": "Q-944-2",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "terse_search",
+          "difficulty": "Easy",
+          "latencyMs": 9.463699999999335
+        },
+        {
+          "id": "Q-944-3",
+          "rank": 1,
+          "predictedId": "944",
+          "queryType": "situation_gap",
+          "difficulty": "Easy",
+          "latencyMs": 7.375799999999799
+        },
+        {
+          "id": "Q-270-1",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 8.016200000000026
+        },
+        {
+          "id": "Q-270-2",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 8.304200000000492
+        },
+        {
+          "id": "Q-270-3",
+          "rank": 1,
+          "predictedId": "270",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 8.509900000000016
+        },
+        {
+          "id": "Q-377-1",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 10.322400000000016
+        },
+        {
+          "id": "Q-377-2",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 8.999800000000505
+        },
+        {
+          "id": "Q-377-3",
+          "rank": 1,
+          "predictedId": "377",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 7.6822000000001935
+        },
+        {
+          "id": "Q-1036-1",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 8.377199999999903
+        },
+        {
+          "id": "Q-1036-2",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 8.315800000000309
+        },
+        {
+          "id": "Q-1036-3",
+          "rank": 1,
+          "predictedId": "1036",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 8.103800000000774
+        },
+        {
+          "id": "Q-096-1",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 8.097099999999955
+        },
+        {
+          "id": "Q-096-2",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 8.061599999999999
+        },
+        {
+          "id": "Q-096-3",
+          "rank": 1,
+          "predictedId": "96",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 8.095800000000054
+        },
+        {
+          "id": "Q-356-1",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 8.105199999999968
+        },
+        {
+          "id": "Q-356-2",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 7.5406999999995605
+        },
+        {
+          "id": "Q-356-3",
+          "rank": 1,
+          "predictedId": "356",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 8.06590000000051
+        },
+        {
+          "id": "Q-969-1",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 8.945000000000618
+        },
+        {
+          "id": "Q-969-2",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 10.375400000000809
+        },
+        {
+          "id": "Q-969-3",
+          "rank": 1,
+          "predictedId": "969",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 8.270300000000134
+        },
+        {
+          "id": "Q-370-1",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 8.75500000000011
+        },
+        {
+          "id": "Q-370-2",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 8.391099999999824
+        },
+        {
+          "id": "Q-370-3",
+          "rank": 1,
+          "predictedId": "370",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 8.065200000000004
+        },
+        {
+          "id": "Q-371-1",
+          "rank": 1,
+          "predictedId": "371",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Medium",
+          "latencyMs": 8.07929999999942
+        },
+        {
+          "id": "Q-371-2",
+          "rank": 1,
+          "predictedId": "371",
+          "queryType": "terse_search",
+          "difficulty": "Medium",
+          "latencyMs": 8.778999999999542
+        },
+        {
+          "id": "Q-371-3",
+          "rank": 0,
+          "predictedId": "199",
+          "queryType": "situation_gap",
+          "difficulty": "Medium",
+          "latencyMs": 8.555900000000292
+        },
+        {
+          "id": "Q-818-1",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 8.663700000000063
+        },
+        {
+          "id": "Q-818-2",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 5.955799999999726
+        },
+        {
+          "id": "Q-818-3",
+          "rank": 1,
+          "predictedId": "818",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 4.763899999999921
+        },
+        {
+          "id": "Q-054-1",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 4.59479999999985
+        },
+        {
+          "id": "Q-054-2",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 4.227200000000266
+        },
+        {
+          "id": "Q-054-3",
+          "rank": 1,
+          "predictedId": "54",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 6.277900000000045
+        },
+        {
+          "id": "Q-393-1",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 6.2015999999994165
+        },
+        {
+          "id": "Q-393-2",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 9.00760000000082
+        },
+        {
+          "id": "Q-393-3",
+          "rank": 1,
+          "predictedId": "393",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 10.565700000000106
+        },
+        {
+          "id": "Q-156-1",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 10.065300000000207
+        },
+        {
+          "id": "Q-156-2",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 9.988400000000183
+        },
+        {
+          "id": "Q-156-3",
+          "rank": 1,
+          "predictedId": "156",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 10.010600000000522
+        },
+        {
+          "id": "Q-397-1",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 9.884999999999309
+        },
+        {
+          "id": "Q-397-2",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 9.898299999999836
+        },
+        {
+          "id": "Q-397-3",
+          "rank": 1,
+          "predictedId": "397",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 9.97150000000056
+        },
+        {
+          "id": "Q-976-1",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 9.841899999999441
+        },
+        {
+          "id": "Q-976-2",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 9.836599999999635
+        },
+        {
+          "id": "Q-976-3",
+          "rank": 1,
+          "predictedId": "976",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 9.92830000000049
+        },
+        {
+          "id": "Q-008-1",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "natural_paraphrase",
+          "difficulty": "Hard",
+          "latencyMs": 9.820800000000418
+        },
+        {
+          "id": "Q-008-2",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "terse_search",
+          "difficulty": "Hard",
+          "latencyMs": 9.883100000000013
+        },
+        {
+          "id": "Q-008-3",
+          "rank": 1,
+          "predictedId": "8",
+          "queryType": "situation_gap",
+          "difficulty": "Hard",
+          "latencyMs": 9.882000000000517
+        }
+      ]
+    }
+  }
+}

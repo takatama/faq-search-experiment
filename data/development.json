@@ -1,0 +1,812 @@
+[
+  {
+    "query_id": "Q-286-1",
+    "faq_id": 286,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "natural_paraphrase",
+    "query": "○○市内で、満3歳児クラスのある私立幼稚園を教えてもらえますか?",
+    "category1": "学校・教育"
+  },
+  {
+    "query_id": "Q-286-2",
+    "faq_id": 286,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "terse_search",
+    "query": "○○市内 満3歳児クラスのある私立幼稚園",
+    "category1": "学校・教育"
+  },
+  {
+    "query_id": "Q-286-3",
+    "faq_id": 286,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "situation_gap",
+    "query": "3歳になったばかりの子を私立幼稚園に通わせたい。市内に受け入れ先はある？",
+    "category1": "学校・教育"
+  },
+  {
+    "query_id": "Q-964-1",
+    "faq_id": 964,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "たばこの問題について教えてもらえますか?",
+    "category1": "環境衛生"
+  },
+  {
+    "query_id": "Q-964-2",
+    "faq_id": 964,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "たばこの問題",
+    "category1": "環境衛生"
+  },
+  {
+    "query_id": "Q-964-3",
+    "faq_id": 964,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "たばこの健康影響や受動喫煙の問題について知りたい",
+    "category1": "環境衛生"
+  },
+  {
+    "query_id": "Q-888-1",
+    "faq_id": 888,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "渋谷区LINE公式アカウントでは何ができますか？",
+    "category1": "渋谷区LINE公式アカウントについて"
+  },
+  {
+    "query_id": "Q-888-2",
+    "faq_id": 888,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "渋谷区LINE できること",
+    "category1": "渋谷区LINE公式アカウントについて"
+  },
+  {
+    "query_id": "Q-888-3",
+    "faq_id": 888,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "区からのお知らせをLINEで受け取ったり、行政サービスを利用したりできる？",
+    "category1": "渋谷区LINE公式アカウントについて"
+  },
+  {
+    "query_id": "Q-815-1",
+    "faq_id": 815,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "障害者手帳の申請について教えてもらえますか?",
+    "category1": "障害者"
+  },
+  {
+    "query_id": "Q-815-2",
+    "faq_id": 815,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "障害者手帳の申請",
+    "category1": "障害者"
+  },
+  {
+    "query_id": "Q-815-3",
+    "faq_id": 815,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "障害者手帳を取得したい。申請には何が必要？",
+    "category1": "障害者"
+  },
+  {
+    "query_id": "Q-337-1",
+    "faq_id": 337,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "保育利用料の軽減制度について教えてもらえますか?",
+    "category1": "保育"
+  },
+  {
+    "query_id": "Q-337-2",
+    "faq_id": 337,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "保育利用料の軽減制度",
+    "category1": "保育"
+  },
+  {
+    "query_id": "Q-337-3",
+    "faq_id": 337,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "保育料の負担を減らせる制度を利用できるか知りたい",
+    "category1": "保育"
+  },
+  {
+    "query_id": "Q-304-1",
+    "faq_id": 304,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "natural_paraphrase",
+    "query": "離乳食について相談できるところはありますか？",
+    "category1": "妊娠・出産"
+  },
+  {
+    "query_id": "Q-304-2",
+    "faq_id": 304,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "terse_search",
+    "query": "離乳食 相談",
+    "category1": "妊娠・出産"
+  },
+  {
+    "query_id": "Q-304-3",
+    "faq_id": 304,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "situation_gap",
+    "query": "赤ちゃんの離乳食の進め方に悩んでいる。相談先を知りたい",
+    "category1": "妊娠・出産"
+  },
+  {
+    "query_id": "Q-562-1",
+    "faq_id": 562,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "natural_paraphrase",
+    "query": "自治体のコミュニティバスの時刻表はどこで確認できますか？",
+    "category1": "暮らしに役立つ情報"
+  },
+  {
+    "query_id": "Q-562-2",
+    "faq_id": 562,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "terse_search",
+    "query": "コミュニティバス 時刻表",
+    "category1": "暮らしに役立つ情報"
+  },
+  {
+    "query_id": "Q-562-3",
+    "faq_id": 562,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "situation_gap",
+    "query": "市内を走る小型バスの発車時刻を調べたい",
+    "category1": "暮らしに役立つ情報"
+  },
+  {
+    "query_id": "Q-325-1",
+    "faq_id": 325,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "natural_paraphrase",
+    "query": "ごみの日を知りたいです。",
+    "category1": "ごみ・リサイクル"
+  },
+  {
+    "query_id": "Q-325-2",
+    "faq_id": 325,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "terse_search",
+    "query": "ごみの日",
+    "category1": "ごみ・リサイクル"
+  },
+  {
+    "query_id": "Q-325-3",
+    "faq_id": 325,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "situation_gap",
+    "query": "引っ越してきたばかりで、ごみを出せる曜日を知りたい",
+    "category1": "ごみ・リサイクル"
+  },
+  {
+    "query_id": "Q-928-1",
+    "faq_id": 928,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "natural_paraphrase",
+    "query": "観光名所等について詳しく知りたいです。",
+    "category1": "観光・イベント"
+  },
+  {
+    "query_id": "Q-928-2",
+    "faq_id": 928,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "terse_search",
+    "query": "観光名所等",
+    "category1": "観光・イベント"
+  },
+  {
+    "query_id": "Q-928-3",
+    "faq_id": 928,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "situation_gap",
+    "query": "初めて市を訪れる。おすすめの観光スポットを知りたい",
+    "category1": "観光・イベント"
+  },
+  {
+    "query_id": "Q-1045-1",
+    "faq_id": 1045,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "natural_paraphrase",
+    "query": "予防接種の通知はいつ来ますか？",
+    "category1": "健診・予防接種"
+  },
+  {
+    "query_id": "Q-1045-2",
+    "faq_id": 1045,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "terse_search",
+    "query": "予防接種の通知はいつ来ますか",
+    "category1": "健診・予防接種"
+  },
+  {
+    "query_id": "Q-1045-3",
+    "faq_id": 1045,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "situation_gap",
+    "query": "予防接種の通知はは、いつまでに対応すればよい？",
+    "category1": "健診・予防接種"
+  },
+  {
+    "query_id": "Q-910-1",
+    "faq_id": 910,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "natural_paraphrase",
+    "query": "高齢者向け生活支援の担い手養成研修について詳しく知りたいです。",
+    "category1": "高齢者・介護と福祉サービス"
+  },
+  {
+    "query_id": "Q-910-2",
+    "faq_id": 910,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "terse_search",
+    "query": "高齢者向け生活支援の担い手養成研修",
+    "category1": "高齢者・介護と福祉サービス"
+  },
+  {
+    "query_id": "Q-910-3",
+    "faq_id": 910,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "situation_gap",
+    "query": "高齢者向け生活支援の担い手養成研修について、初めて利用する人向けに知りたい",
+    "category1": "高齢者・介護と福祉サービス"
+  },
+  {
+    "query_id": "Q-094-1",
+    "faq_id": 94,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "natural_paraphrase",
+    "query": "児童手当の申請者は父母どちらでしょうか？",
+    "category1": "子どもの手当・助成"
+  },
+  {
+    "query_id": "Q-094-2",
+    "faq_id": 94,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "terse_search",
+    "query": "児童手当の申請者は父母どちら",
+    "category1": "子どもの手当・助成"
+  },
+  {
+    "query_id": "Q-094-3",
+    "faq_id": 94,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "situation_gap",
+    "query": "児童手当を申請したい。必要な手順を知りたい",
+    "category1": "子どもの手当・助成"
+  },
+  {
+    "query_id": "Q-167-1",
+    "faq_id": 167,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "natural_paraphrase",
+    "query": "セクハラについて相談する場所を知りたいです。",
+    "category1": "女性相談"
+  },
+  {
+    "query_id": "Q-167-2",
+    "faq_id": 167,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "terse_search",
+    "query": "セクハラについて相談する場所",
+    "category1": "女性相談"
+  },
+  {
+    "query_id": "Q-167-3",
+    "faq_id": 167,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "situation_gap",
+    "query": "セクハラについて相談するの手続きをしたい。行く窓口を知りたい",
+    "category1": "女性相談"
+  },
+  {
+    "query_id": "Q-966-1",
+    "faq_id": 966,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "natural_paraphrase",
+    "query": "市民体育大会等について詳しく知りたいです。",
+    "category1": "生涯学習・スポーツ"
+  },
+  {
+    "query_id": "Q-966-2",
+    "faq_id": 966,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "terse_search",
+    "query": "市民体育大会等",
+    "category1": "生涯学習・スポーツ"
+  },
+  {
+    "query_id": "Q-966-3",
+    "faq_id": 966,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "situation_gap",
+    "query": "市民が参加できるスポーツ大会を探している",
+    "category1": "生涯学習・スポーツ"
+  },
+  {
+    "query_id": "Q-944-1",
+    "faq_id": 944,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "natural_paraphrase",
+    "query": "子どもの発育に不安があるのですが、どうすればよいでしょうか？",
+    "category1": "妊娠・出産"
+  },
+  {
+    "query_id": "Q-944-2",
+    "faq_id": 944,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "terse_search",
+    "query": "子どもの発育に不安があるのですが どうすればいい",
+    "category1": "妊娠・出産"
+  },
+  {
+    "query_id": "Q-944-3",
+    "faq_id": 944,
+    "split": "Development",
+    "difficulty": "Easy",
+    "query_type": "situation_gap",
+    "query": "子どもの発育に不安があるのですが どうすればいいについて、自分の場合に必要な対応を知りたい",
+    "category1": "妊娠・出産"
+  },
+  {
+    "query_id": "Q-270-1",
+    "faq_id": 270,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "私立幼稚園の補助金の対象者について詳しく知りたいです。",
+    "category1": "学校・教育"
+  },
+  {
+    "query_id": "Q-270-2",
+    "faq_id": 270,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "私立幼稚園の補助金の対象者",
+    "category1": "学校・教育"
+  },
+  {
+    "query_id": "Q-270-3",
+    "faq_id": 270,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "私立幼稚園の補助金について、自分も対象になるか確認したい",
+    "category1": "学校・教育"
+  },
+  {
+    "query_id": "Q-377-1",
+    "faq_id": 377,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "予防接種の時期はいつでしょうか？",
+    "category1": "健診・予防接種"
+  },
+  {
+    "query_id": "Q-377-2",
+    "faq_id": 377,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "予防接種の時期はいつ",
+    "category1": "健診・予防接種"
+  },
+  {
+    "query_id": "Q-377-3",
+    "faq_id": 377,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "予防接種の時期はは、いつまでに対応すればよい？",
+    "category1": "健診・予防接種"
+  },
+  {
+    "query_id": "Q-1036-1",
+    "faq_id": 1036,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "採用について詳しく知りたいです。",
+    "category1": "採用・職員情報"
+  },
+  {
+    "query_id": "Q-1036-2",
+    "faq_id": 1036,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "採用・職員情報 採用",
+    "category1": "採用・職員情報"
+  },
+  {
+    "query_id": "Q-1036-3",
+    "faq_id": 1036,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "採用・職員情報 採用について、初めて利用する人向けに知りたい",
+    "category1": "採用・職員情報"
+  },
+  {
+    "query_id": "Q-096-1",
+    "faq_id": 96,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "児童手当の手続きは自治体の支所・出張所等でできるのでしょうか？",
+    "category1": "子どもの手当・助成"
+  },
+  {
+    "query_id": "Q-096-2",
+    "faq_id": 96,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "児童手当の手続きは自治体の支所・出張所等で",
+    "category1": "子どもの手当・助成"
+  },
+  {
+    "query_id": "Q-096-3",
+    "faq_id": 96,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "児童手当を近くの支所で手続きできるか知りたい",
+    "category1": "子どもの手当・助成"
+  },
+  {
+    "query_id": "Q-356-1",
+    "faq_id": 356,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "自治体が定める基本計画・基本構想等について詳しく知りたいです。",
+    "category1": "施策・計画・取り組み"
+  },
+  {
+    "query_id": "Q-356-2",
+    "faq_id": 356,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "自治体が定める基本計画・基本構想等",
+    "category1": "施策・計画・取り組み"
+  },
+  {
+    "query_id": "Q-356-3",
+    "faq_id": 356,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "市が将来どんなまちづくりを進めるのか、計画を知りたい",
+    "category1": "施策・計画・取り組み"
+  },
+  {
+    "query_id": "Q-969-1",
+    "faq_id": 969,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "保育担当課の場所を知りたいです。",
+    "category1": "施設"
+  },
+  {
+    "query_id": "Q-969-2",
+    "faq_id": 969,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "保育担当課の場所",
+    "category1": "施設"
+  },
+  {
+    "query_id": "Q-969-3",
+    "faq_id": 969,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "保育担当課のの手続きをしたい。行く窓口を知りたい",
+    "category1": "施設"
+  },
+  {
+    "query_id": "Q-370-1",
+    "faq_id": 370,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "市内の保育園の数を知りたいです。",
+    "category1": "保育"
+  },
+  {
+    "query_id": "Q-370-2",
+    "faq_id": 370,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "市内の保育園の数",
+    "category1": "保育"
+  },
+  {
+    "query_id": "Q-370-3",
+    "faq_id": 370,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "子どもの通う先を探している。市内の保育園の数について知りたい",
+    "category1": "保育"
+  },
+  {
+    "query_id": "Q-371-1",
+    "faq_id": 371,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "natural_paraphrase",
+    "query": "市内の保育園の場所を知りたいです。",
+    "category1": "保育"
+  },
+  {
+    "query_id": "Q-371-2",
+    "faq_id": 371,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "terse_search",
+    "query": "市内の保育園の場所",
+    "category1": "保育"
+  },
+  {
+    "query_id": "Q-371-3",
+    "faq_id": 371,
+    "split": "Development",
+    "difficulty": "Medium",
+    "query_type": "situation_gap",
+    "query": "市内の保育園のの手続きをしたい。行く窓口を知りたい",
+    "category1": "保育"
+  },
+  {
+    "query_id": "Q-818-1",
+    "faq_id": 818,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "natural_paraphrase",
+    "query": "副市長の名前を知りたいです。",
+    "category1": "区の紹介"
+  },
+  {
+    "query_id": "Q-818-2",
+    "faq_id": 818,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "terse_search",
+    "query": "副市長の名前",
+    "category1": "区の紹介"
+  },
+  {
+    "query_id": "Q-818-3",
+    "faq_id": 818,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "situation_gap",
+    "query": "現在の副市長は誰ですか？",
+    "category1": "区の紹介"
+  },
+  {
+    "query_id": "Q-054-1",
+    "faq_id": 54,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "natural_paraphrase",
+    "query": "養育医療はどんな時に申請できるのでしょうか？",
+    "category1": "子どもの手当・助成"
+  },
+  {
+    "query_id": "Q-054-2",
+    "faq_id": 54,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "terse_search",
+    "query": "養育医療はどんな時に申請できる",
+    "category1": "子どもの手当・助成"
+  },
+  {
+    "query_id": "Q-054-3",
+    "faq_id": 54,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "situation_gap",
+    "query": "未熟児で入院が必要になった。養育医療の対象になる？",
+    "category1": "子どもの手当・助成"
+  },
+  {
+    "query_id": "Q-393-1",
+    "faq_id": 393,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "natural_paraphrase",
+    "query": "自治体で実施されている子ども食堂の名称ってどのようなものでしょうか？",
+    "category1": "子育て・子ども家庭支援"
+  },
+  {
+    "query_id": "Q-393-2",
+    "faq_id": 393,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "terse_search",
+    "query": "自治体で実施されている子ども食堂の名称 意味",
+    "category1": "子育て・子ども家庭支援"
+  },
+  {
+    "query_id": "Q-393-3",
+    "faq_id": 393,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "situation_gap",
+    "query": "自治体で実施されている子ども食堂の名称について、初めて利用する人向けに知りたい",
+    "category1": "子育て・子ども家庭支援"
+  },
+  {
+    "query_id": "Q-156-1",
+    "faq_id": 156,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "natural_paraphrase",
+    "query": "自治体の子育て支援センター等の名称の利用方法を知りたいです。",
+    "category1": "施設"
+  },
+  {
+    "query_id": "Q-156-2",
+    "faq_id": 156,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "terse_search",
+    "query": "自治体の子育て支援センター等の名称の利用方法",
+    "category1": "施設"
+  },
+  {
+    "query_id": "Q-156-3",
+    "faq_id": 156,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "situation_gap",
+    "query": "子育て支援センターを初めて利用したい。利用方法を知りたい",
+    "category1": "施設"
+  },
+  {
+    "query_id": "Q-397-1",
+    "faq_id": 397,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "natural_paraphrase",
+    "query": "婚姻届の届出場所を知りたいです。",
+    "category1": "住民票・戸籍・印鑑証明"
+  },
+  {
+    "query_id": "Q-397-2",
+    "faq_id": 397,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "terse_search",
+    "query": "婚姻届の届出場所",
+    "category1": "住民票・戸籍・印鑑証明"
+  },
+  {
+    "query_id": "Q-397-3",
+    "faq_id": 397,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "situation_gap",
+    "query": "婚姻届の届出の手続きをしたい。行く窓口を知りたい",
+    "category1": "住民票・戸籍・印鑑証明"
+  },
+  {
+    "query_id": "Q-976-1",
+    "faq_id": 976,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "natural_paraphrase",
+    "query": "住民税の納税証明書を取りたい。",
+    "category1": "税金"
+  },
+  {
+    "query_id": "Q-976-2",
+    "faq_id": 976,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "terse_search",
+    "query": "住民税の納税証明書を取りたい",
+    "category1": "税金"
+  },
+  {
+    "query_id": "Q-976-3",
+    "faq_id": 976,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "situation_gap",
+    "query": "住民税の納税証明書を取りたいについて、自分の場合に必要な対応を知りたい",
+    "category1": "税金"
+  },
+  {
+    "query_id": "Q-008-1",
+    "faq_id": 8,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "natural_paraphrase",
+    "query": "●●県内で引っ越したら、妊婦健診の受診票は。",
+    "category1": "妊娠・出産"
+  },
+  {
+    "query_id": "Q-008-2",
+    "faq_id": 8,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "terse_search",
+    "query": "●●県内で引っ越したら 妊婦健診の受診票は",
+    "category1": "妊娠・出産"
+  },
+  {
+    "query_id": "Q-008-3",
+    "faq_id": 8,
+    "split": "Development",
+    "difficulty": "Hard",
+    "query_type": "situation_gap",
+    "query": "引っ越すことになった。●●県内で引っ越したら 妊婦健診の受診票ははそのまま使える？",
+    "category1": "妊娠・出産"
+  }
+]

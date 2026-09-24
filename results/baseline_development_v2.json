@@ -1,0 +1,47 @@
+{
+  "fingerprints": {
+    "corpus": "a69251bd452ab44f8c2a2f087e927f4c32560168fd8f1fd7d65a8c0e9fc73940",
+    "development": "3184e0d3bd01bfe7f0de77d9912be2973cf095bf53e9c2f121b90f5a67f615d2",
+    "holdout": "675dc0182379cd1c9398eed77615de315c29720164a88d1de4c5a4cb6b75d894",
+    "split_assignment_v2": "fe362fda3a2c2dbe40137cf820724526f167c08a6a088b0b40a20c3ba8625a47"
+  },
+  "methods": {
+    "substring": {
+      "queries": 90,
+      "hitAt1": 0.3111111111111111,
+      "hitAt3": 0.32222222222222224,
+      "mrr": 0.31666666666666665,
+      "hitAt1ByQueryType": {
+        "natural_paraphrase": 0.1,
+        "terse_search": 0.7666666666666667,
+        "situation_gap": 0.06666666666666667
+      },
+      "hitAt1ByDifficulty": {
+        "Easy": 0.3333333333333333,
+        "Medium": 0.25,
+        "Hard": 0.37037037037037035
+      },
+      "p50LatencyMs": 0,
+      "p95LatencyMs": 0
+    },
+    "lexical": {
+      "queries": 90,
+      "hitAt1": 0.8555555555555555,
+      "hitAt3": 0.8666666666666667,
+      "mrr": 0.8611111111111112,
+      "hitAt1ByQueryType": {
+        "natural_paraphrase": 0.9333333333333333,
+        "terse_search": 0.9666666666666667,
+        "situation_gap": 0.6666666666666666
+      },
+      "hitAt1ByDifficulty": {
+        "Easy": 0.8148148148148148,
+        "Medium": 0.8611111111111112,
+        "Hard": 0.8888888888888888
+      },
+      "p50LatencyMs": 0,
+      "p95LatencyMs": 0
+    }
+  },
+  "note": "Holdout checked for structural validity only. No holdout retrieval evaluation."
+}
