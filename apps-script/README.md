@@ -11,6 +11,10 @@
 - 1536/3072次元版も同じ場所にあります。
 - 比較結果: `results/dimensions-development-v1/report.json` と `report.md`。
 
+クローン直後は `data/apps-script/` がGit管理外なので、上記の配布JSONはありません。Development用のFAQ・問い合わせEmbeddingキャッシュ（`data/cache/faq-embeddings.json`、`data/cache/development-embeddings.json`）を用意したうえで、`npm run prepare:apps-script` を実行して生成してください。既存の `results/dimensions-development-v1/` はそのまま残ります。このコマンドはaliasesキャッシュとAPIキーを必要としません。キャッシュがない場合は `npm run embeddings -- development` で生成できますが、APIを使用します。
+
+保存済みの次元比較は当時のEmbeddingによるものです。新たに生成したEmbeddingで作る配布JSONが同じ順位・正解率になる保証はありません。未評価の環境で改めて比較結果を作る場合だけ `npm run prepare:apps-script -- --compare` を実行します。既に比較結果がある場合は上書きを拒否します。この比較モードには凍結済みのaliases・FAQ Embeddingキャッシュも必要です。
+
 今回の配布JSONにはFAQ質問・回答と正規化済みVectorを含みます。768次元版は約11.1 MBです。以前の約6.5 MBは正規化前の数値とIDのみの概算です。正規化でJSON内の小数表記が長くなるため、配布サイズは異なります。座標数はどちらも768です。
 
 ## 1. Googleログイン
