@@ -12,7 +12,7 @@ function studioPointer_() {
   return JSON.parse(
     PropertiesService.getScriptProperties().getProperty("STUDIO_ACTIVE") ||
       JSON.stringify({
-        id: STUDIO_DEFAULTS.baseIndexId,
+        id: studioConfig_().baseIndexId,
         version: "baseline-768",
         previous: null,
       }),
@@ -330,7 +330,7 @@ function previewStudio() {
   var pointer = studioPointer_(),
     index = studioIndex_(pointer.id);
   var queries = JSON.parse(
-    DriveApp.getFileById(STUDIO_DEFAULTS.developmentId)
+    DriveApp.getFileById(studioConfig_().developmentId)
       .getBlob()
       .getDataAsString("UTF-8"),
   ).queries;

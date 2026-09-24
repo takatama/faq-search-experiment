@@ -4506,6 +4506,19 @@
       "complexity": 4
     }
   ],
-  "selected": null,
-  "note": "Only Development; RRF k=60 and depth=3 fixed; best hybrid weight, ties prefer smaller question weight; gate uses at least two nonzero signals; no holdout inspection"
+  "selected": {
+    "gate": {
+      "minTop1": 0,
+      "minMargin": 0.02,
+      "minCoverage": 0,
+      "minLength": 3
+    },
+    "calls": 7,
+    "rate": 0.07777777777777778,
+    "hitAt1": 0.8888888888888888,
+    "gap": 0.011111111111111183,
+    "complexity": 2
+  },
+  "note": "Only Development; RRF k=60 and depth=3 fixed; best hybrid weight, ties prefer smaller question weight; gate uses at least two nonzero signals. No candidate met the 1-point target; selected the smallest gap, then fewer calls and signals. Reconciled from the recorded candidate list without rerunning evaluation or inspecting holdout.",
+  "targetMet": false
 }
