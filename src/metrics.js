@@ -1,1 +1,23 @@
-export function metrics(records){ const n=records.length; const by=(key)=>Object.fromEntries([...new Set(records.map(x=>x[key]??'unknown'))].map(v=>{const a=records.filter(x=>(x[key]??'unknown')===v);return [v,a.filter(x=>x.rank===1).length/a.length];})); const lat=records.map(x=>x.latencyMs||0).sort((a,b)=>a-b); const pct=p=>lat[Math.min(lat.length-1,Math.floor(lat.length*p))]||0; return {queries:n,hitAt1:n?records.filter(x=>x.rank===1).length/n:0,hitAt3:n?records.filter(x=>x.rank>0&&x.rank<=3).length/n:0,mrr:n?records.reduce((s,x)=>s+(x.rank?1/x.rank:0),0)/n:0,hitAt1ByQueryType:by('queryType'),hitAt1ByDifficulty:by('difficulty'),p50LatencyMs:pct(.5),p95LatencyMs:pct(.95)}; }
+export function metrics(records) {
+  const n = records.length;
+  const by = (key) =>
+    Object.fromEntries(
+      [...new Set(records.map((x) => x[key] ?? "unknown"))].map((v) => {
+        const a = records.filter((x) => (x[key] ?? "unknown") === v);
+        return [v, a.filter((x) => x.rank === 1).length / a.length];
+      }),
+    );
+  const lat = records.map((x) => x.latencyMs || 0).sort((a, b) => a - b);
+  const pct = (p) =>
+    lat[Math.min(lat.length - 1, Math.floor(lat.length * p))] || 0;
+  return {
+    queries: n,
+    hitAt1: n ? records.filter((x) => x.rank === 1).length / n : 0,
+    hitAt3: n ? records.filter((x) => x.rank > 0 && x.rank <= 3).length / n : 0,
+    mrr: n ? records.reduce((s, x) => s + (x.rank ? 1 / x.rank : 0), 0) / n : 0,
+    hitAt1ByQueryType: by("queryType"),
+    hitAt1ByDifficulty: by("difficulty"),
+    p50LatencyMs: pct(0.5),
+    p95LatencyMs: pct(0.95),
+  };
+}

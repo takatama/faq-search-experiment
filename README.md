@@ -2,6 +2,8 @@
 
 自治体FAQ 661件と固定済み450 queryで、substring、文字2〜4-gram TF-IDF、Gemini生成alias、Gemini Embedding、RRF hybrid、lexical-first fallbackを公平に比較するNode.js実験基盤です。
 
+このリポジトリは検索方式を比較するためのコードを収録しています。固定データ、生成済みcache、および実測結果は含まれていません。過去に報告したHit@1などの数値を、このcheckoutのコードだけから検証することはできません。`results/`には未実行の結果を置かず、実行後に生成します。
+
 ## 安全性と再現性
 
 - 認証は `GEMINI_API_KEY` 環境変数だけを使用し、API keyは `x-goog-api-key` headerへ設定します。
@@ -13,7 +15,7 @@
 
 ## 必要な入力
 
-次の固定Split v2を配置してください（このリポジトリの現在のcheckoutにはデータが含まれていません）。配列そのもの、またはcorpusは `faqs` / `corpus`、splitは `queries` / `items` 配下の配列を受け付けます。
+次の固定Split v2を配置してください。配列そのもの、またはcorpusは `faqs` / `corpus`、splitは `queries` / `items` 配下の配列を受け付けます。これらの入力やキャッシュを別のデータに置き換えた場合、得られる数値は元の実験の再現結果ではなく、新しい実行結果です。
 
 ```
 data/corpus.json       # 661 FAQ: id, question, answer, category
@@ -30,7 +32,7 @@ export GEMINI_EMBEDDING_MODEL='gemini-embedding-001'    # default
 export MAX_GEMINI_REQUESTS='200'                        # default
 ```
 
-モデルが利用不能でも自動fallbackはしません。明示的に環境変数と `config/experiment.json` の正確なモデル名を揃えてから、新しいcacheとして実行してください。秘密情報を含む `.env` とcacheはGit管理外です。
+モデルが利用不能でも自動fallbackはしません。明示的に環境変数と `config/experiment.json` の正確なモデル名を揃えてから、新しいcacheとして実行してください。上記のモデル名はコードの既定値であり、過去に報告した実験のモデル設定を示すものではありません。秘密情報を含む `.env` とcacheはGit管理外です。
 
 ## 実行順序
 
@@ -53,6 +55,8 @@ npm run report
 
 評価結果の `queryEmbeddingCalls` / `queryEmbeddingRate` は方式ごとの論理呼出対象query数です。fallbackではgateが低confidenceとしたqueryだけを数えるため、事前cache済みでも全件扱いにはしません。実HTTP request数（batch単位）と混同しません。Geminiが返すusage metadataはcache生成runへ保存し、返されない料金は推測しません。
 
-## 現在の評価状態
+## 公開内容と評価結果
 
-入力データがcheckoutに存在しないため、API大量処理、Development tuning、Holdout one-shot評価は未実施です。`results/` にはこの停止理由を明記し、数値を捏造していません。固定データ配置後は上記手順で再現できます。
+このリポジトリに入力データ、キャッシュ、評価結果は含まれていません。`results/README.md` にもこの状態を記録しています。上記手順を実行するには固定データと利用可能なAPIモデルが必要です。実行すると別の日時の結果が生成されるため、過去のHoldout結果として扱わないでください。
+
+コードはMITライセンスです。自治体FAQの元データを配布する場合は、そのデータに適用される利用条件と出典表記を別途確認してください。
