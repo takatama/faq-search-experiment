@@ -51,7 +51,13 @@ Developmentだけで質問の重み1/2/3（alias重み1）を比較し、Hybrid 
 
 gateはexact alias一致、top1 score、top1とtop2の差、query長、corpus語彙に対するn-gram coverageを使用します。exact alias一致の場合はlexical結果を採用します。それ以外では、2つ以上の有効な最小値を持つ候補から、Hybrid Hit@1との差1ポイント以内、Vector対象率が最小、判定項目が少ない順で決めます。満たす候補がなければ目標未達を記録し、Developmentの精度差が最小、呼出率が最小、判定項目が少ない順で比較用の条件を固定します。成功とは扱いません。
 
-`config/experiment.json` を固定してからHoldoutのEmbedding生成・評価を行います。Holdout評価は開始記録も排他的に作成し、途中停止しても勝手に再評価しません。旧版の未評価レポートは `results/archive/` に保持します。
+`config/experiment.json` を固定してからHoldoutのEmbedding生成・評価を行います。Holdout評価は開始記録も排他的に作成し、途中停止しても勝手に再評価しません。
+
+## 公開済みの結果とライセンス
+
+実測値は [`results/final_report.md`](results/final_report.md) に掲載しています。評価に用いた質問と正解IDは `data/`、各方式の順位・指標は `results/development_report.json` と `results/holdout_report.json` に保存しています。これらはキャッシュ済みEmbeddingを使った検索時間であり、実際のAPI待ち時間を含みません。
+
+ソースコードは [MIT License](LICENSE) で公開します。FAQの元データは [子育てオープンデータ協議会の汎用FAQ](https://www.asukoe.co.jp/news/kosodate_opendata_report/) に由来し、元データの条件である CC BY 4.0 に従って出典を表示します。`data/` 内のFAQをMITライセンスの対象とはしません。評価用の問い合わせはこの実験で別途作成しました。
 
 ## 指標の読み方
 

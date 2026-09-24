@@ -1,9 +1,107 @@
-<!DOCTYPE html><html><head><base target="_top"><style>body{font:14px Arial,sans-serif;color:#202124;padding:12px;line-height:1.6}button{padding:8px;margin:6px 0;cursor:pointer}textarea{width:95%;height:70px}section{border-top:1px solid #ddd;margin-top:14px;padding-top:10px}.note{font-size:12px;color:#555}#status{white-space:pre-wrap}</style></head><body>
-<h2>FAQを確認しながら育てる</h2><p class="note">汎用サンプルです。実在の自治体の案内ではありません。AIは候補を提案し、承認済みだけが公開されます。</p>
-<button onclick="run('previewStudio')">保存済みの質問で試す（APIなし）</button>
-<section><label for="q">自由に検索する</label><textarea id="q" placeholder="個人情報を入力しないでください"></textarea><button onclick="run('searchStudio',document.getElementById('q').value)">検索（Gemini APIを1回利用）</button><p class="note">自由検索にはスクリプト プロパティのAPIキー設定が必要です。検索文はログに自動保存しません。</p></section>
-<section><p>提案のH列を「承認」にして、シート上部の「FAQ育成 → 承認済みを公開」を選んでください。</p><p class="note">言い換えは管理用情報として保存します。今回のVector検索で使うのは検索用質問です。検索用質問が変わったFAQだけEmbeddingを更新します。</p></section><div id="status" role="status"></div><div id="result"></div>
-<script>
-function run(name,arg){document.getElementById('status').textContent='読み込み中…';document.getElementById('result').replaceChildren();var r=google.script.run.withSuccessHandler(show).withFailureHandler(function(e){document.getElementById('status').textContent=e.message;});if(name==='previewStudio')r.previewStudio();else r.searchStudio(arg);}
-function show(data){document.getElementById('status').textContent='公開版: '+data.version+'\nAPI: '+data.apiRequests+'回';var root=document.getElementById('result');(data.examples||[{query:'検索候補',candidates:data.candidates}]).forEach(function(x){var section=document.createElement('section'),h=document.createElement('strong');h.textContent=x.query;section.append(h);x.candidates.forEach(function(c){var p=document.createElement('p');p.textContent='ID '+c.id+'：'+c.question+(c.answer?'\n'+c.answer:'');section.append(p);});root.append(section);});}
-</script></body></html>
+<!doctype html>
+<html>
+  <head>
+    <base target="_top" />
+    <style>
+      body {
+        font:
+          14px Arial,
+          sans-serif;
+        color: #202124;
+        padding: 12px;
+        line-height: 1.6;
+      }
+      button {
+        padding: 8px;
+        margin: 6px 0;
+        cursor: pointer;
+      }
+      textarea {
+        width: 95%;
+        height: 70px;
+      }
+      section {
+        border-top: 1px solid #ddd;
+        margin-top: 14px;
+        padding-top: 10px;
+      }
+      .note {
+        font-size: 12px;
+        color: #555;
+      }
+      #status {
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>FAQを確認しながら育てる</h2>
+    <p class="note">
+      汎用サンプルです。実在の自治体の案内ではありません。AIは候補を提案し、承認済みだけが公開されます。
+    </p>
+    <button onclick="run('previewStudio')">
+      保存済みの質問で試す（APIなし）
+    </button>
+    <section>
+      <label for="q">自由に検索する</label
+      ><textarea id="q" placeholder="個人情報を入力しないでください"></textarea
+      ><button
+        onclick="run('searchStudio', document.getElementById('q').value)"
+      >
+        検索（Gemini APIを1回利用）
+      </button>
+      <p class="note">
+        自由検索にはスクリプト
+        プロパティのAPIキー設定が必要です。検索文はログに自動保存しません。
+      </p>
+    </section>
+    <section>
+      <p>
+        提案のH列を「承認」にして、シート上部の「FAQ育成 →
+        承認済みを公開」を選んでください。
+      </p>
+      <p class="note">
+        言い換えは管理用情報として保存します。今回のVector検索で使うのは検索用質問です。検索用質問が変わったFAQだけEmbeddingを更新します。
+      </p>
+    </section>
+    <div id="status" role="status"></div>
+    <div id="result"></div>
+    <script>
+      function run(name, arg) {
+        document.getElementById("status").textContent = "読み込み中…";
+        document.getElementById("result").replaceChildren();
+        var r = google.script.run
+          .withSuccessHandler(show)
+          .withFailureHandler(function (e) {
+            document.getElementById("status").textContent = e.message;
+          });
+        if (name === "previewStudio") r.previewStudio();
+        else r.searchStudio(arg);
+      }
+      function show(data) {
+        document.getElementById("status").textContent =
+          "公開版: " + data.version + "\nAPI: " + data.apiRequests + "回";
+        var root = document.getElementById("result");
+        (
+          data.examples || [{ query: "検索候補", candidates: data.candidates }]
+        ).forEach(function (x) {
+          var section = document.createElement("section"),
+            h = document.createElement("strong");
+          h.textContent = x.query;
+          section.append(h);
+          x.candidates.forEach(function (c) {
+            var p = document.createElement("p");
+            p.textContent =
+              "ID " +
+              c.id +
+              "：" +
+              c.question +
+              (c.answer ? "\n" + c.answer : "");
+            section.append(p);
+          });
+          root.append(section);
+        });
+      }
+    </script>
+  </body>
+</html>

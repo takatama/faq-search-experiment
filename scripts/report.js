@@ -1,27 +1,121 @@
-import fs from 'node:fs';
-import {readJson,writeJsonAtomic} from '../src/io.js';
-const dev=readJson('results/development_report.json'),hold=readJson('results/holdout_report.json');
-if(!dev.methods||!hold.methods)throw new Error('Both evaluations must finish');
-const faqs=readJson('data/corpus.json'),faq=Object.fromEntries(faqs.map(f=>[String(f.faq_id??f.id),f.question]));
-const r=hold.methods,lists=Object.fromEntries(Object.entries(r).map(([k,v])=>[k,Object.fromEntries(v.records.map(x=>[x.id,x]))]));
-const rows=r.lexical.records.map(b=>({queryId:b.id,query:b.text,correctFaq:faq[b.expectedId],lexicalPrediction:faq[b.predictedId],vectorPrediction:faq[lists.vector[b.id].predictedId],hybridPrediction:faq[lists.hybrid[b.id].predictedId],b,c:lists.lexicalAliases[b.id],d:lists.vector[b.id],e:lists.hybrid[b.id],f:lists.fallback[b.id]}));
-const groups={vectorRescuedLexical:rows.filter(x=>x.b.rank!==1&&x.d.rank===1),vectorWrongWhenLexicalCorrect:rows.filter(x=>x.b.rank===1&&x.d.rank!==1),hybridFailed:rows.filter(x=>x.e.rank!==1),gateMissedRescue:rows.filter(x=>!x.f.vectorCalled&&x.c.rank!==1&&x.e.rank===1),hybridBrokeCorrectLexical:rows.filter(x=>x.b.rank===1&&x.e.rank!==1)};
-const clean=x=>({queryId:x.queryId,query:x.query,correctFaq:x.correctFaq,lexicalPrediction:x.lexicalPrediction,vectorPrediction:x.vectorPrediction,hybridPrediction:x.hybridPrediction});
-const analysis=Object.fromEntries(Object.entries(groups).map(([k,v])=>[k,{count:v.length,examples:v.slice(0,3).map(clean),all:v.map(clean)}]));
-writeJsonAtomic('results/failure_analysis.json',analysis);
-const names={substring:'A. Substring',lexical:'B. Lexical',lexicalAliases:'C. Lexical + aliases',vector:'D. Vector',hybrid:'E. Always hybrid',fallback:'F. Fallback'},pct=x=>`${(100*x).toFixed(1)}%`;
-let md='| Method | Hit@1 | Hit@3 | MRR@3 | Query embedding rate | p50 (ms) | p95 (ms) |\n|---|---:|---:|---:|---:|---:|---:|\n';
-for(const [k,v]of Object.entries(r))md+=`| ${names[k]} | ${pct(v.hitAt1)} | ${pct(v.hitAt3)} | ${v.mrr.toFixed(3)} | ${pct(v.queryEmbeddingRate)} | ${v.p50LatencyMs.toFixed(2)} | ${v.p95LatencyMs.toFixed(2)} |\n`;
-md+=`\n# 自治体FAQ検索実験 最終レポート\n\n上表は固定Holdout 360問の一度だけの評価。処理時間はキャッシュ済みEmbeddingを使うローカル検索の実測値です。API待ち時間、ファイル読込、index作成時間は含みません。MRRは上位3件までです。\n\n## モデル・固定条件\n\n- aliases: ${hold.models.alias}\n- Embedding: ${hold.models.embedding}（3072次元）\n- FAQは正式質問だけ。Embedding 2の公式検索用接頭辞を付与し、taskTypeのAPIフィールドは送信しない。キャッシュには論理的なRETRIEVAL_DOCUMENT / RETRIEVAL_QUERYを記録。\n- 質問の重み: ${hold.settings.questionWeight}、aliasの重み: ${hold.settings.aliasWeight}、RRF k=${hold.settings.rrfK}、各方式上位${hold.settings.rrfDepth}件を融合。\n- gate: ${JSON.stringify(hold.settings.gate)}\n- exact alias一致はlexicalを採用。それ以外は各最小値のいずれかを下回る場合にVectorを呼ぶ。\n- モデル変更はユーザー指定。旧aliasモデルでHTTP 404が発生。設定と入力・キャッシュhashはconfig/experiment.jsonに固定。\n\n## Developmentのみでの選択\n\n90問で質問重み1/2/3を比較しHybrid Hit@1が最高の値を採用（同率は小さい重み）。RRF k=60と深さ3は変更していません。2つ以上の信号を使うgate候補からHybridとの差1ポイント以内、呼出率最小、判定項目が少ない順で選択。\n\nHybrid ${pct(dev.methods.hybrid.hitAt1)}、fallback ${pct(dev.methods.fallback.hitAt1)}、fallback呼出率 ${pct(dev.methods.fallback.queryEmbeddingRate)}。\n\nDevelopment目標達成: ${hold.settings.selection.targetMet ? "達成" : "未達（1.11ポイント差）。候補の精度差が最小、呼出率最小、条件が少ない順で比較用に固定。成功扱いにしていません。"}\n\n## Holdoutでの結論\n\nHybridとfallbackのHit@1差は${((r.hybrid.hitAt1-r.fallback.hitAt1)*100).toFixed(2)}ポイント。fallbackは${r.fallback.queryEmbeddingCalls}/360問（${pct(r.fallback.queryEmbeddingRate)}）でVectorを必要としました。${r.hybrid.hitAt1-r.fallback.hitAt1<=.01?'Holdoutでも1ポイント以内でした。':'Holdoutでは1ポイント以内の条件を満たしませんでした。設定は変更していません。'}\n\n## API利用と時間\n\n- index-time HTTP: ${hold.indexTimeApiRequests}回（aliases ${hold.cachePopulation.aliasRequests}、FAQ Embedding ${hold.cachePopulation.faqRequests}）。旧aliasモデルの失敗1回を含みます。\n- query cache生成: Development ${dev.queryTimeApiRequests}回、Holdout ${hold.queryTimeApiRequests}回。Embedding対象はそれぞれ90問、360問。\n- 評価時の実HTTPは全方式0回。D/Eは全queryをキャッシュ参照、Fはgate対象だけ参照。論理呼出率とHTTP回数は異なります。\n- 各生成batchの実API時間とusage metadataはJSONのcachePopulation.runsに保存。料金は未算出。batch時間からquery単位のcold latencyを推定していません。\n- 以前の接続確認・モデル一覧取得などはこの集計と別枠です。\n\n## 失敗分析\n`;
-for(const [k,v]of Object.entries(analysis)){md+=`\n### ${k}: ${v.count}問\n`;for(const x of v.examples)md+=`\n- ${x.queryId}: ${x.query}\n  正解FAQ: ${x.correctFaq}\n  Vector上位: ${x.vectorPrediction}\n`;}
-md+='\n## 再現と移植\n\nREADMEの手順を参照。Holdout再評価は開始記録と保存済み結果で拒否します。失敗分析は保存済み順位から作成し、検索は再実行しません。GAS/GWSではfetchをUrlFetchAppへ置換し、キャッシュ保存、実行時間に応じた分割、排他制御、認証情報の保存を実装してください。検索・gate・RRFはJavaScriptで独立しています。\n';
-if(fs.existsSync('results/final_report.md')&&!fs.existsSync('results/archive/final_report.pre-evaluation.md')){fs.mkdirSync('results/archive',{recursive:true});fs.copyFileSync('results/final_report.md','results/archive/final_report.pre-evaluation.md');}
-if(fs.existsSync('results/qualitative_analysis.json')){
- const q=readJson('results/qualitative_analysis.json');
- md+='\n## 語句の違いと語彙差（最終評価後の目視分類）\n\n'+q.methodology+'\n';
- for(const [key,label]of [['nearWordConfusion','制度名・対象・場所などの識別語の混同'],['largeVocabularyGap','語彙差が大きくVectorが有効']]){const v=q[key];md+='\n### '+label+': '+v.count+'問\n\n'+v.definition+'\n';for(const x of v.examples)md+='\n- '+x.queryId+': '+x.query+' → 正解: '+x.correctFaq+'\n';}
- md+='\n## 固定queryの限界\n\n以下は最終評価後に気づいた曖昧さです。データも正解IDも変更せず、そのまま採点しました。\n';for(const x of q.fixedQueryLimitations)md+='\n- '+x.id+': '+x.note+'\n';
+import fs from "node:fs";
+import { readJson, writeJsonAtomic } from "../src/io.js";
+const dev = readJson("results/development_report.json"),
+  hold = readJson("results/holdout_report.json");
+if (!dev.methods || !hold.methods)
+  throw new Error("Both evaluations must finish");
+const faqs = readJson("data/corpus.json"),
+  faq = Object.fromEntries(
+    faqs.map((f) => [String(f.faq_id ?? f.id), f.question]),
+  );
+const r = hold.methods,
+  lists = Object.fromEntries(
+    Object.entries(r).map(([k, v]) => [
+      k,
+      Object.fromEntries(v.records.map((x) => [x.id, x])),
+    ]),
+  );
+const rows = r.lexical.records.map((b) => ({
+  queryId: b.id,
+  query: b.text,
+  correctFaq: faq[b.expectedId],
+  lexicalPrediction: faq[b.predictedId],
+  vectorPrediction: faq[lists.vector[b.id].predictedId],
+  hybridPrediction: faq[lists.hybrid[b.id].predictedId],
+  b,
+  c: lists.lexicalAliases[b.id],
+  d: lists.vector[b.id],
+  e: lists.hybrid[b.id],
+  f: lists.fallback[b.id],
+}));
+const groups = {
+  vectorRescuedLexical: rows.filter((x) => x.b.rank !== 1 && x.d.rank === 1),
+  vectorWrongWhenLexicalCorrect: rows.filter(
+    (x) => x.b.rank === 1 && x.d.rank !== 1,
+  ),
+  hybridFailed: rows.filter((x) => x.e.rank !== 1),
+  gateMissedRescue: rows.filter(
+    (x) => !x.f.vectorCalled && x.c.rank !== 1 && x.e.rank === 1,
+  ),
+  hybridBrokeCorrectLexical: rows.filter(
+    (x) => x.b.rank === 1 && x.e.rank !== 1,
+  ),
+};
+const clean = (x) => ({
+  queryId: x.queryId,
+  query: x.query,
+  correctFaq: x.correctFaq,
+  lexicalPrediction: x.lexicalPrediction,
+  vectorPrediction: x.vectorPrediction,
+  hybridPrediction: x.hybridPrediction,
+});
+const analysis = Object.fromEntries(
+  Object.entries(groups).map(([k, v]) => [
+    k,
+    { count: v.length, examples: v.slice(0, 3).map(clean), all: v.map(clean) },
+  ]),
+);
+writeJsonAtomic("results/failure_analysis.json", analysis);
+const names = {
+    substring: "A. Substring",
+    lexical: "B. Lexical",
+    lexicalAliases: "C. Lexical + aliases",
+    vector: "D. Vector",
+    hybrid: "E. Always hybrid",
+    fallback: "F. Fallback",
+  },
+  pct = (x) => `${(100 * x).toFixed(1)}%`;
+let md =
+  "| Method | Hit@1 | Hit@3 | MRR@3 | Query embedding rate | p50 (ms) | p95 (ms) |\n|---|---:|---:|---:|---:|---:|---:|\n";
+for (const [k, v] of Object.entries(r))
+  md += `| ${names[k]} | ${pct(v.hitAt1)} | ${pct(v.hitAt3)} | ${v.mrr.toFixed(3)} | ${pct(v.queryEmbeddingRate)} | ${v.p50LatencyMs.toFixed(2)} | ${v.p95LatencyMs.toFixed(2)} |\n`;
+md += `\n# 自治体FAQ検索実験 最終レポート\n\n上表は固定Holdout 360問の一度だけの評価。処理時間はキャッシュ済みEmbeddingを使うローカル検索の実測値です。API待ち時間、ファイル読込、index作成時間は含みません。MRRは上位3件までです。\n\n## モデル・固定条件\n\n- aliases: ${hold.models.alias}\n- Embedding: ${hold.models.embedding}（3072次元）\n- FAQは正式質問だけ。Embedding 2の公式検索用接頭辞を付与し、taskTypeのAPIフィールドは送信しない。キャッシュには論理的なRETRIEVAL_DOCUMENT / RETRIEVAL_QUERYを記録。\n- 質問の重み: ${hold.settings.questionWeight}、aliasの重み: ${hold.settings.aliasWeight}、RRF k=${hold.settings.rrfK}、各方式上位${hold.settings.rrfDepth}件を融合。\n- gate: ${JSON.stringify(hold.settings.gate)}\n- exact alias一致はlexicalを採用。それ以外は各最小値のいずれかを下回る場合にVectorを呼ぶ。\n- モデル変更はユーザー指定。旧aliasモデルでHTTP 404が発生。設定と入力・キャッシュhashはconfig/experiment.jsonに固定。\n\n## Developmentのみでの選択\n\n90問で質問重み1/2/3を比較しHybrid Hit@1が最高の値を採用（同率は小さい重み）。RRF k=60と深さ3は変更していません。2つ以上の信号を使うgate候補からHybridとの差1ポイント以内、呼出率最小、判定項目が少ない順で選択。\n\nHybrid ${pct(dev.methods.hybrid.hitAt1)}、fallback ${pct(dev.methods.fallback.hitAt1)}、fallback呼出率 ${pct(dev.methods.fallback.queryEmbeddingRate)}。\n\nDevelopment目標達成: ${hold.settings.selection.targetMet ? "達成" : "未達（1.11ポイント差）。候補の精度差が最小、呼出率最小、条件が少ない順で比較用に固定。成功扱いにしていません。"}\n\n## Holdoutでの結論\n\nHybridとfallbackのHit@1差は${((r.hybrid.hitAt1 - r.fallback.hitAt1) * 100).toFixed(2)}ポイント。fallbackは${r.fallback.queryEmbeddingCalls}/360問（${pct(r.fallback.queryEmbeddingRate)}）でVectorを必要としました。${r.hybrid.hitAt1 - r.fallback.hitAt1 <= 0.01 ? "Holdoutでも1ポイント以内でした。" : "Holdoutでは1ポイント以内の条件を満たしませんでした。設定は変更していません。"}\n\n## API利用と時間\n\n- index-time HTTP: ${hold.indexTimeApiRequests}回（aliases ${hold.cachePopulation.aliasRequests}、FAQ Embedding ${hold.cachePopulation.faqRequests}）。旧aliasモデルの失敗1回を含みます。\n- query cache生成: Development ${dev.queryTimeApiRequests}回、Holdout ${hold.queryTimeApiRequests}回。Embedding対象はそれぞれ90問、360問。\n- 評価時の実HTTPは全方式0回。D/Eは全queryをキャッシュ参照、Fはgate対象だけ参照。論理呼出率とHTTP回数は異なります。\n- 各生成batchの実API時間とusage metadataはJSONのcachePopulation.runsに保存。料金は未算出。batch時間からquery単位のcold latencyを推定していません。\n- 以前の接続確認・モデル一覧取得などはこの集計と別枠です。\n\n## 失敗分析\n`;
+for (const [k, v] of Object.entries(analysis)) {
+  md += `\n### ${k}: ${v.count}問\n`;
+  for (const x of v.examples)
+    md += `\n- ${x.queryId}: ${x.query}\n  正解FAQ: ${x.correctFaq}\n  Vector上位: ${x.vectorPrediction}\n`;
 }
-if(fs.existsSync('results/api_audit.json')){const audit=readJson('results/api_audit.json');md+='\n## このローカル作業のAPI総数\n\n'+audit.totalRequests+'リクエスト。生成・旧モデル失敗47回と、接続確認2回・モデル一覧取得2回の合計です。以前のクラウド作業で報告されたfetch失敗1回は別枠です。APIキーは出力していません。\n';}
-md+='\n## 検証\n\nAPIを呼ばないテスト13件、全JavaScriptの構文検査、差分の空白検査を実施。Holdout再評価拒否、凍結したデータ・キャッシュhash一致を確認しました。変更ファイルはresults/changed_files.txtを参照。\n';
-fs.writeFileSync('results/final_report.md',md);console.log('Wrote final report and failure analysis from saved records');
+md +=
+  "\n## 再現と移植\n\nREADMEの手順を参照。Holdout再評価は開始記録と保存済み結果で拒否します。失敗分析は保存済み順位から作成し、検索は再実行しません。GAS/GWSではfetchをUrlFetchAppへ置換し、キャッシュ保存、実行時間に応じた分割、排他制御、認証情報の保存を実装してください。検索・gate・RRFはJavaScriptで独立しています。\n";
+if (
+  fs.existsSync("results/final_report.md") &&
+  !fs.existsSync("results/archive/final_report.pre-evaluation.md")
+) {
+  fs.mkdirSync("results/archive", { recursive: true });
+  fs.copyFileSync(
+    "results/final_report.md",
+    "results/archive/final_report.pre-evaluation.md",
+  );
+}
+if (fs.existsSync("results/qualitative_analysis.json")) {
+  const q = readJson("results/qualitative_analysis.json");
+  md +=
+    "\n## 語句の違いと語彙差（最終評価後の目視分類）\n\n" +
+    q.methodology +
+    "\n";
+  for (const [key, label] of [
+    ["nearWordConfusion", "制度名・対象・場所などの識別語の混同"],
+    ["largeVocabularyGap", "語彙差が大きくVectorが有効"],
+  ]) {
+    const v = q[key];
+    md += "\n### " + label + ": " + v.count + "問\n\n" + v.definition + "\n";
+    for (const x of v.examples)
+      md +=
+        "\n- " + x.queryId + ": " + x.query + " → 正解: " + x.correctFaq + "\n";
+  }
+  md +=
+    "\n## 固定queryの限界\n\n以下は最終評価後に気づいた曖昧さです。データも正解IDも変更せず、そのまま採点しました。\n";
+  for (const x of q.fixedQueryLimitations)
+    md += "\n- " + x.id + ": " + x.note + "\n";
+}
+if (fs.existsSync("results/api_audit.json")) {
+  const audit = readJson("results/api_audit.json");
+  md +=
+    "\n## このローカル作業のAPI総数\n\n" +
+    audit.totalRequests +
+    "リクエスト。生成・旧モデル失敗47回と、接続確認2回・モデル一覧取得2回の合計です。以前のクラウド作業で報告されたfetch失敗1回は別枠です。APIキーは出力していません。\n";
+}
+md +=
+  "\n## 検証\n\nAPIを呼ばないテスト13件、全JavaScriptの構文検査、差分の空白検査を実施。Holdout再評価拒否、凍結したデータ・キャッシュhash一致を確認しました。変更ファイルはresults/changed_files.txtを参照。\n";
+fs.writeFileSync("results/final_report.md", md);
+console.log("Wrote final report and failure analysis from saved records");

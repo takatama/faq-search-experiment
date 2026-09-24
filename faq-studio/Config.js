@@ -1,1 +1,6 @@
-var STUDIO_DEFAULTS = { spreadsheetId: '1x1KkOGoAUJwHjzRf5UtMb7vAX4ex7cDY2GxoE3Xu-x4', folderId: '1MUtXM15nwJIe4kAOXqp9Z-bDbeF4Q-9b', baseIndexId: '1s44YtK63mWEUOXBTYvXbPsSCaCzdynV2', developmentId: '14UL6wDd_fLMjySF1M7_HMDcJyJOTD9hA' };
+var STUDIO_DEFAULTS = {
+  spreadsheetId: "1x1KkOGoAUJwHjzRf5UtMb7vAX4ex7cDY2GxoE3Xu-x4",
+  folderId: "1MUtXM15nwJIe4kAOXqp9Z-bDbeF4Q-9b",
+  baseIndexId: "1s44YtK63mWEUOXBTYvXbPsSCaCzdynV2",
+  developmentId: "14UL6wDd_fLMjySF1M7_HMDcJyJOTD9hA",
+};
