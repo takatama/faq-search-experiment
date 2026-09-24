@@ -77,4 +77,4 @@ GAS/GWSへ移植する際は、fetchをUrlFetchAppへ置換し、秘密情報の
 
 ## Apps Scriptへの追加検証
 
-次元削減比較と導入手順は `apps-script/README.md` を参照してください。`npm run prepare:apps-script` はDevelopmentだけで比較し、Driveへ配置するJSONを生成します。保存済みの比較結果があれば上書きを拒否します。元のHoldoutは再評価しません。
+次元削減比較と導入手順は `apps-script/README.md` を参照してください。`npm run prepare:apps-script` は、FAQとDevelopmentのEmbeddingキャッシュからDriveへ配置するJSONを生成します。保存済みの比較結果は変更しません。次元比較を新規実行する場合だけ `npm run prepare:apps-script -- --compare` を使用します。比較結果が存在する場合は上書きを拒否します。元のHoldoutは再評価しません。

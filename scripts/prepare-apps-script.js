@@ -2,17 +2,63 @@ import fs from "node:fs";
 import vm from "node:vm";
 import { performance } from "node:perf_hooks";
 import { hashText } from "../src/cache.js";
+import { validEmbedding } from "../src/cache.js";
 import { loadExperiment } from "./lib.js";
 import { metrics } from "../src/metrics.js";
-const input = loadExperiment("development");
+import { loadData, fingerprints } from "../src/data.js";
+import { readJson } from "../src/io.js";
+
+const compare = process.argv.slice(2).includes("--compare");
+if (process.argv.slice(2).some((arg) => arg !== "--compare"))
+  throw new Error("Only --compare is supported");
+
+function loadExportInput() {
+  const config = readJson("config/experiment.json");
+  if (
+    config.status !== "frozen" ||
+    JSON.stringify(config.dataHashes) !== JSON.stringify(fingerprints())
+  )
+    throw new Error("Frozen input data hashes differ");
+  const { faqs, queries } = loadData("development");
+  const faqCache = readJson("data/cache/faq-embeddings.json");
+  const queryCache = readJson("data/cache/development-embeddings.json");
+  const faqEmbeddings = {};
+  const queryEmbeddings = {};
+  for (const faq of faqs) {
+    const item = faqCache.items?.[faq.id];
+    if (
+      !validEmbedding(item, {
+        model: config.embeddingModel,
+        taskType: "RETRIEVAL_DOCUMENT",
+        text: faq.question,
+      })
+    )
+      throw new Error(`Invalid FAQ embedding cache: ${faq.id}`);
+    faqEmbeddings[faq.id] = item.embedding;
+  }
+  for (const query of queries) {
+    const item = queryCache.items?.[query.id];
+    if (
+      !validEmbedding(item, {
+        model: config.embeddingModel,
+        taskType: "RETRIEVAL_QUERY",
+        text: query.text,
+      })
+    )
+      throw new Error(`Invalid query embedding cache: ${query.id}`);
+    queryEmbeddings[query.id] = item.embedding;
+  }
+  return { config, faqs, queries, faqEmbeddings, queryEmbeddings };
+}
+
 const scope = vm.createContext({});
 vm.runInContext(fs.readFileSync("apps-script/Vector.js", "utf8"), scope);
 const vector = scope.FaqVector;
 const resultDir = "results/dimensions-development-v1",
   exportDir = "data/apps-script";
-if (fs.existsSync(resultDir))
+if (compare && fs.existsSync(resultDir))
   throw new Error("Dimension results already exist; refusing overwrite");
-fs.mkdirSync(resultDir, { recursive: true });
+const input = compare ? loadExperiment("development") : loadExportInput();
 fs.mkdirSync(exportDir, { recursive: true });
 const basePredictions = {},
   methods = {};
@@ -41,6 +87,17 @@ for (const dimensions of [3072, 1536, 768, 384]) {
       embedding: vector.normalize(input.queryEmbeddings[q.id], dimensions),
     })),
   };
+  if (dimensions !== 384) {
+    fs.writeFileSync(
+      `${exportDir}/faq-index-${dimensions}.json`,
+      JSON.stringify(index),
+    );
+    fs.writeFileSync(
+      `${exportDir}/development-${dimensions}.json`,
+      JSON.stringify(queries),
+    );
+  }
+  if (!compare) continue;
   const records = queries.queries.map((q) => {
     const start = performance.now(),
       r = vector.search(index, q.embedding, 3),
@@ -73,14 +130,14 @@ for (const dimensions of [3072, 1536, 768, 384]) {
     changes: changed,
     records,
   };
-  if (dimensions !== 384) {
-    fs.writeFileSync(`${exportDir}/faq-index-${dimensions}.json`, serialized);
-    fs.writeFileSync(
-      `${exportDir}/development-${dimensions}.json`,
-      JSON.stringify(queries),
-    );
-  }
 }
+if (!compare) {
+  console.log(
+    `Apps Script JSON exported to ${exportDir}; saved results unchanged.`,
+  );
+  process.exit(0);
+}
+fs.mkdirSync(resultDir, { recursive: true });
 const report = {
   experiment: "Additional dimensionality experiment; Development only",
   generatedAt: new Date().toISOString(),
