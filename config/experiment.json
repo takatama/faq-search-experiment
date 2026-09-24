@@ -1,14 +1,51 @@
 {
   "version": 1,
-  "aliasModel": "gemini-2.5-flash-lite",
-  "embeddingModel": "gemini-embedding-001",
+  "aliasModel": "gemini-3.5-flash-lite",
+  "embeddingModel": "gemini-embedding-2",
   "aliasCount": 5,
   "ngramMin": 2,
   "ngramMax": 4,
   "questionWeight": 2,
   "aliasWeight": 1,
   "rrfK": 60,
-  "gate": null,
-  "status": "unfrozen",
-  "note": "Run tune:gate on development data to freeze; never tune using holdout."
+  "gate": {
+    "minTop1": 0,
+    "minMargin": 0.02,
+    "minCoverage": 0,
+    "minLength": 3
+  },
+  "status": "frozen",
+  "note": "Run tune:gate on development data to freeze; never tune using holdout.",
+  "rrfDepth": 3,
+  "tunedOn": "development",
+  "tunedAt": "2026-09-13T04:01:45.938Z",
+  "dataHashes": {
+    "corpus": "a69251bd452ab44f8c2a2f087e927f4c32560168fd8f1fd7d65a8c0e9fc73940",
+    "development": "3184e0d3bd01bfe7f0de77d9912be2973cf095bf53e9c2f121b90f5a67f615d2",
+    "holdout": "675dc0182379cd1c9398eed77615de315c29720164a88d1de4c5a4cb6b75d894",
+    "split_assignment_v2": "fe362fda3a2c2dbe40137cf820724526f167c08a6a088b0b40a20c3ba8625a47"
+  },
+  "cacheHashes": {
+    "aliases": "bc79441017f08fcd2ef5945cae6ae2c051ab134673248f2bcab4acc8a92cea55",
+    "faqEmbeddings": "8d439771fd2d794abe63ed3e93090c899ae385d55c4b7a0caada2caa6334e570"
+  },
+  "embeddingDimensions": 3072,
+  "embeddingInputFormat": "gemini-embedding-2 search prefix v1",
+  "selection": {
+    "targetMet": false,
+    "gate": {
+      "minTop1": 0,
+      "minMargin": 0.02,
+      "minCoverage": 0,
+      "minLength": 3
+    },
+    "calls": 7,
+    "rate": 0.07777777777777778,
+    "hitAt1": 0.8888888888888888,
+    "gap": 0.011111111111111183,
+    "complexity": 2,
+    "hybridHitAt1": 0.9,
+    "reason": "No tested gate meets 1 percentage point target. Freeze closest development result; ties use lower call rate then fewer signals. Not a successful target."
+  },
+  "modelChangeReason": "User selected gemini-embedding-2 and gemini-3.5-flash-lite after old alias model HTTP 404"
 }

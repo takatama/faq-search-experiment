@@ -1,0 +1,30 @@
+{
+  "scope": "This desktop conversation, including previous turns; prior cloud fetch-failed attempt excluded",
+  "generationRequests": {
+    "aliases": 35,
+    "faq-embeddings": 7,
+    "development-embeddings": 1,
+    "holdout-embeddings": 4
+  },
+  "setupRequests": [
+    {
+      "purpose": "previous smoke",
+      "model": "gemini-embedding-001",
+      "requests": 1,
+      "status": "success"
+    },
+    {
+      "purpose": "model list",
+      "requests": 2,
+      "status": "success"
+    },
+    {
+      "purpose": "new smoke",
+      "model": "gemini-embedding-2",
+      "requests": 1,
+      "status": "success"
+    }
+  ],
+  "totalRequests": 51,
+  "notes": "aliases includes the old model HTTP 404 attempt. The earlier cloud conversation reported one additional fetch-failed attempt; it is outside this local run."
+}

@@ -1,0 +1,98 @@
+{
+  "methodology": "Post-evaluation manual classification of saved predictions. Overlapping categories. No tuning or re-evaluation. Counts refer to the explicitly listed IDs.",
+  "nearWordConfusion": {
+    "count": 5,
+    "definition": "VectorまたはHybridの誤答で、避難所/避難場所、犬/子ども、保育室/市立保育室、支所/市役所という識別語の違いを取り違えたもの。",
+    "queryIds": [
+      "Q-971-1",
+      "Q-971-3",
+      "Q-894-3",
+      "Q-1007-2",
+      "Q-162-3"
+    ],
+    "examples": [
+      {
+        "queryId": "Q-971-1",
+        "query": "避難所はどこでしょうか？",
+        "correctFaq": "避難所はどこですか？",
+        "lexicalPrediction": "避難所はどこですか？",
+        "vectorPrediction": "避難場所はどこですか？",
+        "hybridPrediction": "避難所はどこですか？"
+      },
+      {
+        "queryId": "Q-971-3",
+        "query": "避難所はの手続きをしたい。行く窓口を知りたい",
+        "correctFaq": "避難所はどこですか？",
+        "lexicalPrediction": "避難所はどこですか？",
+        "vectorPrediction": "避難場所はどこですか？",
+        "hybridPrediction": "避難所はどこですか？"
+      },
+      {
+        "queryId": "Q-894-3",
+        "query": "犬と一緒に遊べる場所を探している",
+        "correctFaq": "犬を連れて遊べる公園を教えてください。",
+        "lexicalPrediction": "○○駅近くで子どもと遊べる場所を教えてください。",
+        "vectorPrediction": "犬を連れて遊べる公園を教えてください。",
+        "hybridPrediction": "○○駅近くで子どもと遊べる場所を教えてください。"
+      }
+    ]
+  },
+  "largeVocabularyGap": {
+    "count": 12,
+    "definition": "Bが誤答しDが正解した40問のうち、日常的な状況表現とFAQの制度名・概念の間に言い換えがあると判断した12問。機械的な排他的分類ではない。",
+    "queryIds": [
+      "Q-561-3",
+      "Q-1081-3",
+      "Q-299-1",
+      "Q-299-3",
+      "Q-952-3",
+      "Q-943-1",
+      "Q-943-3",
+      "Q-885-3",
+      "Q-920-3",
+      "Q-904-3",
+      "Q-190-3",
+      "Q-191-3"
+    ],
+    "examples": [
+      {
+        "queryId": "Q-561-3",
+        "query": "余った食品を寄付したい。どこへ持っていけばいい？",
+        "correctFaq": "フードドライブについて教えてください。",
+        "lexicalPrediction": "乳腺炎になったらどこの病院に行けばいいですか？",
+        "vectorPrediction": "フードドライブについて教えてください。",
+        "hybridPrediction": "フードドライブについて教えてください。"
+      },
+      {
+        "queryId": "Q-1081-3",
+        "query": "地域の人と交流できる活動にはどんなものがある？",
+        "correctFaq": "（地域交流イベント・地域活動イベント等）とはなんですか？",
+        "lexicalPrediction": "子どもの手当にはどんなものがありますか？",
+        "vectorPrediction": "（地域交流イベント・地域活動イベント等）とはなんですか？",
+        "hybridPrediction": "（地域交流イベント・地域活動イベント等）とはなんですか？"
+      },
+      {
+        "queryId": "Q-299-1",
+        "query": "母親同士が交流できる集まりについて教えてください",
+        "correctFaq": "（ママ同士の交流会等）について教えてください。",
+        "lexicalPrediction": "採用について教えてください。",
+        "vectorPrediction": "（ママ同士の交流会等）について教えてください。",
+        "hybridPrediction": "（ママ同士の交流会等）について教えてください。"
+      }
+    ]
+  },
+  "fixedQueryLimitations": [
+    {
+      "id": "Q-195-3",
+      "note": "「について、自分も対象になるか確認したい」は対象の制度名を欠き、正解を一意に決めにくい。"
+    },
+    {
+      "id": "Q-144-3",
+      "note": "一般的な申請手順を尋ねているが、正解FAQは祖父母等の代理申請。識別条件がqueryにない。"
+    },
+    {
+      "id": "Q-971-3",
+      "note": "避難所を「手続き」「窓口」と表現しており不自然。固定queryを修正せず採点した。"
+    }
+  ]
+}

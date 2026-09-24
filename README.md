@@ -1,58 +1,74 @@
-# FAQ Search Experiment
+# 自治体FAQ検索実験
 
-自治体FAQ 661件と固定済み450 queryで、substring、文字2〜4-gram TF-IDF、Gemini生成alias、Gemini Embedding、RRF hybrid、lexical-first fallbackを公平に比較するNode.js実験基盤です。
+661件のFAQと固定Split v2（Development 90問、Holdout 360問）を使い、A substring、B 文字2〜4gram TF-IDF、C aliases付きlexical、D Vector、E RRF Hybrid、F lexical-first fallbackを比較します。データは変更・再生成しません。
 
-## 安全性と再現性
+## モデルと認証
 
-- 認証は `GEMINI_API_KEY` 環境変数だけを使用し、API keyは `x-goog-api-key` headerへ設定します。
-- `MAX_GEMINI_REQUESTS`（既定200）をプロセス内で数え、送信前に停止します。429/5xxだけを最大4回、上限付き指数backoffで再試行します。
-- alias promptへ渡す項目はcorpusの `id`, `question`, `answer`, `category` だけです。評価queryは読みません。
-- aliasとembeddingを `data/cache/` に逐次atomic保存します。embeddingはmodel、task type、次元、入力SHA-256が一致するときだけ再利用します。
-- FAQ embeddingは正式質問だけを `RETRIEVAL_DOCUMENT`、queryは `RETRIEVAL_QUERY` として生成します。
-- gateはDevelopmentだけで探索し `config/experiment.json` にfreezeします。Holdout評価は既存結果を上書きしません。
+今回ユーザーが指定したモデル:
 
-## 必要な入力
+- `GEMINI_ALIAS_MODEL=gemini-3.5-flash-lite`
+- `GEMINI_EMBEDDING_MODEL=gemini-embedding-2`
+- `MAX_GEMINI_REQUESTS=200`（1プロセスの送信試行上限。再試行も含む）
+- `GEMINI_API_KEY` は環境変数からのみ取得します。値は表示せず、`x-goog-api-key`ヘッダーで送信します。
 
-次の固定Split v2を配置してください（このリポジトリの現在のcheckoutにはデータが含まれていません）。配列そのもの、またはcorpusは `faqs` / `corpus`、splitは `queries` / `items` 配下の配列を受け付けます。
+以前の既定値は `gemini-2.5-flash-lite` / `gemini-embedding-001` でした。旧aliasモデルでHTTP 404が発生した後、ユーザー指定で上記へ変更しました。別モデルへの自動切り替えはしません。モデル変更時は新しい実験として扱い、凍結設定や評価結果を上書きしないでください。
 
-```
-data/corpus.json       # 661 FAQ: id, question, answer, category
-data/development.json  # 90 query: id, query, faq_id, query_type, difficulty
-data/holdout.json      # 360 query: 同上
-```
+Embedding 2は `taskType` フィールドに対応しないため、[公式資料](https://ai.google.dev/gemini-api/docs/embeddings)に従い、FAQ質問は `title: none | text: ...`、検索文は `task: search result | query: ...` で送ります。キャッシュの論理用途はそれぞれ `RETRIEVAL_DOCUMENT` / `RETRIEVAL_QUERY` です。FAQに回答・aliasesを混ぜません。次元は3072です。
 
-## 環境変数
+## 初回実行の順序
 
-```bash
-export GEMINI_API_KEY='...'
-export GEMINI_ALIAS_MODEL='gemini-2.5-flash-lite'       # default
-export GEMINI_EMBEDDING_MODEL='gemini-embedding-001'    # default
-export MAX_GEMINI_REQUESTS='200'                        # default
-```
+Node.js 20以降を使用します。追加SDKは不要です。Windowsでも以下を実行できます。
 
-モデルが利用不能でも自動fallbackはしません。明示的に環境変数と `config/experiment.json` の正確なモデル名を揃えてから、新しいcacheとして実行してください。秘密情報を含む `.env` とcacheはGit管理外です。
-
-## 実行順序
-
-```bash
+```text
 npm test
 npm run check
-npm run smoke                         # 大量処理前に必ず1 requestだけ
-npm run aliases                       # 最大20 FAQ/request
-npm run embeddings -- development    # FAQ + Development query、最大100 inputs/request
-npm run tune:gate                     # Developmentのみ、設定をfreeze
+node scripts/baseline.js
+npm run smoke
+npm run aliases
+npm run embeddings -- development
+npm run tune:gate
 npm run evaluate:development
-npm run embeddings -- holdout         # freeze後に実施
-npm run evaluate:holdout              # 既存reportがあれば停止するone-shot guard
+npm run embeddings -- holdout
+npm run evaluate:holdout
 npm run report
 ```
 
-`tune:gate` は、複数信号（exact alias、top1、margin、coverage、query長）を組み合わせた候補から、(1) always-hybrid Hit@1との差が1ポイント以内、(2) logical query embedding率が最低、の順で選びます。条件を満たさなければfreezeしません。HybridはRRF `k=60` です。
+この順序は未評価のcheckoutでの手順です。すでに凍結・評価済みの場合、tuningと評価コマンドは再実行を拒否します。最終結果を確認するには `results/final_report.md` と各JSONを開いてください。reportは保存済みの順位から作成し、Holdout検索を再実行しません。
 
-## コスト指標
+接続テストは最大1リクエストです。失敗時は大量処理へ進みません。429/5xxの再試行は最大4試行、待ち時間は指数的に増やし上限を設けます。エラー表示はHTTP statusと許可済みのエラーコードに限定し、サーバーや通信例外の自由文を表示しません。
 
-評価結果の `queryEmbeddingCalls` / `queryEmbeddingRate` は方式ごとの論理呼出対象query数です。fallbackではgateが低confidenceとしたqueryだけを数えるため、事前cache済みでも全件扱いにはしません。実HTTP request数（batch単位）と混同しません。Geminiが返すusage metadataはcache生成runへ保存し、返されない料金は推測しません。
+## データ・キャッシュ
 
-## 現在の評価状態
+入力は `data/corpus.json`、`data/development.json`、`data/holdout.json`、`data/split_assignment_v2.json` です。件数、ID重複、FAQごと3種類のquery、難易度の分布、所属splitを検証します。凍結時に入力ファイルhashとindexキャッシュhashを記録し、後の変更を拒否します。
 
-入力データがcheckoutに存在しないため、API大量処理、Development tuning、Holdout one-shot評価は未実施です。`results/` にはこの停止理由を明記し、数値を捏造していません。固定データ配置後は上記手順で再現できます。
+aliases生成はcorpusしか読みません。質問・回答・カテゴリを最大20FAQずつ送り、FAQ IDとの対応、5件、空文字、重複を確認します。生成条件、入力hash、モデル、日時、batchごとのAPI回数・時間・usageを保存します。
+
+Embeddingは最大100入力のbatchで取得します。ID、モデル、用途、3072次元、元テキストhash、接頭辞付き入力hash、有限数値を検証し、合致するキャッシュだけを再利用します。生成はbatchごとに保存し、失敗した試行も記録します。キャッシュと`.env`はGit対象外です。APIキーをファイルへ書かないでください。
+
+## 選択と公平性
+
+Developmentだけで質問の重み1/2/3（alias重み1）を比較し、Hybrid Hit@1が最高の値を選択します。同率では小さい重み。RRF k=60、融合対象は各検索の上位3件で固定です。
+
+gateはexact alias一致、top1 score、top1とtop2の差、query長、corpus語彙に対するn-gram coverageを使用します。exact alias一致の場合はlexical結果を採用します。それ以外では、2つ以上の有効な最小値を持つ候補から、Hybrid Hit@1との差1ポイント以内、Vector対象率が最小、判定項目が少ない順で決めます。満たす候補がなければ目標未達を記録し、Developmentの精度差が最小、呼出率が最小、判定項目が少ない順で比較用の条件を固定します。成功とは扱いません。
+
+`config/experiment.json` を固定してからHoldoutのEmbedding生成・評価を行います。Holdout評価は開始記録も排他的に作成し、途中停止しても勝手に再評価しません。旧版の未評価レポートは `results/archive/` に保持します。
+
+## 指標の読み方
+
+- Hit@1 / Hit@3、上位3件までのMRR、query種別・難易度別Hit@1を記録します。
+- `queryEmbeddingCalls` は方式が必要とするqueryの数。HTTPリクエスト数ではありません。
+- fallbackはgate対象だけEmbeddingキャッシュを参照し、不要な場合にはVectorを実行しません。
+- 実HTTP数はキャッシュ生成batchの共有費用として記録します。比較評価中のHTTP数は全方式0です。同じ生成費用をD/E/Fへ重複加算しません。
+- 各方式のp50/p95は独立に測ったキャッシュ使用時の検索時間です。API待ち時間、ファイル読込、index作成は含みません。
+- APIの実待ち時間と利用量は生成batch単位で保存します。未キャッシュ時のquery単位p50/p95や料金は推測しません。
+- `records`には順位と予測IDを残し、最終評価後の失敗分析に使用します。分析の結果で凍結設定を変えません。
+
+## テストとGAS/GWS移植
+
+`npm test` はAPIを呼ばないmockと検索の結合テストです。`npm run check` はsrc/scripts/testsの全JavaScriptを構文検査します。
+
+GAS/GWSへ移植する際は、fetchをUrlFetchAppへ置換し、秘密情報の保存、キャッシュ保存、実行時間に応じたbatch分割、排他制御を用意します。検索・正規化・RRF・gateはJavaScript関数で分離されています。Node専用の入出力と計測処理は移植先の機能に置き換えてください。
+
+## Apps Scriptへの追加検証
+
+次元削減比較と導入手順は `apps-script/README.md` を参照してください。`npm run prepare:apps-script` はDevelopmentだけで比較し、Driveへ配置するJSONを生成します。保存済みの比較結果があれば上書きを拒否します。元のHoldoutは再評価しません。

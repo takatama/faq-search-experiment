@@ -1,1 +1,26 @@
-{"name":"faq-search-experiment","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node --test","check":"node --check src/*.js scripts/*.js","smoke":"node scripts/smoke.js","aliases":"node scripts/aliases.js","embeddings":"node scripts/embeddings.js","evaluate:development":"node scripts/evaluate.js development","tune:gate":"node scripts/tune-gate.js","evaluate:holdout":"node scripts/evaluate.js holdout","report":"node scripts/report.js","evaluate":"npm run evaluate:development"},"engines":{"node":">=20"}}
+{
+  "name": "faq-search-experiment",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check.js",
+    "smoke": "node scripts/smoke.js",
+    "aliases": "node scripts/aliases.js",
+    "embeddings": "node scripts/embeddings.js",
+    "evaluate:development": "node scripts/evaluate.js development",
+    "tune:gate": "node scripts/tune-gate.js",
+    "evaluate:holdout": "node scripts/evaluate.js holdout",
+    "report": "node scripts/report.js",
+    "evaluate": "npm run evaluate:development",
+    "prepare:apps-script": "node scripts/prepare-apps-script.js",
+    "clasp": "clasp"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@google/clasp": "3.4.1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "targetMet": false,
+  "gate": {
+    "minTop1": 0,
+    "minMargin": 0.02,
+    "minCoverage": 0,
+    "minLength": 3
+  },
+  "calls": 7,
+  "rate": 0.07777777777777778,
+  "hitAt1": 0.8888888888888888,
+  "gap": 0.011111111111111183,
+  "complexity": 2,
+  "hybridHitAt1": 0.9,
+  "reason": "No tested gate meets 1 percentage point target. Freeze closest development result; ties use lower call rate then fewer signals. Not a successful target."
+}

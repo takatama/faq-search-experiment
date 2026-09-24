@@ -3,3 +3,9 @@ node_modules/
 data/cache/
 *.tmp
 results/*.candidate.json
+
+# Apps Script credentials and generated datasets
+.clasprc.json
+.clasp.json
+data/apps-script/
+work/

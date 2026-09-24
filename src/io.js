@@ -20,6 +20,6 @@ export function rows(value, names = []) {
 export function faqId(x) { return String(x.id ?? x.faq_id ?? x.faqId); }
 export function question(x) { return String(x.question ?? x.title ?? ''); }
 export function answer(x) { return String(x.answer ?? x.body ?? ''); }
-export function category(x) { return String(x.category ?? ''); }
+export function category(x) { return String(x.category ?? [x.category1,x.category2].filter(Boolean).join(' / ')); }
 export function queryText(x) { return String(x.query ?? x.text ?? ''); }
 export function expectedId(x) { return String(x.faq_id ?? x.faqId ?? x.expected_id ?? x.answer_id); }

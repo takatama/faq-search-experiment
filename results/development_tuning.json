@@ -1,0 +1,4511 @@
+{
+  "weightResults": [
+    {
+      "questionWeight": 1,
+      "aliasWeight": 1,
+      "hybridHitAt1": 0.8777777777777778,
+      "lexicalAliasesHitAt1": 0.8555555555555555
+    },
+    {
+      "questionWeight": 2,
+      "aliasWeight": 1,
+      "hybridHitAt1": 0.9,
+      "lexicalAliasesHitAt1": 0.8555555555555555
+    },
+    {
+      "questionWeight": 3,
+      "aliasWeight": 1,
+      "hybridHitAt1": 0.9,
+      "lexicalAliasesHitAt1": 0.8555555555555555
+    }
+  ],
+  "gateCandidates": [
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 1,
+      "rate": 0.011111111111111112,
+      "hitAt1": 0.8555555555555555,
+      "gap": 0.04444444444444451,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 2,
+      "rate": 0.022222222222222223,
+      "hitAt1": 0.8555555555555555,
+      "gap": 0.04444444444444451,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 4,
+      "rate": 0.044444444444444446,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 5,
+      "rate": 0.05555555555555555,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 7,
+      "rate": 0.07777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 8,
+      "rate": 0.08888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 8,
+      "rate": 0.08888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 8,
+      "rate": 0.08888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 9,
+      "rate": 0.1,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 10,
+      "rate": 0.1111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 10,
+      "rate": 0.1111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 11,
+      "rate": 0.12222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 28,
+      "rate": 0.3111111111111111,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 15,
+      "rate": 0.16666666666666666,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 17,
+      "rate": 0.18888888888888888,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 18,
+      "rate": 0.2,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 18,
+      "rate": 0.2,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 19,
+      "rate": 0.2111111111111111,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 23,
+      "rate": 0.25555555555555554,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 24,
+      "rate": 0.26666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 24,
+      "rate": 0.26666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 24,
+      "rate": 0.26666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 25,
+      "rate": 0.2777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 37,
+      "rate": 0.4111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 43,
+      "rate": 0.4777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 1,
+      "rate": 0.011111111111111112,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 2,
+      "rate": 0.022222222222222223,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 2,
+      "rate": 0.022222222222222223,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 2,
+      "rate": 0.022222222222222223,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 3,
+      "rate": 0.03333333333333333,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 4,
+      "rate": 0.044444444444444446,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 4,
+      "rate": 0.044444444444444446,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 5,
+      "rate": 0.05555555555555555,
+      "hitAt1": 0.8666666666666667,
+      "gap": 0.033333333333333326,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 7,
+      "rate": 0.07777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 7,
+      "rate": 0.07777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 8,
+      "rate": 0.08888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 8,
+      "rate": 0.08888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 8,
+      "rate": 0.08888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 9,
+      "rate": 0.1,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 10,
+      "rate": 0.1111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 10,
+      "rate": 0.1111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 11,
+      "rate": 0.12222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 28,
+      "rate": 0.3111111111111111,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 15,
+      "rate": 0.16666666666666666,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 15,
+      "rate": 0.16666666666666666,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 17,
+      "rate": 0.18888888888888888,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 18,
+      "rate": 0.2,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 18,
+      "rate": 0.2,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 19,
+      "rate": 0.2111111111111111,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 23,
+      "rate": 0.25555555555555554,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 23,
+      "rate": 0.25555555555555554,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 24,
+      "rate": 0.26666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 24,
+      "rate": 0.26666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 24,
+      "rate": 0.26666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 25,
+      "rate": 0.2777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 37,
+      "rate": 0.4111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.1,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 43,
+      "rate": 0.4777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 7,
+      "rate": 0.07777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 8,
+      "rate": 0.08888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 8,
+      "rate": 0.08888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 8,
+      "rate": 0.08888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 9,
+      "rate": 0.1,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 10,
+      "rate": 0.1111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 10,
+      "rate": 0.1111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 11,
+      "rate": 0.12222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 28,
+      "rate": 0.3111111111111111,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 10,
+      "rate": 0.1111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 10,
+      "rate": 0.1111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 11,
+      "rate": 0.12222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 11,
+      "rate": 0.12222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 11,
+      "rate": 0.12222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 12,
+      "rate": 0.13333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 13,
+      "rate": 0.14444444444444443,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 13,
+      "rate": 0.14444444444444443,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 14,
+      "rate": 0.15555555555555556,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 28,
+      "rate": 0.3111111111111111,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 28,
+      "rate": 0.3111111111111111,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 17,
+      "rate": 0.18888888888888888,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 17,
+      "rate": 0.18888888888888888,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 17,
+      "rate": 0.18888888888888888,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 18,
+      "rate": 0.2,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 19,
+      "rate": 0.2111111111111111,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 19,
+      "rate": 0.2111111111111111,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 20,
+      "rate": 0.2222222222222222,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 23,
+      "rate": 0.25555555555555554,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 23,
+      "rate": 0.25555555555555554,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 24,
+      "rate": 0.26666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 24,
+      "rate": 0.26666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 24,
+      "rate": 0.26666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 25,
+      "rate": 0.2777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 37,
+      "rate": 0.4111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.2,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 43,
+      "rate": 0.4777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 12,
+      "rate": 0.13333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 13,
+      "rate": 0.14444444444444443,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 13,
+      "rate": 0.14444444444444443,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 13,
+      "rate": 0.14444444444444443,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 14,
+      "rate": 0.15555555555555556,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 14,
+      "rate": 0.15555555555555556,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 14,
+      "rate": 0.15555555555555556,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 15,
+      "rate": 0.16666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 15,
+      "rate": 0.16666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 15,
+      "rate": 0.16666666666666666,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 16,
+      "rate": 0.17777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 17,
+      "rate": 0.18888888888888888,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 17,
+      "rate": 0.18888888888888888,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 17,
+      "rate": 0.18888888888888888,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 18,
+      "rate": 0.2,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 20,
+      "rate": 0.2222222222222222,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 20,
+      "rate": 0.2222222222222222,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 21,
+      "rate": 0.23333333333333334,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 21,
+      "rate": 0.23333333333333334,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 21,
+      "rate": 0.23333333333333334,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 22,
+      "rate": 0.24444444444444444,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 22,
+      "rate": 0.24444444444444444,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 22,
+      "rate": 0.24444444444444444,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 23,
+      "rate": 0.25555555555555554,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8777777777777778,
+      "gap": 0.022222222222222254,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 27,
+      "rate": 0.3,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 28,
+      "rate": 0.3111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 28,
+      "rate": 0.3111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 28,
+      "rate": 0.3111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 37,
+      "rate": 0.4111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 37,
+      "rate": 0.4111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 38,
+      "rate": 0.4222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 34,
+      "rate": 0.37777777777777777,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.3,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 43,
+      "rate": 0.4777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 20,
+      "rate": 0.2222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 21,
+      "rate": 0.23333333333333334,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 20,
+      "rate": 0.2222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 20,
+      "rate": 0.2222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 21,
+      "rate": 0.23333333333333334,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 20,
+      "rate": 0.2222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 20,
+      "rate": 0.2222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 21,
+      "rate": 0.23333333333333334,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 22,
+      "rate": 0.24444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 22,
+      "rate": 0.24444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 23,
+      "rate": 0.25555555555555554,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 22,
+      "rate": 0.24444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 22,
+      "rate": 0.24444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 23,
+      "rate": 0.25555555555555554,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 22,
+      "rate": 0.24444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 22,
+      "rate": 0.24444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 23,
+      "rate": 0.25555555555555554,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 25,
+      "rate": 0.2777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 25,
+      "rate": 0.2777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 25,
+      "rate": 0.2777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 25,
+      "rate": 0.2777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 25,
+      "rate": 0.2777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 25,
+      "rate": 0.2777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 26,
+      "rate": 0.28888888888888886,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 34,
+      "rate": 0.37777777777777777,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 34,
+      "rate": 0.37777777777777777,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 38,
+      "rate": 0.4222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 38,
+      "rate": 0.4222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 39,
+      "rate": 0.43333333333333335,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 34,
+      "rate": 0.37777777777777777,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 34,
+      "rate": 0.37777777777777777,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 34,
+      "rate": 0.37777777777777777,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 42,
+      "rate": 0.4666666666666667,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.4,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 43,
+      "rate": 0.4777777777777778,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 29,
+      "rate": 0.32222222222222224,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 34,
+      "rate": 0.37777777777777777,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 34,
+      "rate": 0.37777777777777777,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 30,
+      "rate": 0.3333333333333333,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 31,
+      "rate": 0.34444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.02,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 32,
+      "rate": 0.35555555555555557,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 33,
+      "rate": 0.36666666666666664,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 37,
+      "rate": 0.4111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 37,
+      "rate": 0.4111111111111111,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.05,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 38,
+      "rate": 0.4222222222222222,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 35,
+      "rate": 0.3888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 36,
+      "rate": 0.4,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 40,
+      "rate": 0.4444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 40,
+      "rate": 0.4444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.1,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 41,
+      "rate": 0.45555555555555555,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 0
+      },
+      "calls": 39,
+      "rate": 0.43333333333333335,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 2
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 3
+      },
+      "calls": 39,
+      "rate": 0.43333333333333335,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0,
+        "minLength": 5
+      },
+      "calls": 40,
+      "rate": 0.4444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 0
+      },
+      "calls": 39,
+      "rate": 0.43333333333333335,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 3
+      },
+      "calls": 39,
+      "rate": 0.43333333333333335,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0.25,
+        "minLength": 5
+      },
+      "calls": 40,
+      "rate": 0.4444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 0
+      },
+      "calls": 39,
+      "rate": 0.43333333333333335,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 3
+      },
+      "calls": 39,
+      "rate": 0.43333333333333335,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0.5,
+        "minLength": 5
+      },
+      "calls": 40,
+      "rate": 0.4444444444444444,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 0
+      },
+      "calls": 44,
+      "rate": 0.4888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 3
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 3
+      },
+      "calls": 44,
+      "rate": 0.4888888888888889,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    },
+    {
+      "gate": {
+        "minTop1": 0.5,
+        "minMargin": 0.15,
+        "minCoverage": 0.75,
+        "minLength": 5
+      },
+      "calls": 45,
+      "rate": 0.5,
+      "hitAt1": 0.8888888888888888,
+      "gap": 0.011111111111111183,
+      "complexity": 4
+    }
+  ],
+  "selected": null,
+  "note": "Only Development; RRF k=60 and depth=3 fixed; best hybrid weight, ties prefer smaller question weight; gate uses at least two nonzero signals; no holdout inspection"
+}
