@@ -87,3 +87,50 @@ test("publish then rollback restores previous snapshot in a simulated cycle", ()
   assert.equal(snapshots[active].faqs[0].searchQuestion, undefined);
   assert.equal(snapshots[active].faqs[0].answer, "○○市窓口");
 });
+
+test("copied Studio uses configured index and development data before first publication", () => {
+  const opened = [];
+  const config = {
+    spreadsheetId: "copied-sheet",
+    folderId: "copied-folder",
+    baseIndexId: "copied-index",
+    developmentId: "copied-development",
+  };
+  const faqs = Array.from({ length: 661 }, (_, i) => ({
+    id: String(i),
+    question: `question ${i}`,
+    answer: `answer ${i}`,
+  }));
+  const context = vm.createContext({
+    PropertiesService: {
+      getScriptProperties: () => ({
+        getProperty: (key) =>
+          key === "STUDIO_CONFIG" ? JSON.stringify(config) : null,
+      }),
+    },
+    DriveApp: {
+      getFileById: (id) => {
+        opened.push(id);
+        const payload =
+          id === config.baseIndexId
+            ? { model: "gemini-embedding-2", dimensions: 768, faqs }
+            : { queries: [{ text: "test", expectedId: "0", embedding: [1] }] };
+        if (id !== config.baseIndexId && id !== config.developmentId)
+          throw new Error(`Unexpected Drive ID: ${id}`);
+        return {
+          getBlob: () => ({ getDataAsString: () => JSON.stringify(payload) }),
+        };
+      },
+    },
+    FaqVector: { search: () => [{ id: "0" }] },
+  });
+  vm.runInContext(fs.readFileSync("faq-studio/Studio.js", "utf8"), context);
+  assert.equal(context.studioPointer_().id, config.baseIndexId);
+  assert.equal(context.studioPointer_().previous, null);
+  const preview = context.previewStudio();
+  assert.equal(preview.examples[0].candidates[0].id, "0");
+  assert.deepEqual(opened, [config.baseIndexId, config.developmentId]);
+  context.studioApi_ = () => ({ embedding: { values: Array(768).fill(0) } });
+  assert.equal(context.searchStudio("test").candidates[0].id, "0");
+  assert.equal(opened[2], config.baseIndexId);
+});
