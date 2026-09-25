@@ -1,0 +1,21 @@
+name: Independent FAQ benchmark
+on:
+  push:
+    branches: [experiment/independent-faq-benchmark]
+  workflow_dispatch:
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Evaluate pinned public data
+        run: python scripts/independent_eval.py --output evaluation.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: independent-faq-evaluation
+          path: evaluation.json
