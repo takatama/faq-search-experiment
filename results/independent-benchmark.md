@@ -42,8 +42,18 @@ The complete top-10 rankings are stored in `results/independent-open-vector.json
 
 Run: `python scripts/independent_eval.py --output evaluation.json`. No third-party Python packages or API key are required. All top-10 rankings, input hashes and method totals are saved in the workflow's `independent-faq-evaluation` artifact ([successful run](https://github.com/takatama/faq-search-experiment/actions/runs/36136869375)). The source file SHA-256 values are: corpus `9ccca2d032720d5c824260872666ba9112e10fe844f2dac888cbcbc8019325e1`, queries `33bf6216a34a544cd672f06225f0c0a82af8f81a80a64c7a2017546aae11f273`, qrels `8012a0cd45fd8553e01d03cf49fec7f065eb8dec13e2ae27f6366391decadc8a`.
 
-## Vector comparison
+## Gemini Embedding 2: independent replication
 
-`python scripts/independent_vector.py` can additionally compare Gemini Embedding 2 at fixed 768 dimensions with the official asymmetric search prefixes. It produces cache-bound input hashes and full top-10 rankings, scored with the same relevance function. It runs in CI only if the repository has a `GEMINI_API_KEY` secret. The current run skipped this optional job because no such secret was available. **Do not use the old 661-FAQ Gemini scores or a third party's Recall@10 as this dataset's result.** The E5 comparison above already constitutes a completed character-versus-vector test.
+`python scripts/independent_vector.py` evaluated Gemini Embedding 2 at a predeclared 768 dimensions with the [official asymmetric search prefixes](https://ai.google.dev/gemini-api/docs/embeddings). FAQ titles and user queries were embedded separately, normalized and scored with dot product. It made 51 batch API calls for 1,786 FAQs and 749 queries; it used the **same** judgments and metrics as the other methods. No setting was tuned against the 749 judgments.
+
+| Method | Grade-2 Hit@1, 587 queries | Grade-2 Hit@3 | Grade-2 Hit@10 |
+|---|---:|---:|---:|
+| Character TF-IDF | 140/587 (23.9%) | 222/587 (37.8%) | 338/587 (57.6%) |
+| E5-small vector | 256/587 (43.6%) | 360/587 (61.3%) | 462/587 (78.7%) |
+| Gemini Embedding 2, 768d | **403/587 (68.7%)** | **505/587 (86.0%)** | **562/587 (95.7%)** |
+
+At Hit@3, Gemini finds a grade-2 FAQ for 289 queries missed by character TF-IDF; the character method finds one for 6 queries missed by Gemini. Against E5, the paired counts are 156 and 11. On all 749 queries with grade >=1, Gemini scores Hit@1 491/749, Hit@3 632/749, and Hit@10 693/749.
+
+`results/independent-gemini-results.json.gz` contains all 749 top-10 rankings. `results/independent-gemini-vectors.json.gz` contains the original embedding cache with model/dimension/prefixed-input hashes; no API key is included. After the [successful CI run](https://github.com/takatama/faq-search-experiment/actions/runs/36138830512), all rankings were independently recalculated from the saved 768-dimensional vectors, with **zero mismatches**. The original 661-FAQ Gemini scores and another benchmark's Recall@10 are not mixed into this result.
 
 For the article, define the scope positively: independently authored user queries against FAQ questions, with published relevance judgments. Do not claim that Hit@3 measures what a reader chooses from a UI or whether a new FAQ should be created from a chat thread; these are separate experiments.
