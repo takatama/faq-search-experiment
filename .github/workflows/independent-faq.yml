@@ -19,3 +19,27 @@ jobs:
         with:
           name: independent-faq-evaluation
           path: evaluation.json
+  vector:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run vector evaluation when a key is configured
+        if: env.GEMINI_API_KEY != ''
+        run: |
+          pip install google-genai numpy
+          python scripts/independent_vector.py
+      - uses: actions/upload-artifact@v4
+        if: env.GEMINI_API_KEY != ''
+        with:
+          name: independent-vector-evaluation
+          path: |
+            independent-vector-results.json
+            independent-vectors.json.gz
