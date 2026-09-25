@@ -78,3 +78,9 @@ GAS/GWSへ移植する際は、fetchをUrlFetchAppへ置換し、秘密情報の
 ## Apps Scriptへの追加検証
 
 次元削減比較と導入手順は `apps-script/README.md` を参照してください。`npm run prepare:apps-script` は、FAQとDevelopmentのEmbeddingキャッシュからDriveへ配置するJSONを生成します。保存済みの比較結果は変更しません。次元比較を新規実行する場合だけ `npm run prepare:apps-script -- --compare` を使用します。比較結果が存在する場合は上書きを拒否します。元のHoldoutは再評価しません。
+
+## 次元数の事後確認（順位を公開）
+
+[`results/dimensions-additional.json.gz`](results/dimensions-additional.json.gz) には、3072次元の保存済みEmbeddingを先頭から切り詰め、L2正規化した追加分析の全質問の上位3件と集計をgzip圧縮して保存しました。Development 90問とHoldout 360問の3072・1536・768・384次元を収録します。これは**元の6方式のHoldout結果を固定した後の事後分析**です。次元数の選択にHoldoutを用いたものとして、元の事前評価と混同しないでください。
+
+FAQ・問い合わせ・正解IDは `data/` に収録済みです。生成済みEmbeddingは約75 MBあり、元のAPI利用記録とともに `data/cache/` からGit対象外にしています。生成済みベクトル自体がない環境でも公開した順位と集計は確認できます。**同一ベクトルから独立に順位を再計算したい場合**は、実験時の `data/cache/{faq,development,holdout}-embeddings.json` を配置して `python -m pip install numpy` の後に `python scripts/verify-dimensions.py` を実行してください。スクリプトは元データ・キャッシュのハッシュと全順位を照合し、評価結果を書き換えずAPIも呼びません。キャッシュを再生成した場合には、モデル出力が異なりハッシュが一致しない可能性があります。
