@@ -60,6 +60,12 @@ def score(ranked, judgments, minimum):
 
 def evaluate(corpus, queries, qrels):
     titles = {str(k): corpus_question(doc) for k, doc in corpus.items()}
+    for query_id, judgments in qrels.items():
+        if not judgments:
+            raise ValueError(f"No judgments for query {query_id}")
+        for doc_id, grade in judgments.items():
+            if str(doc_id) not in titles or int(grade) not in (1, 2):
+                raise ValueError(f"Invalid judgment {query_id}/{doc_id}: {grade}")
     indexed = {k: grams(title) for k, title in titles.items()}
     n_docs = len(indexed)
     df = collections.Counter()
