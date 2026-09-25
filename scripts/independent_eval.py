@@ -66,6 +66,7 @@ def evaluate(corpus, queries, qrels):
         for doc_id, grade in judgments.items():
             if str(doc_id) not in titles or int(grade) not in (1, 2):
                 raise ValueError(f"Invalid judgment {query_id}/{doc_id}: {grade}")
+    normalized_titles = {k: chars(title) for k, title in titles.items()}
     indexed = {k: grams(title) for k, title in titles.items()}
     n_docs = len(indexed)
     df = collections.Counter()
@@ -83,7 +84,7 @@ def evaluate(corpus, queries, qrels):
     norms = {doc: math.sqrt(sum((1 + math.log(tf))**2 * tfidf[term]**2
                                 for term, tf in terms.items()))
              for doc, terms in indexed.items()}
-    exact = {chars(title): doc_id for doc_id, title in titles.items()}
+    exact = {text: doc_id for doc_id, text in normalized_titles.items()}
     results = {"substring": [], "char_tfidf": [], "char_bm25": []}
     overlaps = []
     for query_id, text in sorted(queries.items(), key=lambda p: int(p[0])):
@@ -101,8 +102,8 @@ def evaluate(corpus, queries, qrels):
         tf_rank = sorted(tf_scores, key=lambda d: (-tf_scores[d] / max(1e-9, norms[d] * qnorm), d))[:10]
         bm_rank = sorted(bm_scores, key=lambda d: (-bm_scores[d], d))[:10]
         needle = chars(text)
-        substr_rank = sorted((d for d, title in titles.items() if needle and needle in chars(title)),
-                             key=lambda d: (len(chars(titles[d])), d))[:10]
+        substr_rank = sorted((d for d, title in normalized_titles.items() if needle and needle in title),
+                             key=lambda d: (len(normalized_titles[d]), d))[:10]
         if needle in exact:
             overlaps.append(str(query_id))
         for method, ranking in (("substring", substr_rank), ("char_tfidf", tf_rank),
