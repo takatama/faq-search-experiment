@@ -1,4 +1,4 @@
-# Independent FAQ retrieval benchmark: fixed protocol and initial results
+# Independent FAQ retrieval benchmark: fixed protocol and results
 
 This replaces the synthetic-query dataset as the **primary** evaluation for a new article. The original 661-FAQ/450-query experiment remains an archived exploratory comparison and must not be combined with these numbers.
 
@@ -57,3 +57,9 @@ At Hit@3, Gemini finds a grade-2 FAQ for 289 queries missed by character TF-IDF;
 `results/independent-gemini-results.json.gz` contains all 749 top-10 rankings. `results/independent-gemini-vectors.json.gz` contains the original embedding cache with model/dimension/prefixed-input hashes; no API key is included. After the [successful CI run](https://github.com/takatama/faq-search-experiment/actions/runs/36138830512), all rankings were independently recalculated from the saved 768-dimensional vectors, with **zero mismatches**. The original 661-FAQ Gemini scores and another benchmark's Recall@10 are not mixed into this result.
 
 For the article, define the scope positively: independently authored user queries against FAQ questions, with published relevance judgments. Do not claim that Hit@3 measures what a reader chooses from a UI or whether a new FAQ should be created from a chat thread; these are separate experiments.
+
+## Judgment audit before publication
+
+An audit of all 82 Gemini Hit@3 misses against published grade-2 judgments found 57 with a labeled answer in ranks 4–10 and 25 with none in the top 10. Sixteen of the 82 have the same generic garbage-disposal FAQ (#1784) marked grade 2. More importantly, some apparently relevant top-three answers have no grade-2 judgment: query #244 asks when child allowance is paid, and top result #1268 lists the payment months, while its sole grade-2 FAQ #91 explains the application after birth and does not list the payment months. Query #656 asks about child medical subsidies and ranks FAQ #593 and #565 on those subsidies, while the only grade-2 FAQ #394 concerns premature infants.
+
+These examples show that the published judgments are not exhaustive or uniformly aligned with direct answerability. The reported metrics accurately reproduce performance against those judgments; they are not yet validated estimates of how often a reader gets an answer. See `results/independent-failure-audit.md` for the traceable 82-query audit and adjudication protocol. Hold publication of the article until the label audit is resolved or the article is explicitly scoped to a benchmark-label comparison.
