@@ -26,10 +26,24 @@ Search input is the FAQ question only. For substring, a normalized query must be
 | Character TF-IDF | 190/749 (25.4%) | 313/749 (41.8%) | 452/749 (60.3%) |
 | Character BM25 | 189/749 (25.2%) | 293/749 (39.1%) | 422/749 (56.3%) |
 
+## Keyless vector result on the same questions
+
+The pinned `intfloat/multilingual-e5-small` model (revision `ada7b62be30f82b0bc5da131b0477721c8fc14e9`) used its prescribed `query: ` and `passage: ` prefixes, with FAQ questions as passages and normalized cosine similarity. It ran with `sentence-transformers` 5.1.1, with no task-specific training or tuning.
+
+| Method | Grade-2 Hit@1, 587 queries | Grade-2 Hit@3 | Grade-2 Hit@10 |
+|---|---:|---:|---:|
+| Character TF-IDF | 140/587 (23.9%) | 222/587 (37.8%) | 338/587 (57.6%) |
+| Character BM25 | 144/587 (24.5%) | 218/587 (37.1%) | 323/587 (55.0%) |
+| E5-small vector | **256/587 (43.6%)** | **360/587 (61.3%)** | **462/587 (78.7%)** |
+
+At Hit@3, E5 finds a grade-2 FAQ for 181 queries missed by character TF-IDF. Character TF-IDF finds one for 43 queries missed by E5. The paired difference is 138/587 queries. The reverse cases are kept and the result does not assert that every vector model or ranking fusion will improve retrieval. On all 749 queries at grade >=1, E5 achieves Hit@1 344/749, Hit@3 481/749, and Hit@10 600/749.
+
+The complete top-10 rankings are stored in `results/independent-open-vector.json.gz`; the [successful run](https://github.com/takatama/faq-search-experiment/actions/runs/36138110738) also has its output artifact. This is a different model from Gemini Embedding 2: the new article should name E5 and its version whenever it reports these scores.
+
 Run: `python scripts/independent_eval.py --output evaluation.json`. No third-party Python packages or API key are required. All top-10 rankings, input hashes and method totals are saved in the workflow's `independent-faq-evaluation` artifact ([successful run](https://github.com/takatama/faq-search-experiment/actions/runs/36136869375)). The source file SHA-256 values are: corpus `9ccca2d032720d5c824260872666ba9112e10fe844f2dac888cbcbc8019325e1`, queries `33bf6216a34a544cd672f06225f0c0a82af8f81a80a64c7a2017546aae11f273`, qrels `8012a0cd45fd8553e01d03cf49fec7f065eb8dec13e2ae27f6366391decadc8a`.
 
 ## Vector comparison
 
-`python scripts/independent_vector.py` uses Gemini Embedding 2, fixed 768 dimensions and the official asymmetric search prefixes. It produces cache-bound input hashes and full top-10 rankings, scored with the same relevance function. It runs in CI only if the repository has a `GEMINI_API_KEY` secret. The current run skipped the vector job because no such secret was available. **Do not use the old 661-FAQ Gemini scores or a third party's Recall@10 as this dataset's result.** Finish this run and inspect failures before writing a numerical vector claim in the article.
+`python scripts/independent_vector.py` can additionally compare Gemini Embedding 2 at fixed 768 dimensions with the official asymmetric search prefixes. It produces cache-bound input hashes and full top-10 rankings, scored with the same relevance function. It runs in CI only if the repository has a `GEMINI_API_KEY` secret. The current run skipped this optional job because no such secret was available. **Do not use the old 661-FAQ Gemini scores or a third party's Recall@10 as this dataset's result.** The E5 comparison above already constitutes a completed character-versus-vector test.
 
 For the article, define the scope positively: independently authored user queries against FAQ questions, with published relevance judgments. Do not claim that Hit@3 measures what a reader chooses from a UI or whether a new FAQ should be created from a chat thread; these are separate experiments.
