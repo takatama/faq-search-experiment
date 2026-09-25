@@ -43,7 +43,7 @@ npm run report
 
 aliases生成はcorpusしか読みません。質問・回答・カテゴリを最大20FAQずつ送り、FAQ IDとの対応、5件、空文字、重複を確認します。生成条件、入力hash、モデル、日時、batchごとのAPI回数・時間・usageを保存します。
 
-Embeddingは最大100入力のbatchで取得します。ID、モデル、用途、3072次元、元テキストhash、接頭辞付き入力hash、有限数値を検証し、合致するキャッシュだけを再利用します。生成はbatchごとに保存し、失敗した試行も記録します。キャッシュと`.env`はGit対象外です。APIキーをファイルへ書かないでください。
+Embeddingは最大100入力のbatchで取得します。ID、モデル、用途、3072次元、元テキストhash、接頭辞付き入力hash、有限数値を検証し、合致するキャッシュだけを再利用します。生成はbatchごとに保存し、失敗した試行も記録します。展開済みキャッシュと`.env`はGit対象外です。実験時に生成したキャッシュの圧縮版は `data/cache-archive/` に収録しました。APIキーをファイルへ書かないでください。
 
 ## 選択と公平性
 
@@ -83,4 +83,4 @@ GAS/GWSへ移植する際は、fetchをUrlFetchAppへ置換し、秘密情報の
 
 [`results/dimensions-additional.json.gz`](results/dimensions-additional.json.gz) には、3072次元の保存済みEmbeddingを先頭から切り詰め、L2正規化した追加分析の全質問の上位3件と集計をgzip圧縮して保存しました。Development 90問とHoldout 360問の3072・1536・768・384次元を収録します。これは**元の6方式のHoldout結果を固定した後の事後分析**です。次元数の選択にHoldoutを用いたものとして、元の事前評価と混同しないでください。
 
-FAQ・問い合わせ・正解IDは `data/` に収録済みです。生成済みEmbeddingは約75 MBあり、元のAPI利用記録とともに `data/cache/` からGit対象外にしています。生成済みベクトル自体がない環境でも公開した順位と集計は確認できます。**同一ベクトルから独立に順位を再計算したい場合**は、実験時の `data/cache/{faq,development,holdout}-embeddings.json` を配置して `python -m pip install numpy` の後に `python scripts/verify-dimensions.py` を実行してください。スクリプトは元データ・キャッシュのハッシュと全順位を照合し、評価結果を書き換えずAPIも呼びません。キャッシュを再生成した場合には、モデル出力が異なりハッシュが一致しない可能性があります。
+FAQ・問い合わせ・正解IDは `data/` に収録済みです。生成済みキャッシュは `data/cache-archive/` にgzip形式で収録し、展開済みの `data/cache/` はGit対象外です。`node scripts/restore-caches.js` で元ファイルのSHA-256を照合して展開できます。既存ファイルの内容が異なる場合は上書きを拒否します。続けて `python -m pip install numpy` の後に `python scripts/verify-dimensions.py` を実行してください。スクリプトは元データ・キャッシュのハッシュと全順位を照合し、評価結果を書き換えずAPIも呼びません。キャッシュを再生成した場合には、モデル出力が異なりハッシュが一致しない可能性があります。
