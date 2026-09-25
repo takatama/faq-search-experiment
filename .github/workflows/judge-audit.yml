@@ -19,15 +19,15 @@ jobs:
       - name: Build blinded packet
         run: |
           python scripts/build_judgment_audit.py --lexical results/independent-evaluation.json.gz --e5 results/independent-open-vector.json.gz --gemini results/independent-gemini-results.json.gz --packet judgment-packet.json --key judgment-key.json
-      - name: Trial three answer judgments
+      - name: Judge all blinded cases
         if: env.GEMINI_API_KEY != ''
         run: |
           pip install google-genai pydantic
-          python scripts/judge_audit.py --packet judgment-packet.json --output provisional-judgments.json --limit 3
+          python scripts/judge_audit.py --packet judgment-packet.json --output provisional-judgments.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: blinded-judgment-trial
+          name: blinded-judgment-full
           path: |
             judgment-packet.json
             judgment-key.json
