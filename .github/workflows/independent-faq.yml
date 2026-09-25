@@ -1,7 +1,8 @@
 name: Independent FAQ benchmark
 on:
   push:
-    branches: [experiment/independent-faq-benchmark]
+    branches: [audit/independent-qrels]
+    paths: [.github/workflows/independent-faq.yml]
   workflow_dispatch:
 jobs:
   evaluate:
@@ -24,6 +25,7 @@ jobs:
     timeout-minutes: 35
     permissions:
       contents: read
+      actions: read
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
     steps:
@@ -31,6 +33,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Reuse unchanged query embeddings from previous run
+        if: env.GEMINI_API_KEY != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 36138830512 -R takatama/faq-search-experiment -n independent-vector-evaluation -D /tmp/faq-embed
+          cp /tmp/faq-embed/independent-vectors.json.gz independent-vectors.json.gz
       - name: Run vector evaluation when a key is configured
         if: env.GEMINI_API_KEY != ''
         run: |
