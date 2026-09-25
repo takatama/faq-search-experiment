@@ -27,7 +27,7 @@ def by_id(rows):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset-dir", type=pathlib.Path, required=True)
+    parser.add_argument("--dataset-dir", type=pathlib.Path)
     parser.add_argument("--lexical", type=pathlib.Path, required=True)
     parser.add_argument("--e5", type=pathlib.Path, required=True)
     parser.add_argument("--gemini", type=pathlib.Path, required=True)
