@@ -1,0 +1,26 @@
+{
+  "sample_file": "results/human-audit-sample.json",
+  "criterion": "Any useful FAQ within Gemini top 3, evaluated against the archived FAQ text",
+  "reviewed": [
+    {
+      "case": "C169",
+      "query_id": "624",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "No close child-oriented park established by top three."
+    }
+  ],
+  "pending": [
+    "C200",
+    "C028",
+    "C112",
+    "C045",
+    "C004",
+    "C113",
+    "C035",
+    "C077",
+    "C085",
+    "C079",
+    "C149"
+  ]
+}
