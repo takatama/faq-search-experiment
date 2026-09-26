@@ -71,10 +71,21 @@
       "decision": "useful_candidate",
       "source": "User answer in chat",
       "note": "Pigeon FAQ supplies an answer and next actions."
+    },
+    {
+      "case": "C079",
+      "query_id": "663",
+      "decision": "useful_candidate",
+      "source": "User answer in tappable UI",
+      "note": "Archived mayor profile names the mayor at the dataset's time; not a claim about the current mayor."
+    },
+    {
+      "case": "C149",
+      "query_id": "323",
+      "decision": "useful_candidate",
+      "source": "User answer in tappable UI",
+      "note": "Rat FAQ explains municipal pesticide for homes and specialist referral for outside."
     }
   ],
-  "pending": [
-    "C079",
-    "C149"
-  ]
+  "pending": []
 }
