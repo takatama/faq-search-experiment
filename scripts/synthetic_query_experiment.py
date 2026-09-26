@@ -16,6 +16,7 @@ import time
 import numpy as np
 from google import genai
 from google.genai import types
+from pydantic import BaseModel
 
 from independent_eval import BLOBS, corpus_question, load
 
@@ -28,6 +29,15 @@ GEN_MODEL = 'gemini-3.1-flash-lite'
 DIMS = 768
 N_SYNTH = 5
 CLIENT = genai.Client(api_key=os.environ['GEMINI_API_KEY'])
+
+
+class GeneratedFAQ(BaseModel):
+    id: str
+    queries: list[str]
+
+
+class GeneratedBatch(BaseModel):
+    items: list[GeneratedFAQ]
 
 
 def retry(fn):
@@ -59,14 +69,18 @@ def generate(corpus):
         prompt = ('自治体FAQの見出しと回答を読み、各FAQについて住民が検索窓に入力しそうな日本語の'
                   '異なる言い換えを正確に5件作る。元の見出しをそのまま複写せず、FAQの記載にない制度や条件を'
                   '作らない。別FAQの情報を混ぜない。評価用の問い合わせは一切提示されていない。'
-                  'JSON objectで返す。キーは入力id、値は5件の文字列配列。\n'
+                  '入力したすべてのidについて、idとqueries（5件の文字列配列）を返す。\n'
                   + json.dumps(source, ensure_ascii=False))
         for attempt in range(3):
             response = retry(lambda: CLIENT.models.generate_content(
                 model=GEN_MODEL, contents=prompt,
-                config=types.GenerateContentConfig(temperature=0.3,response_mime_type='application/json')))
+                config=types.GenerateContentConfig(temperature=0.3,response_mime_type='application/json',
+                                                   response_schema=GeneratedBatch)))
             try:
-                generated = json.loads(response.text)
+                parsed = GeneratedBatch.model_validate_json(response.text)
+                generated = {item.id:item.queries for item in parsed.items}
+                if len(parsed.items)!=len(generated):
+                    raise ValueError('Duplicate FAQ IDs')
                 if set(generated) != set(batch):
                     raise ValueError('FAQ IDs do not match')
                 for d in batch:
