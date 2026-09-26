@@ -1,0 +1,124 @@
+{
+  "checks": [
+    {
+      "query_id": "144",
+      "case": "C011",
+      "scope": "clarity",
+      "expected": "clear",
+      "observed": "clear",
+      "match": true
+    },
+    {
+      "query_id": "144",
+      "faq_id": "1174",
+      "case": "C011",
+      "candidate": "F03",
+      "scope": "candidate",
+      "expected": "related",
+      "observed": "useful",
+      "match": false
+    },
+    {
+      "query_id": "144",
+      "faq_id": "127",
+      "case": "C011",
+      "candidate": "F08",
+      "scope": "candidate",
+      "expected": "related",
+      "observed": "useful",
+      "match": false
+    },
+    {
+      "query_id": "144",
+      "faq_id": "202",
+      "case": "C011",
+      "candidate": "F10",
+      "scope": "candidate",
+      "expected": "related",
+      "observed": "useful",
+      "match": false
+    },
+    {
+      "query_id": "570",
+      "case": "C140",
+      "scope": "clarity",
+      "expected": "clear",
+      "observed": "clear",
+      "match": true
+    },
+    {
+      "query_id": "570",
+      "faq_id": "1688",
+      "case": "C140",
+      "candidate": "F01",
+      "scope": "candidate",
+      "expected": "useful",
+      "observed": "useful",
+      "match": true
+    },
+    {
+      "query_id": "248",
+      "case": "C197",
+      "scope": "clarity",
+      "expected": "needs_clarification",
+      "observed": "clear",
+      "match": false
+    },
+    {
+      "query_id": "657",
+      "case": "C039",
+      "scope": "clarity",
+      "expected": "clear",
+      "observed": "clear",
+      "match": true
+    },
+    {
+      "query_id": "657",
+      "faq_id": "1784",
+      "case": "C039",
+      "candidate": "F04",
+      "scope": "candidate",
+      "expected": "useful",
+      "observed": "useful",
+      "match": true
+    },
+    {
+      "query_id": "60",
+      "case": "C138",
+      "scope": "clarity",
+      "expected": "clear",
+      "observed": "clear",
+      "match": true
+    },
+    {
+      "query_id": "60",
+      "faq_id": "1723",
+      "case": "C138",
+      "candidate": "F02",
+      "scope": "candidate",
+      "expected": "related",
+      "observed": "useful",
+      "match": false
+    },
+    {
+      "query_id": "656",
+      "case": "C053",
+      "scope": "clarity",
+      "expected": "clear",
+      "observed": "clear",
+      "match": true
+    },
+    {
+      "query_id": "656",
+      "faq_id": "394",
+      "case": "C053",
+      "candidate": "F07",
+      "scope": "candidate",
+      "expected": "related",
+      "observed": "related",
+      "match": true
+    }
+  ],
+  "n_checks": 13,
+  "n_disagreements": 5
+}
