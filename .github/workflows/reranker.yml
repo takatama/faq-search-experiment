@@ -1,0 +1,31 @@
+name: Rerank fixed FAQ top ten
+on:
+  push:
+    branches: [audit/independent-qrels]
+    paths: [.github/workflows/reranker.yml, scripts/reranker_experiment.py]
+  workflow_dispatch:
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'sentence-transformers>=3,<6' 'torch>=2,<3'
+      - name: Run fixed cross encoder evaluation
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+        run: python scripts/reranker_experiment.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: faq-reranker-results
+          path: |
+            reranker-results.json
+            reranker-progress.json
+          if-no-files-found: warn
