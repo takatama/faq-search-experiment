@@ -50,12 +50,30 @@
       "decision": "needs_clarification",
       "source": "User answer in chat",
       "note": "Noise source unspecified; source-specific complaint offices cannot be selected."
+    },
+    {
+      "case": "C035",
+      "query_id": "304",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "Prior January-March specific checkup and year-dependent coupon notices do not settle a general consecutive-year screening question."
+    },
+    {
+      "case": "C077",
+      "query_id": "212",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "Early voting, 2017 election-specific address rules, and travel absentee voting do not answer the general recent-move polling place question."
+    },
+    {
+      "case": "C085",
+      "query_id": "172",
+      "decision": "useful_candidate",
+      "source": "User answer in chat",
+      "note": "Pigeon FAQ supplies an answer and next actions."
     }
   ],
   "pending": [
-    "C035",
-    "C077",
-    "C085",
     "C079",
     "C149"
   ]
