@@ -26,7 +26,7 @@ class Judgment(BaseModel):
     clarity_reason: str
     candidates: list[Candidate]
 
-INSTRUCTION = '''自治体FAQ検索の評価。利用者は上位3件の候補を見て、どれを開くか選ぶ。質問とFAQの質問文・本文だけを読み、検索方式、順位、元ラベル、外部知識を使わず判定する。
+INSTRUCTION = '''自治体FAQ検索の評価。利用者が候補を見て、どれを開くか選ぶ用途を想定する。提示した候補は順位を隠した集合であり、すべての候補IDを一度ずつ判定する。質問とFAQの質問文・本文だけを読み、検索方式、順位、元ラベル、外部知識を使わず判定する。
 clarity=needs_clarification は、病名・加入保険など必要条件が不明で、候補が役立つか判定できない質問に付ける。明確な情報要求は広いだけで保留しない。
 各候補のverdict:
 useful: 質問者がこのFAQを選べば、求める情報、適切な行動、または具体的な参照先に進める。本文が直接答える場合を含む。分別方法を尋ねた質問に対し、名称が明記された分別アプリを案内するFAQは、URLがプレースホルダーでも利用先を特定できるので有用とする。問い合わせ先を尋ねる質問には、対応する窓口と電話番号を示せば有用。
@@ -35,7 +35,8 @@ unrelated: 質問の用件に実質的に関係しない。
 外部リンクの内容を推測せず、本文で名前が特定できないリンクだけにはusefulを付けない。適用条件を勝手に補わない。候補すべてを一度ずつ判定し、日本語で短い根拠を記録する。'''
 
 def judge(client, case):
-    prompt=INSTRUCTION+'\n\n'+json.dumps(case, ensure_ascii=False)
+    ids=[c['candidate'] for c in case['candidates']]
+    prompt=INSTRUCTION+f'\n\n必ず{len(ids)}件すべてを返す。候補ID: {", ".join(ids)}\n\n'+json.dumps(case, ensure_ascii=False)
     for attempt in range(6):
         try:
             response=client.models.generate_content(model=MODEL, contents=prompt,
