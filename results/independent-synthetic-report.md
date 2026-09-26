@@ -4,7 +4,7 @@
 
 FAQ質問文のベクトル検索に、FAQから生成した検索語を追加すると、上位3件への公開grade-2正解ラベルの包含率は改善するか。
 
-localgovFAQ派生データのFAQ1,786件を使用。生成モデル`gemini-3.1-flash-lite`にはFAQの質問文と回答文だけを渡し、各FAQに異なる日本語の想定質問5件を生成した。評価用問い合わせ749問と正解ラベルは、生成と新しいFAQベクトルの構築には渡していない。生成データ全件を`results/independent-synthetic-generation.json.gz`に保存。
+LocalgovFAQ派生データのFAQ1,786件を使用。生成モデル `gemini-3.1-flash-lite`にはFAQの質問文と回答文だけを渡し、各FAQに異なる日本語の想定質問5件を生成した。評価用問い合わせ749問と正解ラベルは、生成と新しいFAQベクトルの構築には渡していない。元データの再配布条件が明示されていないため、FAQから生成した質問文8,930件は公開リポジトリーに収録しない。
 
 埋め込みは`gemini-embedding-2`の768次元。既存の修正済み質問ベクトルと問い合わせベクトルを再利用し、新規に連結文1件＋合成クエリ5件のベクトルをFAQごとに生成した。問い合わせとFAQ側の接頭辞、正規化・コサイン類似度は既存実験と同じ。保存済み基準順位の全749問・各上位10件に一致することを確認してから比較した。
 
@@ -34,4 +34,4 @@ localgovFAQ派生データのFAQ1,786件を使用。生成モデル`gemini-3.1-f
 
 この固定条件では、連結方式を選ぶ理由はない。個別方式はHit@3がわずかに増える一方、Hit@1が下がり、ベクトル数が6倍になる。候補3件を見せる初期実装は質問文ベクトル1件/FAQを採用する。合成クエリは検索漏れの具体例に対する追加実験として残し、初期必須条件にはしない。
 
-コードは`scripts/synthetic_query_experiment.py`。全749問の順位は`results/independent-synthetic-rankings.json.gz`、10,716本の新規ベクトルは`results/independent-synthetic-vectors.json.gz`に保存。実行履歴はGitHub Actions run 36226164276。
+コードは`scripts/synthetic_query_experiment.py`。全749問の順位は`results/independent-synthetic-rankings.json.gz`、10,716本の新規ベクトルは`results/independent-synthetic-vectors.json.gz`に保存。実行履歴はGitHub Actions run 36226164276。元の質問文・回答文は[配布元](https://github.com/ku-nlp/bert-based-faqir)を参照。
