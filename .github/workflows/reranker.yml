@@ -10,13 +10,23 @@ jobs:
     timeout-minutes: 360
     permissions:
       contents: read
+      actions: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Restore 5,936 scored pairs from the timed-out run
+        uses: actions/download-artifact@v4
+        with:
+          name: faq-reranker-results
+          run-id: 36231434228
+          github-token: ${{ github.token }}
+          path: .
+      - name: Verify restored checkpoint
+        run: python -c "import json; p=json.load(open('reranker-progress.json')); assert len(p)==5936, len(p); print('Restored',len(p),'scored pairs')"
       - run: pip install 'sentence-transformers>=3,<6' 'torch>=2,<3'
-      - name: Run fixed cross encoder evaluation
+      - name: Finish fixed cross encoder evaluation
         env:
           HF_HUB_DISABLE_TELEMETRY: '1'
           TOKENIZERS_PARALLELISM: 'false'
