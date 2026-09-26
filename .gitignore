@@ -1,4 +1,6 @@
 .env
+.venv/
+__pycache__/
 node_modules/
 data/cache/
 *.tmp
@@ -9,3 +11,10 @@ results/*.candidate.json
 .clasp.json
 data/apps-script/
 work/
+synthetic-query-generation.json
+synthetic-query-vectors.json.gz
+synthetic-query-results.json
+independent-vectors.json.gz
+independent-vector-results.json
+reranker-progress.json
+reranker-results.json

@@ -65,6 +65,10 @@ gateはexact alias一致、top1 score、top1とtop2の差、query長、corpus語
 
 LocalgovFAQの明示的な再配布ライセンスは確認できていません。上のCC BY 4.0表記は661件の子育てFAQのみを指します。原データに関しては[Sakataらの論文](https://arxiv.org/abs/1905.02851)と配布元を参照してください。生成した質問文の一括ファイルは公開結果から除きました。過去の公開ブランチ履歴やActions artifactには旧ファイルが残る可能性があります。
 
+追加実験は[ローカルでの再現手順](docs/localgovfaq-local-reproduction.md)に従って実行できます。入力データと生成文を `work/` に保存し、元データのハッシュを検証します。保存済みベクトルと当時の生成文を使用すれば、Gemini APIの再実行は不要です。追加実験用のGitHub Actionsワークフローは現在のブランチから外しました。
+
+このリポジトリーの[MIT License](LICENSE)は自作のプログラムコードに適用します。`data/` の元FAQ、LocalgovFAQの原文、各元データに由来する成果物をMITとして再許諾する趣旨ではありません。子育てFAQには元のCC BY 4.0の表示条件が適用されます。
+
 ## 指標の読み方
 
 - Hit@1 / Hit@3、上位3件までのMRR、query種別・難易度別Hit@1を記録します。

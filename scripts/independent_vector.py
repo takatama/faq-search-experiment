@@ -1,9 +1,10 @@
 """Run the pinned independent benchmark with Gemini Embedding 2, 768 dimensions.
 
-Requires GEMINI_API_KEY and `pip install google-genai numpy`. The script never
-prints the key. Its cache binds every vector to its exact prefixed input text.
+Requires `pip install google-genai numpy`. GEMINI_API_KEY is only needed for
+uncached inputs. Its cache binds every vector to its exact prefixed input text.
 """
 import collections
+import argparse
 import gzip
 import hashlib
 import json
@@ -14,17 +15,16 @@ import sys
 import time
 
 import numpy as np
-from google import genai
-from google.genai import types
-
 from independent_eval import BLOBS, corpus_question, load, score
 
 MODEL = "gemini-embedding-2"
 DIMS = 768
-CACHE = pathlib.Path("independent-vectors.json.gz")
+CACHE = pathlib.Path("work/localgovfaq/independent-vectors.json.gz")
 
 
 def vectorize(client, items):
+    if client is not None:
+        from google.genai import types
     cached = json.loads(gzip.decompress(CACHE.read_bytes())) if CACHE.exists() else {}
     expected = {key for key, _ in items}
     saved = {key: value for key, value in cached.items() if key in expected}
@@ -59,11 +59,18 @@ def vectorize(client, items):
 
 
 def main():
-    if not os.environ.get("GEMINI_API_KEY"):
-        raise ValueError("GEMINI_API_KEY is required")
-    corpus, _ = load("corpus.json", None)
-    queries, _ = load("queries.json", None)
-    qrels, _ = load("qrels.json", None)
+    global CACHE
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset-dir", type=pathlib.Path, default=pathlib.Path("work/localgovfaq/dataset"))
+    parser.add_argument("--cache", type=pathlib.Path, default=CACHE)
+    parser.add_argument("--output", type=pathlib.Path, default=pathlib.Path("work/localgovfaq/independent-vector-results.json"))
+    args = parser.parse_args()
+    CACHE = args.cache
+    CACHE.parent.mkdir(parents=True, exist_ok=True)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    corpus, _ = load("corpus.json", args.dataset_dir)
+    queries, _ = load("queries.json", args.dataset_dir)
+    qrels, _ = load("qrels.json", args.dataset_dir)
     docs = sorted(corpus, key=int)
     qids = sorted(queries, key=int)
     def item(kind, key, text):
@@ -71,7 +78,16 @@ def main():
         return f"{kind}:{key}:{digest}", text
     items = [item("d", key, f"title: none | text: {corpus_question(corpus[key])}") for key in docs]
     items += [item("q", key, f"task: search result | query: {queries[key]}") for key in qids]
-    saved, requests = vectorize(genai.Client(api_key=os.environ["GEMINI_API_KEY"]), items)
+    existing = json.loads(gzip.decompress(CACHE.read_bytes())) if CACHE.exists() else {}
+    missing = [key for key, _ in items if key not in existing]
+    if missing and not os.environ.get("GEMINI_API_KEY"):
+        raise ValueError(f"{len(missing)} embeddings missing; provide the saved cache or GEMINI_API_KEY")
+    if missing:
+        from google import genai
+        client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    else:
+        client = None
+    saved, requests = vectorize(client, items)
     array = np.array([saved[key] for key, _ in items], dtype=np.float32)
     array /= np.linalg.norm(array, axis=1)[:, None]
     vectors = array[:len(docs)]
@@ -95,7 +111,7 @@ def main():
               "document_prefix": "title: none | text: {faq question}",
               "document_field": "FAQ question only", "new_api_calls": requests,
               "source_blobs": BLOBS, "summary": summary, "rankings": results}
-    pathlib.Path("independent-vector-results.json").write_text(
+    args.output.write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({k: v for k, v in report.items() if k != "rankings"}, ensure_ascii=False))
 
