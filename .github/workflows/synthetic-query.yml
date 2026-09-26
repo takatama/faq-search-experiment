@@ -1,8 +1,5 @@
 name: Synthetic FAQ query comparison
 on:
-  push:
-    branches: [audit/independent-qrels]
-    paths: [.github/workflows/synthetic-query.yml, scripts/synthetic_query_experiment.py]
   workflow_dispatch:
 jobs:
   compare:
@@ -26,7 +23,5 @@ jobs:
         with:
           name: synthetic-query-comparison
           path: |
-            synthetic-query-generation.json
-            synthetic-query-vectors.json.gz
             synthetic-query-results.json
           if-no-files-found: warn
