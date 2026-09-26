@@ -29,12 +29,30 @@
       "decision": "useful_candidate",
       "source": "User answer in chat",
       "note": "At least one FAQ describes a reduction mechanism for unemployment."
+    },
+    {
+      "case": "C045",
+      "query_id": "341",
+      "decision": "useful_candidate",
+      "source": "User answer in chat",
+      "note": "Park tree/pest consultation provides a useful contact route."
+    },
+    {
+      "case": "C004",
+      "query_id": "150",
+      "decision": "useful_candidate",
+      "source": "User answer in chat",
+      "note": "At least one health checkup FAQ gives an actionable route."
+    },
+    {
+      "case": "C113",
+      "query_id": "514",
+      "decision": "needs_clarification",
+      "source": "User answer in chat",
+      "note": "Noise source unspecified; source-specific complaint offices cannot be selected."
     }
   ],
   "pending": [
-    "C045",
-    "C004",
-    "C113",
     "C035",
     "C077",
     "C085",
