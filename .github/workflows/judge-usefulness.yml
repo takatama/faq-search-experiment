@@ -28,15 +28,15 @@ jobs:
           assert [v['query_id'] for v in key.values()]==expected['query_ids']
           assert sum(len(v['candidates']) for v in key.values())==1658
           PY
-      - name: Trial five complete usefulness judgments
+      - name: Judge all 200 usefulness cases
         if: env.GEMINI_API_KEY != ''
         run: |
           pip install google-genai pydantic
-          python scripts/judge_usefulness.py --packet stratified-packet.json --output usefulness-judgments.json --limit 5
+          python scripts/judge_usefulness.py --packet stratified-packet.json --output usefulness-judgments.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: usefulness-trial
+          name: usefulness-stratified-200
           path: |
             stratified-packet.json
             stratified-key.json
