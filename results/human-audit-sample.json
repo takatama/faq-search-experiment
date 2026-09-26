@@ -1,0 +1,78 @@
+{
+  "seed": 20260928,
+  "selection": "3 cases per published-hit x model-useful quadrant, excluding calibration queries",
+  "cases": [
+    {
+      "case": "C169",
+      "query_id": "624",
+      "published_hit3": false,
+      "model_useful_hit3": false
+    },
+    {
+      "case": "C200",
+      "query_id": "531",
+      "published_hit3": false,
+      "model_useful_hit3": false
+    },
+    {
+      "case": "C028",
+      "query_id": "265",
+      "published_hit3": false,
+      "model_useful_hit3": false
+    },
+    {
+      "case": "C112",
+      "query_id": "61",
+      "published_hit3": false,
+      "model_useful_hit3": true
+    },
+    {
+      "case": "C045",
+      "query_id": "341",
+      "published_hit3": false,
+      "model_useful_hit3": true
+    },
+    {
+      "case": "C004",
+      "query_id": "150",
+      "published_hit3": false,
+      "model_useful_hit3": true
+    },
+    {
+      "case": "C113",
+      "query_id": "514",
+      "published_hit3": true,
+      "model_useful_hit3": false
+    },
+    {
+      "case": "C035",
+      "query_id": "304",
+      "published_hit3": true,
+      "model_useful_hit3": false
+    },
+    {
+      "case": "C077",
+      "query_id": "212",
+      "published_hit3": true,
+      "model_useful_hit3": false
+    },
+    {
+      "case": "C085",
+      "query_id": "172",
+      "published_hit3": true,
+      "model_useful_hit3": true
+    },
+    {
+      "case": "C079",
+      "query_id": "663",
+      "published_hit3": true,
+      "model_useful_hit3": true
+    },
+    {
+      "case": "C149",
+      "query_id": "323",
+      "published_hit3": true,
+      "model_useful_hit3": true
+    }
+  ]
+}
