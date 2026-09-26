@@ -1,10 +1,11 @@
 """Compare question-only FAQ embeddings with five synthetic queries per FAQ.
 
-Generation sees corpus only, never queries or relevance judgments. Run in a
-GitHub Actions checkout with GEMINI_API_KEY. Saves progress after each batch.
+Generation sees corpus only, never queries or relevance judgments. Run locally;
+GEMINI_API_KEY is needed only if generation or embedding cache entries are missing.
 Requires: google-genai, numpy. Source JSON blobs are pinned by independent_eval.
 """
 import collections
+import argparse
 import gzip
 import hashlib
 import json
@@ -14,13 +15,11 @@ import pathlib
 import time
 
 import numpy as np
-from google import genai
-from google.genai import types
 from pydantic import BaseModel
 
 from independent_eval import BLOBS, corpus_question, load
 
-ROOT = pathlib.Path('.')
+ROOT = pathlib.Path('work/localgovfaq')
 SYNTH = ROOT / 'synthetic-query-generation.json'
 VECTORS = ROOT / 'synthetic-query-vectors.json.gz'
 OUTPUT = ROOT / 'synthetic-query-results.json'
@@ -28,7 +27,21 @@ EMBED_MODEL = 'gemini-embedding-2'
 GEN_MODEL = 'gemini-3.1-flash-lite'
 DIMS = 768
 N_SYNTH = 5
-CLIENT = genai.Client(api_key=os.environ['GEMINI_API_KEY'])
+CLIENT = None
+types = None
+
+def api_client():
+    global CLIENT, types
+    if CLIENT is not None:
+        return CLIENT
+    key = os.environ.get('GEMINI_API_KEY')
+    if not key:
+        raise ValueError('Cache incomplete: set GEMINI_API_KEY to generate missing entries')
+    from google import genai
+    from google.genai import types as genai_types
+    types = genai_types
+    CLIENT = genai.Client(api_key=key)
+    return CLIENT
 
 
 class GeneratedFAQ(BaseModel):
@@ -71,8 +84,9 @@ def generate(corpus):
                   '作らない。別FAQの情報を混ぜない。評価用の問い合わせは一切提示されていない。'
                   '入力したすべてのidについて、idとqueries（5件の文字列配列）を返す。\n'
                   + json.dumps(source, ensure_ascii=False))
+        client = api_client()
         for attempt in range(3):
-            response = retry(lambda: CLIENT.models.generate_content(
+            response = retry(lambda: client.models.generate_content(
                 model=GEN_MODEL, contents=prompt,
                 config=types.GenerateContentConfig(temperature=0.3,response_mime_type='application/json',
                                                    response_schema=GeneratedBatch)))
@@ -110,7 +124,8 @@ def embed(items):
     missing = [(key,text) for key,text in items if key not in saved]
     for start in range(0,len(missing),50):
         batch = missing[start:start+50]
-        response = retry(lambda: CLIENT.models.embed_content(
+        client = api_client()
+        response = retry(lambda: client.models.embed_content(
             model=EMBED_MODEL,
             contents=[types.Content(parts=[types.Part.from_text(text=t)]) for _,t in batch],
             config=types.EmbedContentConfig(output_dimensionality=DIMS)))
@@ -139,9 +154,20 @@ def rank(scores, docs, k=10):
 
 
 def main():
-    corpus,_=load('corpus.json',None)
-    queries,_=load('queries.json',None)
-    qrels,_=load('qrels.json',None)
+    global SYNTH, VECTORS, OUTPUT
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--dataset-dir',type=pathlib.Path,default=ROOT/'dataset')
+    parser.add_argument('--generation',type=pathlib.Path,default=SYNTH)
+    parser.add_argument('--vectors',type=pathlib.Path,default=VECTORS)
+    parser.add_argument('--output',type=pathlib.Path,default=OUTPUT)
+    parser.add_argument('--baseline-vectors',type=pathlib.Path,default=pathlib.Path('results/independent-gemini-vectors.json.gz'))
+    parser.add_argument('--baseline-results',type=pathlib.Path,default=pathlib.Path('results/independent-gemini-results.json.gz'))
+    args=parser.parse_args()
+    SYNTH,VECTORS,OUTPUT=args.generation,args.vectors,args.output
+    for path in (SYNTH,VECTORS,OUTPUT):path.parent.mkdir(parents=True,exist_ok=True)
+    corpus,_=load('corpus.json',args.dataset_dir)
+    queries,_=load('queries.json',args.dataset_dir)
+    qrels,_=load('qrels.json',args.dataset_dir)
     assert len(corpus)==1786 and len(queries)==len(qrels)==749
     docs=sorted(corpus,key=int)
     qids=sorted(queries,key=int)
@@ -153,9 +179,9 @@ def main():
         for i,value in enumerate(generated[d]):
             items.append((vector_key('synthetic',d,value,i),f'title: none | text: {value}'))
     new_vectors=embed(items)
-    with gzip.open('results/independent-gemini-vectors.json.gz','rt') as f:
+    with gzip.open(args.baseline_vectors,'rt') as f:
         baseline=json.load(f)
-    with gzip.open('results/independent-gemini-results.json.gz','rt') as f:
+    with gzip.open(args.baseline_results,'rt') as f:
         baseline_results=json.load(f)
     qvec={k.split(':')[1]:v for k,v in baseline.items() if k.startswith('q:')}
     dvec={k.split(':')[1]:v for k,v in baseline.items() if k.startswith('d:')}
