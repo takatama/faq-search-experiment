@@ -1,0 +1,63 @@
+{
+  "protocol": "2026-09-26-useful-candidate-v1",
+  "source": "User judgments in chat, before usefulness run completion",
+  "cases": [
+    {
+      "query_id": "144",
+      "faq_ids": [
+        "1174",
+        "127",
+        "202"
+      ],
+      "clarity": "clear",
+      "verdict": "related",
+      "note": "Age-limited bus discounts for unspecified traveler; individual FAQ applicability still requires review."
+    },
+    {
+      "query_id": "570",
+      "faq_ids": [
+        "1688"
+      ],
+      "clarity": "clear",
+      "verdict": "useful",
+      "note": "City consultation provides office and phone for where-to-complain question."
+    },
+    {
+      "query_id": "248",
+      "faq_ids": [
+        "502",
+        "426"
+      ],
+      "clarity": "needs_clarification",
+      "verdict": null,
+      "note": "Condition and insurance unknown for medical subsidy."
+    },
+    {
+      "query_id": "657",
+      "faq_ids": [
+        "1784"
+      ],
+      "clarity": "clear",
+      "verdict": "useful",
+      "note": "Named garbage sorting app gives next action despite URL placeholder."
+    },
+    {
+      "query_id": "60",
+      "faq_ids": [
+        "1723"
+      ],
+      "clarity": "clear",
+      "verdict": "related",
+      "note": "Contact office alone does not answer policy question."
+    },
+    {
+      "query_id": "656",
+      "faq_ids": [
+        "394"
+      ],
+      "clarity": "clear",
+      "verdict": "related",
+      "note": "Premature-infant inpatient aid too narrow for general child medical subsidy."
+    }
+  ]
+}
