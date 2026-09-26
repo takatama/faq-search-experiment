@@ -25,7 +25,9 @@ CACHE = pathlib.Path("independent-vectors.json.gz")
 
 
 def vectorize(client, items):
-    saved = json.loads(gzip.decompress(CACHE.read_bytes())) if CACHE.exists() else {}
+    cached = json.loads(gzip.decompress(CACHE.read_bytes())) if CACHE.exists() else {}
+    expected = {key for key, _ in items}
+    saved = {key: value for key, value in cached.items() if key in expected}
     pending = [(key, text) for key, text in items if key not in saved]
     requests = 0
     for start in range(0, len(pending), 50):

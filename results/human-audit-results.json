@@ -1,0 +1,91 @@
+{
+  "sample_file": "results/human-audit-sample.json",
+  "criterion": "Any useful FAQ within Gemini top 3, evaluated against the archived FAQ text",
+  "reviewed": [
+    {
+      "case": "C169",
+      "query_id": "624",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "No close child-oriented park established by top three."
+    },
+    {
+      "case": "C200",
+      "query_id": "531",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "Park fence damage: none of three candidates identifies the relevant repair reporting route."
+    },
+    {
+      "case": "C028",
+      "query_id": "265",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "Separate partial moving FAQs do not each answer the broad request; do not combine multiple FAQs to make a hit."
+    },
+    {
+      "case": "C112",
+      "query_id": "61",
+      "decision": "useful_candidate",
+      "source": "User answer in chat",
+      "note": "At least one FAQ describes a reduction mechanism for unemployment."
+    },
+    {
+      "case": "C045",
+      "query_id": "341",
+      "decision": "useful_candidate",
+      "source": "User answer in chat",
+      "note": "Park tree/pest consultation provides a useful contact route."
+    },
+    {
+      "case": "C004",
+      "query_id": "150",
+      "decision": "useful_candidate",
+      "source": "User answer in chat",
+      "note": "At least one health checkup FAQ gives an actionable route."
+    },
+    {
+      "case": "C113",
+      "query_id": "514",
+      "decision": "needs_clarification",
+      "source": "User answer in chat",
+      "note": "Noise source unspecified; source-specific complaint offices cannot be selected."
+    },
+    {
+      "case": "C035",
+      "query_id": "304",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "Prior January-March specific checkup and year-dependent coupon notices do not settle a general consecutive-year screening question."
+    },
+    {
+      "case": "C077",
+      "query_id": "212",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "Early voting, 2017 election-specific address rules, and travel absentee voting do not answer the general recent-move polling place question."
+    },
+    {
+      "case": "C085",
+      "query_id": "172",
+      "decision": "useful_candidate",
+      "source": "User answer in chat",
+      "note": "Pigeon FAQ supplies an answer and next actions."
+    },
+    {
+      "case": "C079",
+      "query_id": "663",
+      "decision": "useful_candidate",
+      "source": "User answer in tappable UI",
+      "note": "Archived mayor profile names the mayor at the dataset's time; not a claim about the current mayor."
+    },
+    {
+      "case": "C149",
+      "query_id": "323",
+      "decision": "useful_candidate",
+      "source": "User answer in tappable UI",
+      "note": "Rat FAQ explains municipal pesticide for homes and specialist referral for outside."
+    }
+  ],
+  "pending": []
+}

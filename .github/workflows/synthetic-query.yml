@@ -1,0 +1,27 @@
+name: Synthetic FAQ query comparison
+on:
+  workflow_dispatch:
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: read
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install google-genai numpy
+      - name: Generate from FAQs and evaluate against unseen queries
+        if: env.GEMINI_API_KEY != ''
+        run: python scripts/synthetic_query_experiment.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: synthetic-query-comparison
+          path: |
+            synthetic-query-results.json
+          if-no-files-found: warn

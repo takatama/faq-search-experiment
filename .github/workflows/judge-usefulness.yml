@@ -1,0 +1,43 @@
+name: FAQ candidate usefulness triage
+on:
+  push:
+    branches: [audit/independent-qrels]
+    paths: [.github/workflows/judge-usefulness.yml]
+jobs:
+  judge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build fixed sample
+        run: |
+          python scripts/build_judgment_audit.py --lexical results/independent-evaluation.json.gz --e5 results/independent-open-vector.json.gz --gemini results/independent-gemini-results.json.gz --sample-success 109 --packet stratified-packet.json --key stratified-key.json
+      - name: Check sample IDs
+        run: |
+          python - <<'PY'
+          import json
+          key=json.load(open('stratified-key.json'))['cases']
+          expected=json.load(open('results/stratified-sample-ids.json'))
+          assert [v['query_id'] for v in key.values()]==expected['query_ids']
+          assert sum(len(v['candidates']) for v in key.values())==1658
+          PY
+      - name: Judge all 200 usefulness cases
+        if: env.GEMINI_API_KEY != ''
+        run: |
+          pip install google-genai pydantic
+          python scripts/judge_usefulness.py --packet stratified-packet.json --output usefulness-judgments.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: usefulness-stratified-200
+          path: |
+            stratified-packet.json
+            stratified-key.json
+            usefulness-judgments.json

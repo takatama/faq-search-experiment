@@ -42,7 +42,13 @@ def grams(s):
 
 def corpus_question(doc):
     if isinstance(doc, str):
-        return doc
+        question, separator, answer = doc.partition("\nAnswer: ")
+        if not question.startswith("Question: ") or not separator or not answer.strip():
+            raise ValueError(f"Unexpected FAQ document format: {repr(doc)[:150]}")
+        question = question[len("Question: "):]
+        if not question.strip():
+            raise ValueError("Empty FAQ question")
+        return question
     if isinstance(doc, dict):
         # Fail explicitly if the transformed corpus has an unexpected layout.
         for key in ("title", "question"):
