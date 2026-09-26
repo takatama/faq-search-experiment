@@ -8,12 +8,30 @@
       "decision": "no_useful_candidate",
       "source": "User answer in chat",
       "note": "No close child-oriented park established by top three."
+    },
+    {
+      "case": "C200",
+      "query_id": "531",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "Park fence damage: none of three candidates identifies the relevant repair reporting route."
+    },
+    {
+      "case": "C028",
+      "query_id": "265",
+      "decision": "no_useful_candidate",
+      "source": "User answer in chat",
+      "note": "Separate partial moving FAQs do not each answer the broad request; do not combine multiple FAQs to make a hit."
+    },
+    {
+      "case": "C112",
+      "query_id": "61",
+      "decision": "useful_candidate",
+      "source": "User answer in chat",
+      "note": "At least one FAQ describes a reduction mechanism for unemployment."
     }
   ],
   "pending": [
-    "C200",
-    "C028",
-    "C112",
     "C045",
     "C004",
     "C113",
