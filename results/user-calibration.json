@@ -58,6 +58,33 @@
       "clarity": "clear",
       "verdict": "related",
       "note": "Premature-infant inpatient aid too narrow for general child medical subsidy."
+    },
+    {
+      "query_id": "434",
+      "faq_ids": [
+        "1702"
+      ],
+      "clarity": "needs_clarification",
+      "verdict": null,
+      "note": "General donation request does not identify what is donated; child benefit assignment is conditional."
+    },
+    {
+      "query_id": "267",
+      "faq_ids": [
+        "42"
+      ],
+      "clarity": "needs_clarification",
+      "verdict": null,
+      "note": "City hall closure versus service center weekend operation is ambiguous."
+    },
+    {
+      "query_id": "302",
+      "faq_ids": [
+        "920"
+      ],
+      "clarity": "clear",
+      "verdict": "related",
+      "note": "Human rights consultation FAQ does not state DV consultation acceptance."
     }
   ]
 }
