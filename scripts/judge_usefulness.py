@@ -45,7 +45,7 @@ def judge(client, case):
             expected={c['candidate'] for c in case['candidates']}
             got=[c.candidate for c in result.candidates]
             if len(got)!=len(expected) or set(got)!=expected:
-                raise ValueError(f'Candidate IDs do not match: {case["case"]}')
+                raise ValueError(f'Candidate IDs do not match: {case["case"]}: expected={sorted(expected)} got={got}')
             return result.model_dump(),getattr(response,'usage_metadata',None)
         except Exception:
             if attempt==5: raise
