@@ -34,6 +34,8 @@ def main():
     parser.add_argument("--packet", type=pathlib.Path, required=True)
     parser.add_argument("--key", type=pathlib.Path, required=True)
     parser.add_argument("--sample-success", type=int, default=30)
+    parser.add_argument("--all-eligible", action="store_true",
+                        help="Include all grade-2 queries for a full re-judgment packet")
     args = parser.parse_args()
     corpus, _ = load("corpus.json", args.dataset_dir)
     queries, _ = load("queries.json", args.dataset_dir)
@@ -53,14 +55,14 @@ def main():
                  if rankings["gemini"][qid]["grade2"]["hit3"]]
     sampled = random.Random(SEED).sample(
         successes, min(args.sample_success, len(successes)))
-    selected = misses + sampled
+    selected = misses + (successes if args.all_eligible else sampled)
     random.Random(SEED + 1).shuffle(selected)
     packet = []
     key = {
         "protocol": "Question-only index; all four methods' top 3 plus published grade-2 candidates",
         "seed": SEED,
         "n_miss": len(misses),
-        "n_success_sampled": len(sampled),
+        "n_success_sampled": len(successes) if args.all_eligible else len(sampled),
         "cases": {},
     }
     for i, qid in enumerate(selected, 1):
@@ -95,7 +97,7 @@ def main():
     args.key.write_text(json.dumps(key, ensure_ascii=False, indent=2),
                         encoding="utf-8")
     print(json.dumps({"cases": len(packet), "misses": len(misses),
-                      "sampled_successes": len(sampled),
+                      "sampled_successes": len(successes) if args.all_eligible else len(sampled),
                       "candidate_pairs": sum(len(c["candidates"]) for c in packet)}))
 
 
