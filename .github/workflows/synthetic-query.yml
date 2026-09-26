@@ -2,7 +2,7 @@ name: Synthetic FAQ query comparison
 on:
   push:
     branches: [audit/independent-qrels]
-    paths: [.github/workflows/synthetic-query.yml]
+    paths: [.github/workflows/synthetic-query.yml, scripts/synthetic_query_experiment.py]
   workflow_dispatch:
 jobs:
   compare:
