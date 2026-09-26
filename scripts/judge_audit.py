@@ -15,6 +15,7 @@ from google.genai import types
 from pydantic import BaseModel, Field
 
 MODEL = "gemini-3.1-flash-lite"
+PROTOCOL = "2026-09-26-calibrated-v2"
 
 
 class CandidateJudgment(BaseModel):
@@ -31,10 +32,10 @@ class CaseJudgment(BaseModel):
 
 INSTRUCTION = """自治体FAQの検索評価用に、問い合わせとFAQの本文だけを判定する。
 検索方式、順位、元の正解ラベルは知らされていない。外部知識や現在の制度は使わず、提示された当時の本文に限る。
-clarity=needs_clarification は、問い合わせから知りたい情報や対象が特定できず、回答の良し悪しを決められない場合に限る。
+clarity=needs_clarification は、問い合わせから知りたい情報や適用条件が特定できず、回答の良し悪しを決められない場合に付ける。医療費助成のように病名・保険などで制度の適用が変わるのに質問に情報がない場合は要確認とする。一方、交通割引を尋ねる質問は年齢不明でも情報要求として明確であり、高齢者限定の案内をleadにできる。
 各候補に一つ verdict を付ける。
-answer: 本文自体に質問への具体的な答えがある。広い質問で複数の制度が該当する場合、その一つを具体的に説明すればよい。
-lead: 関連するが直接答えない。担当課への問い合わせだけ、リンクやアプリに答えを委ねるだけ、異なる条件や対象についての説明はここ。
+answer: 本文自体に質問への具体的な答えがあり、質問から分かる条件と両立する。問い合わせ先を尋ねる質問なら、対応する窓口と連絡方法の提示は直接回答となる。
+lead: 関連するが直接答えない。質問にない年齢・病名・加入保険などを仮定しないと使えない制度、別の対象への説明、答えをリンクやアプリや担当課に委ねるだけの場合はここ。ただし窓口を尋ねる質問では窓口の提示をanswerにできる。
 unrelated: 質問に実質的に関係しない。
 URLが［ＵＲＬ］と欠落していれば、リンク先の内容を推測しない。短い根拠を各候補に付け、すべての候補IDを一度ずつ返す。"""
 
@@ -79,7 +80,7 @@ def main():
     for i, case in enumerate(cases, 1):
         judgment, usage = judge(client, case)
         output.append({
-            "case": case["case"], "model": MODEL,
+            "case": case["case"], "model": MODEL, "protocol": PROTOCOL,
             "judgment": judgment,
             "usage": {
                 "prompt_tokens": getattr(usage, "prompt_token_count", None),
