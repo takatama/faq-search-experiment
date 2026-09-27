@@ -1,5 +1,7 @@
 # 自治体FAQ検索実験
 
+> **旧実験のアーカイブです。** 記事で扱う独立した問い合わせを用いたFAQ検索比較は、[faq-retrieval-benchmark-ja](https://github.com/takatama/faq-retrieval-benchmark-ja)を参照してください。このリポジトリーには以前の子育てFAQ実験とそのGit履歴が残っています。新しいリポジトリーには引き継いでいません。保存済みの大きな数値ベクトルは、新しい追試手順から固定コミットを指定して取得します。
+
 661件のFAQと固定Split v2（Development 90問、Holdout 360問）を使い、A substring、B 文字2〜4gram TF-IDF、C aliases付きlexical、D Vector、E RRF Hybrid、F lexical-first fallbackを比較します。データは変更・再生成しません。
 
 ## モデルと認証
